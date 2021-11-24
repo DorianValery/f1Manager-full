@@ -14,6 +14,9 @@ public class Views {
 	public static class ViewEcurie extends ViewCommon{
 	}
 	
+	public static class ViewEcurieDetail extends ViewEcurie{
+	}
+	
 	public static class ViewInfrastructure extends ViewCommon{
 	}
 	
