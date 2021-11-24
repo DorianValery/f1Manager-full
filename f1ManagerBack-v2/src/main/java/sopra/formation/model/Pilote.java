@@ -34,11 +34,14 @@ public class Pilote {
 	 private double prix;
 	 @ManyToOne
 	 @JoinColumn(name="ecurie_id")
+	 @JsonView(Views.ViewPiloteDetail.class)
 	 private Ecurie ecurie;
 	 @OneToMany(mappedBy = "pilote")
+	 @JsonView(Views.ViewPiloteDetail.class)
 	 private List <Position> positions;
 	 @ManyToOne
 	 @JoinColumn(name="inventaire_id")
+	 @JsonView(Views.ViewPiloteDetail.class)
 	 private Inventaire inventaire;
 	 
 	 public Pilote() {}

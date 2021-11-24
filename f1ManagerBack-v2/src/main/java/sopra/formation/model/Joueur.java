@@ -27,11 +27,14 @@ public class Joueur {
 	private Civilite civ;
 	@OneToOne
 	@JoinColumn(name="inventaire_id")
+	@JsonView(Views.ViewJoueurDetail.class)
 	private Inventaire inventaire;
 	@OneToOne
 	@JoinColumn(name="ecurie_id")
+	@JsonView(Views.ViewJoueurDetail.class)
 	private Ecurie ecurie;
 	@OneToOne (mappedBy = "joueur")
+	@JsonView(Views.ViewJoueurDetail.class)
 	private Compte compte;
 	
 	public Joueur() {}

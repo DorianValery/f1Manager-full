@@ -55,7 +55,7 @@ public class InfrastructureRestController {
 	}
 	
 	@GetMapping("{id}/detail")
-	//@JsonView(Views.ViewInfrastructureDetail.class)
+	@JsonView(Views.ViewInfrastructureDetail.class)
 	public Infrastructure detail(@PathVariable Long id) {
 		Optional<Infrastructure> optInfrastructure = infrastructureRepo.findById(id);
 
