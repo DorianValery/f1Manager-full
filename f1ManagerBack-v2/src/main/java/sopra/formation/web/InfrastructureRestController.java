@@ -98,7 +98,6 @@ public class InfrastructureRestController {
 			infrastructureFind.setNbIngenieurs((Integer) updates.get("comportemental"));
 		}
 		
-		
 		infrastructureFind = infrastructureRepo.save(infrastructureFind);
 
 		return infrastructureFind;
