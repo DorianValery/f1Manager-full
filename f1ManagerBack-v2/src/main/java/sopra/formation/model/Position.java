@@ -24,9 +24,9 @@ public class Position {
 	@JoinColumn(name="course_id")
 	@JsonView(Views.ViewPosition.class)
 	private Course course;
-	private byte position;
+	private int position;
 	
-	public Position(Long id, Pilote pilote, Course course, byte position) {
+	public Position(Long id, Pilote pilote, Course course, int position) {
 		super();
 		this.id = id;
 		this.pilote = pilote;
@@ -62,11 +62,11 @@ public class Position {
 		this.course = course;
 	}
 
-	public byte getPosition() {
+	public int getPosition() {
 		return position;
 	}
 
-	public void setPosition(byte position) {
+	public void setPosition(int position) {
 		this.position = position;
 	}
 

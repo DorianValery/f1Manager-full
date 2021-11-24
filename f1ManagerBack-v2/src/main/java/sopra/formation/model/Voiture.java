@@ -25,6 +25,8 @@ public class Voiture {
 	private int poids;
 	private boolean etat;
 	private int prix;
+	private int degatSubi;
+	private int usurePneu;
 	@ManyToOne
 	@JoinColumn(name="ecurie_id")
 	private Ecurie ecurie;
@@ -130,6 +132,24 @@ public class Voiture {
 
 	public void setInventaire(Inventaire inventaire) {
 		this.inventaire = inventaire;
+	}
+	
+	
+
+	public int getDegatSubi() {
+		return degatSubi;
+	}
+
+	public void setDegatSubi(int degatSubi) {
+		this.degatSubi = degatSubi;
+	}
+
+	public int getUsurePneu() {
+		return usurePneu;
+	}
+
+	public void setUsurePneu(int usurePneu) {
+		this.usurePneu = usurePneu;
 	}
 
 	@Override
