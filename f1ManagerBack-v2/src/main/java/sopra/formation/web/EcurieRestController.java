@@ -38,7 +38,7 @@ public class EcurieRestController {
 		private IEcurieRepository ecurieRepo;
 
 		@GetMapping("")
-		//@JsonView(Views.ViewEcurie.class)
+		@JsonView(Views.ViewEcurie.class)
 		public List<Ecurie> findAll() {
 			List<Ecurie> ecuries = ecurieRepo.findAll();
 
@@ -46,8 +46,20 @@ public class EcurieRestController {
 		}
 
 		@GetMapping("{id}")
-		//@JsonView(Views.ViewEcurie.class)
+		@JsonView(Views.ViewEcurie.class)
 		public Ecurie find(@PathVariable Long id) {
+			Optional<Ecurie> optEcurie = ecurieRepo.findById(id);
+
+			if (optEcurie.isPresent()) {
+				return optEcurie.get();
+			} else {
+				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Ecurie non trouvé");
+			}
+		}
+		
+		@GetMapping("{id}/detail")
+		@JsonView(Views.ViewEcurieDetail.class)
+		public Ecurie findDetail(@PathVariable Long id) {
 			Optional<Ecurie> optEcurie = ecurieRepo.findById(id);
 
 			if (optEcurie.isPresent()) {
@@ -73,7 +85,7 @@ public class EcurieRestController {
 		}
 
 		@PostMapping("")
-		//@JsonView(Views.ViewEcurie.class)
+		@JsonView(Views.ViewEcurie.class)
 		public Ecurie create(@Valid @RequestBody Ecurie ecurie, BindingResult result) {
 //			if(result.hasErrors()) {
 //				throw new EcurieValidationException();
@@ -85,7 +97,7 @@ public class EcurieRestController {
 		}
 
 		@PutMapping("/{id}")
-		//@JsonView(Views.ViewEcurie.class)
+		@JsonView(Views.ViewEcurie.class)
 		public Ecurie update(@PathVariable Long id, @RequestBody Ecurie ecurie) {
 			if (!ecurieRepo.existsById(id)) {
 				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Ecurie non trouvé");
