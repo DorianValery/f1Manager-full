@@ -1,14 +1,11 @@
 package sopra.formation.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
@@ -25,8 +22,6 @@ public class Voiture {
 	private int poids;
 	private boolean etat;
 	private int prix;
-	private int degatSubi;
-	private int usurePneu;
 	@ManyToOne
 	@JoinColumn(name="ecurie_id")
 	private Ecurie ecurie;
@@ -134,23 +129,6 @@ public class Voiture {
 		this.inventaire = inventaire;
 	}
 	
-	
-
-	public int getDegatSubi() {
-		return degatSubi;
-	}
-
-	public void setDegatSubi(int degatSubi) {
-		this.degatSubi = degatSubi;
-	}
-
-	public int getUsurePneu() {
-		return usurePneu;
-	}
-
-	public void setUsurePneu(int usurePneu) {
-		this.usurePneu = usurePneu;
-	}
 
 	@Override
 	public String toString() {
