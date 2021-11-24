@@ -19,7 +19,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@EnableJpaRepositories("sopra.projetF1.repository")
+@EnableJpaRepositories("sopra.formation.repository")
 @EnableTransactionManagement
 @PropertySource("classpath:db.properties")
 public class ApplicationConfig {
@@ -45,7 +45,7 @@ public class ApplicationConfig {
 		public LocalContainerEntityManagerFactoryBean entityManagerFactory(BasicDataSource dataSource) {
 			LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
 			emf.setDataSource(dataSource);
-			emf.setPackagesToScan("sopra.projetF1.model");
+			emf.setPackagesToScan("sopra.formation.model");
 
 			// On pr�cise le provider ...
 			JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
