@@ -31,6 +31,10 @@ public class Position {
 		this.course = course;
 		this.position = position;
 	}
+	
+	public Position() {
+		super();
+	}
 
 	public Long getId() {
 		return id;
