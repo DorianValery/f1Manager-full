@@ -75,9 +75,9 @@ public class EcurieRestController {
 		@PostMapping("")
 		//@JsonView(Views.ViewEcurie.class)
 		public Ecurie create(@Valid @RequestBody Ecurie ecurie, BindingResult result) {
-			if(result.hasErrors()) {
-				throw new EcurieValidationException();
-			}
+//			if(result.hasErrors()) {
+//				throw new EcurieValidationException();
+//			}
 			
 			ecurie = ecurieRepo.save(ecurie);
 
