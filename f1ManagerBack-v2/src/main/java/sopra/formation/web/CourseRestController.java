@@ -1,5 +1,6 @@
 package sopra.formation.web;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -67,7 +68,7 @@ public class CourseRestController {
 		if (!courseRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Course non trouvé");
 		}
-
+		
 		course = courseRepo.save(course);
 
 		return course;
@@ -79,10 +80,26 @@ public class CourseRestController {
 		if (!courseRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Course non trouvé");
 		}
-
+		
 		Course courseFind = courseRepo.findById(id).get();
 
-
+		if (updates.containsKey("nom")) {
+			courseFind.setNom((String) updates.get("nom"));
+		}
+		
+		if (updates.containsKey("nombreTour")) {
+			courseFind.setNombreTour((Integer) updates.get("nombreTour"));
+		}
+		
+		if (updates.containsKey("tempsRef")) {
+			courseFind.setTempsRef((Duration) updates.get("tempsRef"));
+		}
+		if (updates.containsKey("cashPrize")) {
+			courseFind.setCashPrize((double) updates.get("cashPrize"));
+		}
+		if (updates.containsKey("popularite")) {
+			courseFind.setPopularite((double) updates.get("popularite"));
+		}
 		courseFind = courseRepo.save(courseFind);
 
 		return courseFind;

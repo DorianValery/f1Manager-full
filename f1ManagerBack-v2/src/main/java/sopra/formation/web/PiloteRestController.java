@@ -53,7 +53,7 @@ public class PiloteRestController {
 	}
 	
 	@GetMapping("{id}/detail")
-	//@JsonView(Views.ViewPiloteDetail.class)
+	@JsonView(Views.ViewPiloteDetail.class)
 	public Pilote detail(@PathVariable Long id) {
 		Optional<Pilote> optPilote = piloteRepo.findById(id);
 

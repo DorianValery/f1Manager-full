@@ -53,7 +53,7 @@ public class JoueurRestController {
 	}
 	
 	@GetMapping("{id}/detail")
-	//@JsonView(Views.ViewJoueurDetail.class)
+	@JsonView(Views.ViewJoueurDetail.class)
 	public Joueur detail(@PathVariable Long id) {
 		Optional<Joueur> optJoueur = joueurRepo.findById(id);
 

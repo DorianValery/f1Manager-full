@@ -26,9 +26,11 @@ public class Infrastructure {
 	private double prix;
 	@OneToOne
 	@JoinColumn(name="ecurie")
+	@JsonView(Views.ViewInfrastructureDetail.class)
 	private Ecurie ecurie;
 	@ManyToOne
 	@JoinColumn(name="inventaire")
+	@JsonView(Views.ViewInfrastructureDetail.class)
 	private Inventaire inventaire;
 	
 	public Infrastructure(Long id, String nom, typeInfra type, int nbIngenieurs, int pitStop, double experience,

@@ -20,13 +20,22 @@ public class Views {
 	public static class ViewInfrastructure extends ViewCommon{
 	}
 	
+	public static class ViewInfrastructureDetail extends ViewInfrastructure{
+	}
+	
 	public static class ViewInventaire extends ViewCommon{
 	}
 	
 	public static class ViewJoueur extends ViewCommon{
 	}
 	
+	public static class ViewJoueurDetail extends ViewJoueur{
+	}
+	
 	public static class ViewPilote extends ViewCommon{
+	}
+	
+	public static class ViewPiloteDetail extends ViewPilote{
 	}
 	
 	public static class ViewPosition extends ViewCommon{
