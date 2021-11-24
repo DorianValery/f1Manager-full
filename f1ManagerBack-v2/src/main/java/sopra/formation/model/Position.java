@@ -18,9 +18,11 @@ public class Position {
 	private Long id;
 	@ManyToOne
 	@JoinColumn(name="pilote_id")
+	@JsonView(Views.ViewPosition.class)
 	private Pilote pilote;
 	@ManyToOne
 	@JoinColumn(name="course_id")
+	@JsonView(Views.ViewPosition.class)
 	private Course course;
 	private byte position;
 	

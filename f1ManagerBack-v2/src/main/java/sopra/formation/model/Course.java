@@ -27,11 +27,13 @@ public class Course {
 	private Duration tempsRef;
 	private double cashPrize;
 	@OneToMany(mappedBy = "course")
+	@JsonView(Views.ViewCourse.class)
 	private List <Position> classement;
 	private double popularite;
 	@ManyToMany
 	@JoinTable(name = "ecuriesInscrites", joinColumns = @JoinColumn(name = "course_id"), inverseJoinColumns = @JoinColumn(name = "ecurie_id"), uniqueConstraints = @UniqueConstraint(columnNames = {
 			"course_id", "ecurie_id" }))
+	@JsonView(Views.ViewCourse.class)
 	private List<Ecurie> ecuries;
 	
 	public Course(Long id, String nom, int nombreTour, Duration tempsRef, double cashPrize, List<Position> classement,
