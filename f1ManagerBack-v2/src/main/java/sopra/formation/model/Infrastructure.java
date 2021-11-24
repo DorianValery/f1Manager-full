@@ -16,7 +16,7 @@ public class Infrastructure {
 	private Long id;
 	private String nom;
 	private typeInfra type;
-	private int nbingenieurs;
+	private int nbIngenieurs;
 	private int pitStop;
 	private double experience;
 	private boolean etat;
@@ -28,13 +28,13 @@ public class Infrastructure {
 	@JoinColumn(name="inventaire")
 	private Inventaire inventaire;
 	
-	public Infrastructure(Long id, String nom, typeInfra type, int nbingenieurs, int pitStop, double experience,
+	public Infrastructure(Long id, String nom, typeInfra type, int nbIngenieurs, int pitStop, double experience,
 			boolean etat, double prix, Ecurie ecurie, Inventaire inventaire) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.type = type;
-		this.nbingenieurs = nbingenieurs;
+		this.nbIngenieurs = nbIngenieurs;
 		this.pitStop = pitStop;
 		this.experience = experience;
 		this.etat = etat;
@@ -43,13 +43,13 @@ public class Infrastructure {
 		this.inventaire = inventaire;
 	}
 	
-	public Infrastructure(Long id, String nom, typeInfra type, int nbingenieurs, int pitStop, double experience,
+	public Infrastructure(Long id, String nom, typeInfra type, int nbIngenieurs, int pitStop, double experience,
 			boolean etat, double prix) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.type = type;
-		this.nbingenieurs = nbingenieurs;
+		this.nbIngenieurs = nbIngenieurs;
 		this.pitStop = pitStop;
 		this.experience = experience;
 		this.etat = etat;
@@ -84,12 +84,12 @@ public class Infrastructure {
 		this.type = type;
 	}
 
-	public int getNbingenieurs() {
-		return nbingenieurs;
+	public int getNbIngenieurs() {
+		return nbIngenieurs;
 	}
 
-	public void setNbingenieurs(int nbingenieurs) {
-		this.nbingenieurs = nbingenieurs;
+	public void setNbIngenieurs(int nbIngenieurs) {
+		this.nbIngenieurs = nbIngenieurs;
 	}
 
 	public int getPitStop() {
@@ -142,7 +142,7 @@ public class Infrastructure {
 
 	@Override
 	public String toString() {
-		return "Infrastructure [id=" + id + ", nom=" + nom + ", type=" + type + ", nbingenieurs=" + nbingenieurs
+		return "Infrastructure [id=" + id + ", nom=" + nom + ", type=" + type + ", nbingenieurs=" + nbIngenieurs
 				+ ", pitStop=" + pitStop + ", experience=" + experience + ", etat=" + etat + ", prix=" + prix
 				+ ", ecurie=" + ecurie + ", inventaire=" + inventaire + "]";
 	}
