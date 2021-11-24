@@ -5,27 +5,27 @@ import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import sopra.projetF1.config.ApplicationConfig;
-import sopra.projetF1.model.Civilite;
-import sopra.projetF1.model.Compte;
-import sopra.projetF1.model.Course;
-import sopra.projetF1.model.Ecurie;
-import sopra.projetF1.model.Infrastructure;
-import sopra.projetF1.model.Inventaire;
-import sopra.projetF1.model.Joueur;
-import sopra.projetF1.model.Pilote;
-import sopra.projetF1.model.Type;
-import sopra.projetF1.model.Voiture;
-import sopra.projetF1.model.typeInfra;
-import sopra.projetF1.repository.ICompteRepository;
-import sopra.projetF1.repository.ICourseRepository;
-import sopra.projetF1.repository.IEcurieRepository;
-import sopra.projetF1.repository.IInfrastructureRepository;
-import sopra.projetF1.repository.IInventaireRepository;
-import sopra.projetF1.repository.IJoueurRepository;
-import sopra.projetF1.repository.IPiloteRepository;
-import sopra.projetF1.repository.IPositionRepository;
-import sopra.projetF1.repository.IVoitueRepository;
+import sopra.formation.config.ApplicationConfig;
+import sopra.formation.model.Civilite;
+import sopra.formation.model.Compte;
+import sopra.formation.model.Course;
+import sopra.formation.model.Ecurie;
+import sopra.formation.model.Infrastructure;
+import sopra.formation.model.Inventaire;
+import sopra.formation.model.Joueur;
+import sopra.formation.model.Pilote;
+import sopra.formation.model.Voiture;
+import sopra.formation.model.typeInfra;
+import sopra.formation.model.Type;
+import sopra.formation.repository.ICompteRepository;
+import sopra.formation.repository.ICourseRepository;
+import sopra.formation.repository.IEcurieRepository;
+import sopra.formation.repository.IInfrastructureRepository;
+import sopra.formation.repository.IInventaireRepository;
+import sopra.formation.repository.IJoueurRepository;
+import sopra.formation.repository.IPiloteRepository;
+import sopra.formation.repository.IPositionRepository;
+import sopra.formation.repository.IVoitureRepository;
 
 public class TestJpa {
 
@@ -40,7 +40,7 @@ public class TestJpa {
 		IJoueurRepository joueurRepo = spring.getBean(IJoueurRepository.class);
 		IPiloteRepository piloteRepo = spring.getBean(IPiloteRepository.class);
 		IPositionRepository positionRepo = spring.getBean(IPositionRepository.class);
-		IVoitueRepository voitureRepo = spring.getBean(IVoitueRepository.class);
+		IVoitureRepository voitureRepo = spring.getBean(IVoitureRepository.class);
 		
 		//Compte Admin
 		Compte compteAdmin = new Compte();
@@ -482,7 +482,7 @@ public class TestJpa {
 		Infrastructure infraPilote1 = new Infrastructure();
 		infraPilote1.setExperience(15);
 		infraPilote1.setNom("infraPilote1");
-		infraPilote1.setNbingenieurs(5);
+		infraPilote1.setNbIngenieurs(5);
 		infraPilote1.setPrix(100000);
 		infraPilote1.setEtat(false);
 		infraPilote1.setType(typeInfra.P);
@@ -490,7 +490,7 @@ public class TestJpa {
 		Infrastructure infraVoiture1 = new Infrastructure();
 		infraVoiture1.setExperience(15);
 		infraVoiture1.setNom("infraVoiture1");
-		infraVoiture1.setNbingenieurs(5);
+		infraVoiture1.setNbIngenieurs(5);
 		infraVoiture1.setPitStop(15);
 		infraVoiture1.setPrix(120000);
 		infraVoiture1.setEtat(false);
@@ -499,7 +499,7 @@ public class TestJpa {
 		Infrastructure infraMarketing1 = new Infrastructure();
 		infraMarketing1.setExperience(15);
 		infraMarketing1.setNom("infraMarketing1");
-		infraMarketing1.setNbingenieurs(2);
+		infraMarketing1.setNbIngenieurs(2);
 		infraMarketing1.setPrix(100000);
 		infraMarketing1.setEtat(false);
 		infraMarketing1.setType(typeInfra.M);
