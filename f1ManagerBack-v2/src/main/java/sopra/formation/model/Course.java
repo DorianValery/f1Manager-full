@@ -1,6 +1,8 @@
 package sopra.formation.model;
 
 import java.time.Duration;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -23,7 +25,11 @@ public class Course {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nom;
-	private int nombreTour; 
+	private int nombreTour;
+//	Period period;
+//	long minutes = period.get(ChronoUnit.MINUTES);
+//	long secondes = period.get(ChronoUnit.SECONDS);
+//	long millisecondes = period.get(ChronoUnit.MILLIS);
 	private Duration tempsRef;
 	private double cashPrize;
 	@OneToMany(mappedBy = "course")
@@ -47,6 +53,16 @@ public class Course {
 		this.classement = classement;
 		this.popularite = popularite;
 		this.ecuries = ecuries;
+	}
+	
+	public Course(Long id, String nom, int nombreTour, Duration tempsRef, double cashPrize,double popularite) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.nombreTour = nombreTour;
+		this.tempsRef = tempsRef;
+		this.cashPrize = cashPrize;
+		this.popularite = popularite;
 	}
 
 	public Course() {
