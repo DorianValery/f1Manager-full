@@ -180,6 +180,7 @@ public class TestJpa {
 		listPilote.add(piloteX);
 		
 		//PILOTES DES ECURIES
+		Inventaire inventaire1 = new Inventaire(50);
 		
 		Pilote pilote1 =new Pilote();
 		pilote1.setNom("SUSHI");
@@ -190,6 +191,7 @@ public class TestJpa {
 		pilote1.setExperience(60);
 		pilote1.setEtat(false);
 		pilote1.setPrix(100000);
+		pilote1.setInventaire(inventaire1);
 		
 		Pilote pilote2 =new Pilote();
 		pilote2.setNom("KONI");
@@ -1024,9 +1026,10 @@ public class TestJpa {
 		ecurie9.setNom("F1 TEAM PRO");
 		ecurie9.setArgent(1200000);
 		ecurie9.setExperience(290);
-		ecurie9.setInfrastructure(listInfrastructure9);
+		
 		ecurie9.setVoitures(listVoiture9);
 		ecurie9.setPilotes(listPilote8);
+		ecurie9.setInfrastructure(listInfrastructure9);
 		
 		
 		ecurie1= ecurieRepo.save(ecurie1);
@@ -1042,12 +1045,14 @@ public class TestJpa {
 		
 		//Inventaires
 		
-		Inventaire inventaire1 = new Inventaire(0);
+		
 		Inventaire inventaire2 = new Inventaire(0);
 		Inventaire inventaire3 = new Inventaire(0);
 		Inventaire inventaire4 = new Inventaire(0);
 		
 		inventaire1.setPilotes(listPilote);
+		inventaire1.setInfrastructure(listInfrastructure3);
+		inventaire1.setVoitures(listVoiture10);
 		
 		inventaire1 = inventaireRepo.save(inventaire1);
 		inventaire2 = inventaireRepo.save(inventaire2);
@@ -1258,6 +1263,24 @@ public class TestJpa {
 		pilote2false = piloteRepo.save(pilote2false);
 		pilote3true = piloteRepo.save(pilote3true);
 		pilote4true = piloteRepo.save(pilote4true);
+		
+		voiture1.setInventaire(inventaire1);
+		voiture1 = voitureRepo.save(voiture1);
+		
+		voiture2.setInventaire(inventaire1);
+		voiture2 = voitureRepo.save(voiture2);
+		
+		infraMarketing1.setInventaire(inventaire1);
+		infraMarketing1 = infrastructureRepo.save(infraMarketing1);
+		
+		infraPilote1.setInventaire(inventaire1);
+		infraPilote1 = infrastructureRepo.save(infraPilote1);
+		
+		infraVoiture1.setInventaire(inventaire1);
+		infraVoiture1 = infrastructureRepo.save(infraVoiture1);
+		
+		inventaire1 = inventaireRepo.save(inventaire1);
+	
 		
 
 		spring.close();

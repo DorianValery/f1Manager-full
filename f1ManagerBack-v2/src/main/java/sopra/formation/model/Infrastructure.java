@@ -27,7 +27,7 @@ public class Infrastructure {
 	private double experience;
 	private boolean etat;
 	private double prix;
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name="ecurie")
 	@JsonView(Views.ViewInfrastructureDetail.class)
 	private Ecurie ecurie;

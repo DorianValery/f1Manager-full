@@ -1,0 +1,25 @@
+<div class="card mt-3">
+    <div class="card-header bg-info text-white">
+        <h2>Ecurie</h2>
+    </div>
+<div>
+
+    <div></div>
+    <button (click)="findPilote(1)">button</button>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>NOM</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor= "let pilote of list()" >
+                <td>{{pilote.id}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+

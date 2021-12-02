@@ -53,7 +53,7 @@ public class InventaireRestController {
 	}
 	
 	@GetMapping("{id}/detail")
-	//@JsonView(Views.ViewInventaireDetail.class)
+	@JsonView(Views.ViewInventaireDetail.class)
 	public Inventaire detail(@PathVariable Long id) {
 		Optional<Inventaire> optInventaire = inventaireRepo.findById(id);
 
