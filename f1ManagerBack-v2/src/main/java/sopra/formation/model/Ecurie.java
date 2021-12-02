@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Version;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
@@ -20,6 +21,8 @@ public class Ecurie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Version
+	private int version;
 	private String nom;
 	private double argent;
 	private double experience;
@@ -124,6 +127,22 @@ public class Ecurie {
 
 	public void setCourses(List<Course> courses) {
 		this.courses = courses;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public List<Infrastructure> getInfrastructures() {
+		return infrastructures;
+	}
+
+	public void setInfrastructures(List<Infrastructure> infrastructures) {
+		this.infrastructures = infrastructures;
 	}
 
 	@Override

@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
@@ -16,6 +17,8 @@ public class Voiture {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Version
+	private int version;
 	private String marque;
 	private int maniabilite;
 	private int vitesse;
@@ -129,6 +132,14 @@ public class Voiture {
 		this.inventaire = inventaire;
 	}
 	
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
 
 	@Override
 	public String toString() {

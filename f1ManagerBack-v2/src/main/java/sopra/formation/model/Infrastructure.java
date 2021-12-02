@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Version;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
@@ -17,6 +18,8 @@ public class Infrastructure {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Version
+	private int version;
 	private String nom;
 	private typeInfra type;
 	private int nbIngenieurs;
@@ -143,6 +146,14 @@ public class Infrastructure {
 
 	public void setInventaire(Inventaire inventaire) {
 		this.inventaire = inventaire;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
 	}
 
 	@Override
