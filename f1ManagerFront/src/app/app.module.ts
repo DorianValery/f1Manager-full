@@ -5,18 +5,23 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppConfigService } from './app-config.service';
+import { MenuHttpService } from './menu/menu-http.service';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+   
   ],
-  providers: [],
+  providers: [AppConfigService,MenuHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

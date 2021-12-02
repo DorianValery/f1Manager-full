@@ -1,0 +1,24 @@
+<div class="card mt-3">
+    <div class="card-header bg-info text-white">
+        <h2>Ecurie</h2>
+    </div>
+<div>
+    <div (value)="piloteTest.nom" ></div>
+    <div></div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>NOM</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor= "let pilote of list()" >
+                <td>{{pilote.nom}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
