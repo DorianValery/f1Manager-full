@@ -3,8 +3,9 @@
         <h2>Ecurie</h2>
     </div>
 <div>
-    <div (value)="piloteTest.nom" ></div>
+
     <div></div>
+    <button (click)="findPilote(1)">button</button>
 
 
     <table>
@@ -15,7 +16,7 @@
         </thead>
         <tbody>
             <tr *ngFor= "let pilote of list()" >
-                <td>{{pilote.nom}}</td>
+                <td>{{pilote.id}}</td>
             </tr>
         </tbody>
     </table>
