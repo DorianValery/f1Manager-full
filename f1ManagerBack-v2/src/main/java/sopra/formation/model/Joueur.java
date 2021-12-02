@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Version;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
@@ -18,6 +19,8 @@ public class Joueur {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	@Version
+	private int version;
 	private String pseudo;
 	private int age;
 	private String mail;
@@ -124,6 +127,22 @@ public class Joueur {
 
 	public void setEcurie(Ecurie ecurie) {
 		this.ecurie = ecurie;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public Compte getCompte() {
+		return compte;
+	}
+
+	public void setCompte(Compte compte) {
+		this.compte = compte;
 	}
 
 	@Override

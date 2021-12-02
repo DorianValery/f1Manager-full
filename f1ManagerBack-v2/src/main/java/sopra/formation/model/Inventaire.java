@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Version;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
@@ -18,6 +19,8 @@ public class Inventaire {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Version
+	private int version;
 	private int argentDisponible;
 	@OneToOne(mappedBy = "inventaire")
 	private Joueur joueur;
@@ -96,6 +99,16 @@ public class Inventaire {
 	public void setPilotes(List<Pilote> pilotes) {
 		this.pilotes = pilotes;
 	}
+
+	public int getVersion() {
+		return version;
+	}
+
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
 
 	@Override
 	public String toString() {

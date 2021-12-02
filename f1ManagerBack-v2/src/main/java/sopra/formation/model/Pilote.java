@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Version;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
@@ -22,6 +23,8 @@ public class Pilote {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Version
+	private int version;
 	 private String nom;
 	 private String prenom;
 	 private int age;
@@ -169,6 +172,14 @@ public class Pilote {
 
 	public void setInventaire(Inventaire inventaire) {
 		this.inventaire = inventaire;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
 	}
 
 	@Override
