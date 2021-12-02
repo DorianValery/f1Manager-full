@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="card" *ngFor="let voit of list()">
+        <img class="card-img-top" [src]="voit.image" alt="Card image cap">
+        <div class="card-body" class="text-center">
+            <h5 class="card-title">{{voit.marque}}</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Maniabilité : {{voit.maniabilite}}</li>
+                <li class="list-group-item">Vitesse : {{voit.vitesse}}</li>
+                <li class="list-group-item">Poids : {{voit.poids}}</li>
+            </ul>
+        </div>
+        <div class="card-footer" class="text-center">
+            <div><button *ngIf="voit.etat" class="btn btn-primary">Sélectionner</button><button *ngIf="!voit.etat" class="btn btn-primary">Acheter : {{voit.prix}} ฿</button></div>
+        </div>
+    </div>
+</div>

@@ -451,6 +451,7 @@ public class TestJpa {
 		voiture1.setVitesse(300);
 		voiture1.setPrix(300000);
 		voiture1.setEtat(false);
+		voiture1.setImage("../app/image/voiture_surplace 1.gif");
 
 		Voiture voiture2 = new Voiture();
 		voiture2.setMarque("LOTUS");
@@ -459,6 +460,7 @@ public class TestJpa {
 		voiture2.setVitesse(305);
 		voiture2.setPrix(400000);
 		voiture2.setEtat(false);
+		voiture2.setImage("../app/image/voiture_surplace_bleu.gif");
 		
 		Voiture voiture3 = new Voiture();
 		voiture3.setMarque("FERRARI");
@@ -467,6 +469,7 @@ public class TestJpa {
 		voiture3.setVitesse(315);
 		voiture3.setPrix(420000);
 		voiture3.setEtat(false);
+		voiture3.setImage("../app/image/voiture_surplace_bleu.gif");
 		
 		Voiture voiture4= new Voiture();
 		voiture4.setMarque("MCLAREN");
@@ -475,6 +478,7 @@ public class TestJpa {
 		voiture4.setVitesse(320);
 		voiture4.setPrix(380000);
 		voiture4.setEtat(false);
+		voiture4.setImage("../app/image/voiture_surplace_bleu.gif");
 		
 		Voiture voiture5= new Voiture();
 		voiture5.setMarque("ASTON MARTIN");
@@ -483,6 +487,7 @@ public class TestJpa {
 		voiture5.setVitesse(297);
 		voiture5.setPrix(400000);
 		voiture5.setEtat(false);
+		voiture5.setImage("../app/image/voiture_surplace_bleu.gif");
 	
 		Voiture voiture6= new Voiture();
 		voiture6.setMarque("FERRARI");
@@ -491,6 +496,7 @@ public class TestJpa {
 		voiture6.setVitesse(330);
 		voiture6.setPrix(500000);
 		voiture6.setEtat(false);
+		voiture6.setImage("../app/image/voiture_surplace_bleu.gif");
 		
 		Voiture voiture7= new Voiture();
 		voiture7.setMarque("MERCEDES");
@@ -499,6 +505,7 @@ public class TestJpa {
 		voiture7.setVitesse(335);
 		voiture7.setPrix(500000);
 		voiture7.setEtat(false);
+		voiture7.setImage("../app/image/voiture_surplace_bleu.gif");
 		
 		Voiture voiture8= new Voiture();
 		voiture8.setMarque("HONDA");
@@ -507,6 +514,7 @@ public class TestJpa {
 		voiture8.setVitesse(350);
 		voiture8.setPrix(620000);
 		voiture8.setEtat(false);
+		voiture8.setImage("../app/image/voiture_surplace_bleu.gif");
 			
 		voiture1 = voitureRepo.save(voiture1);
 		voiture2 = voitureRepo.save(voiture2);
