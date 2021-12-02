@@ -1,6 +1,4 @@
-
 import { Component, OnInit } from '@angular/core';
-
 import { AppConfigService } from '../app-config.service';
 import { Pilote } from '../model';
 import { MenuHttpService } from './menu-http.service';

@@ -4,8 +4,11 @@
     </div>
 <div>
 
-    <div></div>
-    <button (click)="findPilote(1)">button</button>
+    <button (click)="findPilote(1)">
+       button   
+    </button>
+
+    <div> {{piloteTest.nom}} {{piloteTest.prenom}}</div>
 
 
     <table>
@@ -16,7 +19,7 @@
         </thead>
         <tbody>
             <tr *ngFor= "let pilote of list()" >
-                <td>{{pilote.id}}</td>
+                <td>{{pilote.id}} {{piloteTest.nom}} {{piloteTest.prenom}}</td>
             </tr>
         </tbody>
     </table>

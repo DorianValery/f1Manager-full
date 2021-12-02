@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppConfigService } from '../app-config.service';
 import { Voiture } from '../model';
 import { VoitureInventaireService } from './voiture-inventaire.service';
 
@@ -9,7 +10,7 @@ import { VoitureInventaireService } from './voiture-inventaire.service';
 })
 export class VoitureInventaireComponent implements OnInit {
 
-  constructor(private voitureInventaireService: VoitureInventaireService) { }
+  constructor(private appConfig: AppConfigService, private voitureInventaireService: VoitureInventaireService) { }
 
   ngOnInit(): void {
   }

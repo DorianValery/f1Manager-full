@@ -9,11 +9,12 @@ import { AppConfigService } from './app-config.service';
 import { MenuHttpService } from './menu/menu-http.service';
 import { MenuComponent } from './menu/menu.component';
 import { VoitureInventaireComponent } from './voiture-inventaire/voiture-inventaire.component';
+import { VoitureInventaireService } from './voiture-inventaire/voiture-inventaire.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
     VoitureInventaireComponent
   ],
   imports: [
@@ -23,7 +24,7 @@ import { VoitureInventaireComponent } from './voiture-inventaire/voiture-inventa
     AppRoutingModule,
    
   ],
-  providers: [AppConfigService,MenuHttpService],
+  providers: [AppConfigService,MenuHttpService, VoitureInventaireService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,11 +4,10 @@ import { MenuComponent } from './menu/menu.component';
 import { VoitureInventaireComponent } from './voiture-inventaire/voiture-inventaire.component';
 
 const routes: Routes = [
-  // { path: "pilote-inventaire", component: PiloteInventaireComponent },
-  // { path: "voiture-inventaire", component: VoitureInventaireComponent },
-  // { path: "infrastructure-inventaire", component: InfrastructureInventaireComponent }
-  {path: "ecurie", component : MenuComponent}
-  {path: 'voitureInventaire', component: VoitureInventaireComponent}
+  // { path: "pilote", component: PiloteInventaireComponent },
+  // { path: "infrastructure", component: InfrastructureInventaireComponent }
+  {path: "ecurie", component : MenuComponent},
+  {path: "voiture", component: VoitureInventaireComponent}
 ];
 
 @NgModule({

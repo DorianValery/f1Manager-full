@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
 import { Observable } from 'rxjs';
 import { AppConfigService } from '../app-config.service';
 import { Pilote } from '../model';
