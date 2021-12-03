@@ -36,7 +36,6 @@ public class Pilote {
 	 private boolean etat;
 	 private double prix;
 	 @ManyToOne
-	 @JoinColumn(name="ecurie_id")
 	 @JsonView(Views.ViewPiloteDetail.class)
 	 private Ecurie ecurie;
 	 @OneToMany(mappedBy = "pilote")

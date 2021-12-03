@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppConfigService } from '../app-config.service';
-import { Pilote } from '../model';
+import { Ecurie, Pilote } from '../model';
 import { MenuHttpService } from './menu-http.service';
 
 @Component({
@@ -11,6 +11,7 @@ import { MenuHttpService } from './menu-http.service';
 export class MenuComponent implements OnInit {
 
  piloteTest : Pilote;
+ ecurie : Ecurie;
 
   constructor(private appConfig: AppConfigService,  private menuService : MenuHttpService) {
   
@@ -26,7 +27,11 @@ list(): Array<Pilote> {
   return this.menuService.findAllPilote();
 }
 
-
+findEcurie(id : number) {
+  this.menuService.findEcurieById(id).subscribe(resp =>{
+    this.ecurie = resp;
+  },error=> console.log(error))
+}
 
   ngOnInit(): void {
   }

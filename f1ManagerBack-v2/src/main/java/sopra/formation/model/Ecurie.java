@@ -26,22 +26,21 @@ public class Ecurie {
 	private String nom;
 	private double argent;
 	private double experience;
-	@OneToMany
-	@JoinColumn(name="infrastructure_id")
+	@OneToMany(mappedBy = "ecurie")
 	//@JsonView(Views.ViewEcurieInfra.class)
-	@JsonView(Views.ViewEcurieDetail.class)
+	//@JsonView(Views.ViewEcurieDetail.class)
 	private List<Infrastructure> infrastructures;
 	@OneToMany(mappedBy = "ecurie")
 	//@JsonView(Views.ViewEcurieVoiture.class)
-	@JsonView(Views.ViewEcurieDetail.class)
+	//@JsonView(Views.ViewEcurieDetail.class)
 	private List<Voiture> voitures;
 	@OneToMany(mappedBy = "ecurie")
 	//@JsonView(Views.ViewEcuriePilote.class)
-	@JsonView(Views.ViewEcurieDetail.class)
+	//@JsonView(Views.ViewEcurieDetail.class)
 	private List<Pilote> pilotes;
 	@ManyToMany(mappedBy = "ecuries")
 	//@JsonView(Views.ViewEcurieCourses.class)
-	@JsonView(Views.ViewEcurieDetail.class)
+	//@JsonView(Views.ViewEcurieDetail.class)
 	private List<Course> courses;
 	
 	public Ecurie() {}

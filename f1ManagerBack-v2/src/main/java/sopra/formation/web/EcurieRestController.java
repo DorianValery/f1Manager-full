@@ -70,9 +70,31 @@ public class EcurieRestController {
 		}
 		
 		@GetMapping("{id}/pilotes")
-		@JsonView(Views.ViewEcurieDetail.class)
+		@JsonView(Views.ViewEcuriePilote.class)
 		public Ecurie findEcurieWithPilotes(@PathVariable Long id) {
 			Optional<Ecurie> optEcurie = ecurieRepo.findEcurieWithPilotes(id);
+
+			if (optEcurie.isPresent()) {
+				return optEcurie.get();
+			} else {
+				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Ecurie non trouvé");
+			}
+		}
+		@GetMapping("{id}/voitures")
+		@JsonView(Views.ViewEcurieVoiture.class)
+		public Ecurie findEcurieWithVoitures(@PathVariable Long id) {
+			Optional<Ecurie> optEcurie = ecurieRepo.findEcurieWithVoitures(id);
+
+			if (optEcurie.isPresent()) {
+				return optEcurie.get();
+			} else {
+				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Ecurie non trouvé");
+			}
+		}
+		@GetMapping("{id}/infrastructures")
+		@JsonView(Views.ViewEcurieInfra.class)
+		public Ecurie findEcurieWithInfrastructures(@PathVariable Long id) {
+			Optional<Ecurie> optEcurie = ecurieRepo.findEcurieWithInfrastructures(id);
 
 			if (optEcurie.isPresent()) {
 				return optEcurie.get();

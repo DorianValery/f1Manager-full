@@ -1,0 +1,16 @@
+.card{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    background-color:#f31d1d;
+    border-bottom :solid black 5px;
+    text-decoration: none;
+    list-style-type: none;
+    
+    color :black;
+    font-weight:bold;
+    font-family:"Formula1-Regular";
+}
+.card h2{
+    font-size: 40px;
+}

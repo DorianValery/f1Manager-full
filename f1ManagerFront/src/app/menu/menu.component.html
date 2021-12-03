@@ -1,28 +1,27 @@
-<div class="card mt-3">
-    <div class="card-header bg-info text-white">
+<div class="card">
+    
         <h2>Ecurie</h2>
-    </div>
+    
 <div>
 
-    <button (click)="findPilote(1)">
+    <button (click)="findEcurie(1)">
        button   
     </button>
 
-    <!-- <div> {{piloteTest.nom}} {{piloteTest.prenom}}</div> -->
+    <div>{{ecurie.nom}}</div>
+    <div><ul *ngFor="let p of ecurie.pilotes">
+        <li >Nom : {{p.prenom}} {{p.nom}}</li>
+    </ul></div>
+    <div><ul *ngFor="let p of ecurie.voitures">
+        <li > Marque :{{p.marque}} - {{p.vitesse}}km/h Visuel :{{p.image}}</li>
+    </ul></div>
+    <div><ul *ngFor="let p of ecurie.infrastructures">
+        <li >Nom :{{p.nom}} {{p.nbIngenieurs}}/10</li>
+    </ul></div>
+</div>
+    <!-- <div> {{ecurie.voitures.marque}} </div> -->
+    <!-- <div> {{ecurie.infrastructures.nom}}</div> -->
 
 
-    <table>
-        <thead>
-            <tr>
-                <th>NOM</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor= "let pilote of list()" >
-                <td>{{pilote.id}} {{piloteTest.nom}} {{piloteTest.prenom}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-</div>
+    
 

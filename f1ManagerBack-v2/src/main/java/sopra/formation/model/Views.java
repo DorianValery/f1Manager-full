@@ -17,6 +17,18 @@ public class Views {
 	public static class ViewEcurieDetail extends ViewEcurie{
 	}
 	
+	public static class ViewEcurieVoiture extends ViewEcurie{
+	}
+	
+	public static class ViewEcuriePilote extends ViewEcurie{
+	}
+	
+	public static class ViewEcurieInfra extends ViewEcurie{
+	}
+	
+	public static class ViewEcurieCourses extends ViewEcurie{
+	}
+	
 	public static class ViewInfrastructure extends ViewCommon{
 	}
 	
