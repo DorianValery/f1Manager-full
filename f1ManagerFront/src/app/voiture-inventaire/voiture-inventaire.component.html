@@ -10,7 +10,7 @@
       <!-- ngfor loop using get dynamic value and ngclass for add acive class -->
       <div class="carousel-item" *ngFor="let voit of list(); let i = index" [ngClass]="{'active': i === 0}" >
         <!-- card -->
-        <div class="card" style="width: 60%;">
+        <div class="card" style="width: 70%;">
             <img class="card-img-top" [src]="voit.image" alt="Card image cap">
             <div class="card-body" class="text-center">
                 <h5 class="card-title">{{voit.marque}}</h5>
@@ -35,4 +35,28 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+
+
+  <div class="footer">
+    <div class="voitureSelect">
+    <div  class="card"  style="width: 100%;">
+      <img [src]="voituresEcurie[0].image" class="voitureSelect" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">{{voituresEcurie[0].marque}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="voitureSelect">
+    <div  class="card" style="width: 100%;">
+      <img [src]="voituresEcurie[1].image" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">{{voituresEcurie[1].marque}}</p>
+      </div>
+    </div>
+  </div>
+    <div>
+      <button>Valider</button>
+    </div>
+  </div>
+
 </div>

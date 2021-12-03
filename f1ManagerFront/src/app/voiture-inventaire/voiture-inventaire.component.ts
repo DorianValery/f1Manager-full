@@ -10,7 +10,11 @@ import { VoitureInventaireService } from './voiture-inventaire.service';
 })
 export class VoitureInventaireComponent implements OnInit {
 
-  constructor(private appConfig: AppConfigService, private voitureInventaireService: VoitureInventaireService) { }
+  voituresEcurie: Array<Voiture>;
+
+  constructor(private appConfig: AppConfigService, private voitureInventaireService: VoitureInventaireService) {
+    this.listVoituresEcurie(1);
+  }
 
   ngOnInit(): void {
   }
@@ -18,5 +22,13 @@ export class VoitureInventaireComponent implements OnInit {
   list(): Array<Voiture> {
     return this.voitureInventaireService.findAll();
   }
+
+  listVoituresEcurie(id: number) {
+    this.voitureInventaireService.loadEcurie(id).subscribe(response => {
+      this.voituresEcurie = response.voitures;
+      console.log(this.voituresEcurie);
+    }, error => console.log(error));
+  }
+
 
 }
