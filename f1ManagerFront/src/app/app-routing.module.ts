@@ -5,8 +5,8 @@ import { PiloteInventaireComponent } from './pilote-inventaire/pilote-inventaire
 import { VoitureInventaireComponent } from './voiture-inventaire/voiture-inventaire.component';
 
 const routes: Routes = [
- { path: "pilote", component: PiloteInventaireComponent },
-  // { path: "infrastructure", component: InfrastructureInventaireComponent }
+  { path: "pilote", component: PiloteInventaireComponent },
+ // { path: "infrastructure", component: InfrastructureInventaireComponent }
   {path: "ecurie", component : MenuComponent},
   {path: "voiture", component: VoitureInventaireComponent}
 ];

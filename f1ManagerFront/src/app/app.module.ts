@@ -26,7 +26,7 @@ import { VoitureInventaireService } from './voiture-inventaire/voiture-inventair
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    AppRoutingModule,
+    
    
   ],
   providers: [AppConfigService,MenuHttpService, VoitureInventaireService],

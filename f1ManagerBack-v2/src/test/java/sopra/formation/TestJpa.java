@@ -191,7 +191,7 @@ public class TestJpa {
 		pilote1.setExperience(60);
 		pilote1.setEtat(false);
 		pilote1.setPrix(100000);
-		pilote1.setInventaire(inventaire1);
+
 		
 		Pilote pilote2 =new Pilote();
 		pilote2.setNom("KONI");
