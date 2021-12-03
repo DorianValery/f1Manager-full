@@ -14,9 +14,10 @@ import sopra.formation.model.Infrastructure;
 import sopra.formation.model.Inventaire;
 import sopra.formation.model.Joueur;
 import sopra.formation.model.Pilote;
+import sopra.formation.model.Position;
+import sopra.formation.model.Type;
 import sopra.formation.model.Voiture;
 import sopra.formation.model.typeInfra;
-import sopra.formation.model.Type;
 import sopra.formation.repository.ICompteRepository;
 import sopra.formation.repository.ICourseRepository;
 import sopra.formation.repository.IEcurieRepository;
@@ -1303,7 +1304,12 @@ public class TestJpa {
 		
 		inventaire1 = inventaireRepo.save(inventaire1);
 	
+		Position positionPilote1 = new Position();
+		positionPilote1.setPosition(4);
+		positionPilote1.setPilote(pilote1false);
+		positionPilote1.setCourse(course1);
 		
+		positionPilote1 = positionRepo.save(positionPilote1);
 
 		spring.close();
 	}

@@ -14,6 +14,8 @@ import { VoitureInventaireService } from './voiture-inventaire/voiture-inventair
 import { SaisonComponent } from './saison/saison.component';
 import { SaisonService } from './saison/saison.service';
 import { JoueurDirective } from './joueur/joueur.directive';
+import { CourseComponent } from './course/course.component';
+import { PiloteInventaireHttpService } from './pilote-inventaire/pilote-inventaire-http.service';
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { JoueurDirective } from './joueur/joueur.directive';
     MenuComponent,
     VoitureInventaireComponent,
     SaisonComponent,
-    JoueurDirective
+    JoueurDirective,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,7 @@ import { JoueurDirective } from './joueur/joueur.directive';
     HttpClientModule,
     AppRoutingModule, 
   ],
-  providers: [AppConfigService,MenuHttpService, VoitureInventaireService, SaisonService],
+  providers: [AppConfigService,MenuHttpService,PiloteInventaireHttpService, VoitureInventaireService, SaisonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

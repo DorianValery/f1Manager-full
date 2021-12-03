@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EcurieService } from '../ecurie/ecurie.service';
-import { JoueurDirective } from '../joueur/joueur.directive';
+
 
 
 import { Ecurie, Joueur, Pilote } from '../model';
@@ -15,7 +15,7 @@ export class PiloteInventaireComponent implements OnInit {
   //pilote: Pilote = null;
   joueur: Joueur;
 
-  constructor(private piloteService: PiloteInventaireHttpService, private ecurieService: EcurieService, private joueurDirective: JoueurDirective) { }
+  constructor(private piloteService: PiloteInventaireHttpService, private ecurieService: EcurieService) { }
   
   ngOnInit(): void {}
 
@@ -23,8 +23,8 @@ export class PiloteInventaireComponent implements OnInit {
     return this.piloteService.findAll();
   }
 
-  findJoueurEcurie(id:number){
-    return this.joueurDirective.findEcurie(id);
-  }
+  // findJoueurEcurie(id:number){
+  //   return this.joueurDirective.findEcurie(id);
+  // }
 
 }
