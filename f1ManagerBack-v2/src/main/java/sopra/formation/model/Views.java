@@ -26,6 +26,9 @@ public class Views {
 	public static class ViewInventaire extends ViewCommon{
 	}
 	
+	public static class ViewInventaireDetail extends ViewInventaire{
+	}
+	
 	public static class ViewJoueur extends ViewCommon{
 	}
 	

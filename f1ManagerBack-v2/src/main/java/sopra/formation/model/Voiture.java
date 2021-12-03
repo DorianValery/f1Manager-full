@@ -25,6 +25,7 @@ public class Voiture {
 	private int poids;
 	private boolean etat;
 	private int prix;
+	private String image ;
 	@ManyToOne
 	@JoinColumn(name="ecurie_id")
 	private Ecurie ecurie;
@@ -139,6 +140,14 @@ public class Voiture {
 
 	public void setVersion(int version) {
 		this.version = version;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	@Override

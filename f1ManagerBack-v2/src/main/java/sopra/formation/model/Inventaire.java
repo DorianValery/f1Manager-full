@@ -23,12 +23,16 @@ public class Inventaire {
 	private int version;
 	private int argentDisponible;
 	@OneToOne(mappedBy = "inventaire")
+	@JsonView(Views.ViewInventaire.class)
 	private Joueur joueur;
 	@OneToMany(mappedBy ="inventaire")
+	@JsonView(Views.ViewInventaire.class)
 	private List<Infrastructure> infrastructure;
 	@OneToMany(mappedBy = "inventaire")
+	@JsonView(Views.ViewInventaire.class)
 	private List <Voiture> voitures;
 	@OneToMany(mappedBy ="inventaire")
+	@JsonView(Views.ViewInventaireDetail.class)
 	private List<Pilote> pilotes;
 	
 	public Inventaire(Long id, int argentDisponible, Joueur joueur, List<Infrastructure> infrastructure,

@@ -180,6 +180,7 @@ public class TestJpa {
 		listPilote.add(piloteX);
 		
 		//PILOTES DES ECURIES
+		Inventaire inventaire1 = new Inventaire(50);
 		
 		Pilote pilote1 =new Pilote();
 		pilote1.setNom("SUSHI");
@@ -190,6 +191,7 @@ public class TestJpa {
 		pilote1.setExperience(60);
 		pilote1.setEtat(false);
 		pilote1.setPrix(100000);
+		pilote1.setInventaire(inventaire1);
 		
 		Pilote pilote2 =new Pilote();
 		pilote2.setNom("KONI");
@@ -451,6 +453,7 @@ public class TestJpa {
 		voiture1.setVitesse(300);
 		voiture1.setPrix(300000);
 		voiture1.setEtat(false);
+		voiture1.setImage("../app/image/voiture_surplace 1.gif");
 
 		Voiture voiture2 = new Voiture();
 		voiture2.setMarque("LOTUS");
@@ -459,6 +462,7 @@ public class TestJpa {
 		voiture2.setVitesse(305);
 		voiture2.setPrix(400000);
 		voiture2.setEtat(false);
+		voiture2.setImage("../app/image/voiture_surplace_bleu.gif");
 		
 		Voiture voiture3 = new Voiture();
 		voiture3.setMarque("FERRARI");
@@ -467,6 +471,7 @@ public class TestJpa {
 		voiture3.setVitesse(315);
 		voiture3.setPrix(420000);
 		voiture3.setEtat(false);
+		voiture3.setImage("../app/image/voiture_surplace_bleu.gif");
 		
 		Voiture voiture4= new Voiture();
 		voiture4.setMarque("MCLAREN");
@@ -475,6 +480,7 @@ public class TestJpa {
 		voiture4.setVitesse(320);
 		voiture4.setPrix(380000);
 		voiture4.setEtat(false);
+		voiture4.setImage("../app/image/voiture_surplace_bleu.gif");
 		
 		Voiture voiture5= new Voiture();
 		voiture5.setMarque("ASTON MARTIN");
@@ -483,6 +489,7 @@ public class TestJpa {
 		voiture5.setVitesse(297);
 		voiture5.setPrix(400000);
 		voiture5.setEtat(false);
+		voiture5.setImage("../app/image/voiture_surplace_bleu.gif");
 	
 		Voiture voiture6= new Voiture();
 		voiture6.setMarque("FERRARI");
@@ -491,6 +498,7 @@ public class TestJpa {
 		voiture6.setVitesse(330);
 		voiture6.setPrix(500000);
 		voiture6.setEtat(false);
+		voiture6.setImage("../app/image/voiture_surplace_bleu.gif");
 		
 		Voiture voiture7= new Voiture();
 		voiture7.setMarque("MERCEDES");
@@ -499,6 +507,7 @@ public class TestJpa {
 		voiture7.setVitesse(335);
 		voiture7.setPrix(500000);
 		voiture7.setEtat(false);
+		voiture7.setImage("../app/image/voiture_surplace_bleu.gif");
 		
 		Voiture voiture8= new Voiture();
 		voiture8.setMarque("HONDA");
@@ -507,6 +516,7 @@ public class TestJpa {
 		voiture8.setVitesse(350);
 		voiture8.setPrix(620000);
 		voiture8.setEtat(false);
+		voiture8.setImage("../app/image/voiture_surplace_bleu.gif");
 			
 		voiture1 = voitureRepo.save(voiture1);
 		voiture2 = voitureRepo.save(voiture2);
@@ -1016,9 +1026,10 @@ public class TestJpa {
 		ecurie9.setNom("F1 TEAM PRO");
 		ecurie9.setArgent(1200000);
 		ecurie9.setExperience(290);
-		ecurie9.setInfrastructure(listInfrastructure9);
+		
 		ecurie9.setVoitures(listVoiture9);
 		ecurie9.setPilotes(listPilote8);
+		ecurie9.setInfrastructure(listInfrastructure9);
 		
 		
 		ecurie1= ecurieRepo.save(ecurie1);
@@ -1034,12 +1045,14 @@ public class TestJpa {
 		
 		//Inventaires
 		
-		Inventaire inventaire1 = new Inventaire(0);
+		
 		Inventaire inventaire2 = new Inventaire(0);
 		Inventaire inventaire3 = new Inventaire(0);
 		Inventaire inventaire4 = new Inventaire(0);
 		
 		inventaire1.setPilotes(listPilote);
+		inventaire1.setInfrastructure(listInfrastructure3);
+		inventaire1.setVoitures(listVoiture10);
 		
 		inventaire1 = inventaireRepo.save(inventaire1);
 		inventaire2 = inventaireRepo.save(inventaire2);
@@ -1250,6 +1263,24 @@ public class TestJpa {
 		pilote2false = piloteRepo.save(pilote2false);
 		pilote3true = piloteRepo.save(pilote3true);
 		pilote4true = piloteRepo.save(pilote4true);
+		
+		voiture1.setInventaire(inventaire1);
+		voiture1 = voitureRepo.save(voiture1);
+		
+		voiture2.setInventaire(inventaire1);
+		voiture2 = voitureRepo.save(voiture2);
+		
+		infraMarketing1.setInventaire(inventaire1);
+		infraMarketing1 = infrastructureRepo.save(infraMarketing1);
+		
+		infraPilote1.setInventaire(inventaire1);
+		infraPilote1 = infrastructureRepo.save(infraPilote1);
+		
+		infraVoiture1.setInventaire(inventaire1);
+		infraVoiture1 = infrastructureRepo.save(infraVoiture1);
+		
+		inventaire1 = inventaireRepo.save(inventaire1);
+	
 		
 
 		spring.close();

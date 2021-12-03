@@ -62,8 +62,9 @@ export class Pilote {
 	poids : number;
 	etat : boolean;
 	prix : number;
+    image: string;
 
-    constructor(id? : number,version ? :number,marque ?: string , maniabilite ?: number,vitesse ? : number, poids ?: number, etat ? : boolean, prix ? : number){
+    constructor(id? : number,version ? :number,marque ?: string , maniabilite ?: number,vitesse ? : number, poids ?: number, etat ? : boolean, prix ? : number, image?: string){
     }
  }
 
