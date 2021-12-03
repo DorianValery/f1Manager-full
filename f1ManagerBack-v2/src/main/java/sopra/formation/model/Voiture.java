@@ -28,11 +28,11 @@ public class Voiture {
 	private String image ;
 	@ManyToOne
 	@JoinColumn(name="ecurie_id")
-	@JsonView(Views.ViewVoiture.class)
+	@JsonView(Views.ViewVoitureDetail.class)
 	private Ecurie ecurie;
 	@ManyToOne
 	@JoinColumn(name="inventaire_id")
-	@JsonView(Views.ViewVoiture.class)
+	@JsonView(Views.ViewVoitureDetail.class)
 	private Inventaire inventaire;
 	
 	public Voiture(Long id, String marque, int maniabilite, int vitesse, int poids, boolean etat, int prix,

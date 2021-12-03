@@ -58,7 +58,8 @@ public class Views {
 	
 	public static class ViewVoiture extends ViewCommon{
 	}
-	
+	public static class ViewVoitureDetail extends ViewVoiture{
+	}
 	
 
 
