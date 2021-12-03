@@ -10,12 +10,17 @@ nav ul {
     color :black;
     font-weight:bold;
     font-family:"Formula1-Regular";
+    margin-bottom: 0rem;
   }
 
   .nav-link{
     color :black;
   }
   
+  .container-fluid{
+    padding-right: var(--bs-gutter-x, 0rem);
+    padding-left: var(--bs-gutter-x, 0rem);
+}
 
   @font-face {
     font-family:"Formula1-Regular";
