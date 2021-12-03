@@ -13,6 +13,8 @@ import { VoitureInventaireComponent } from './voiture-inventaire/voiture-inventa
 import { VoitureInventaireService } from './voiture-inventaire/voiture-inventaire.service';
 import { SaisonComponent } from './saison/saison.component';
 import { SaisonService } from './saison/saison.service';
+import { JoueurDirective } from './joueur/joueur.directive';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { SaisonService } from './saison/saison.service';
     MenuComponent,
     VoitureInventaireComponent,
     SaisonComponent
+    JoueurDirective
   ],
   imports: [
     BrowserModule,

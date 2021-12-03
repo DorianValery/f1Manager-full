@@ -19,8 +19,9 @@ export class Joueur {
 	mail : string;
 	telephone : string;
     civilite : string;
+    ecurie:Ecurie;
 
-    constructor(id? : number,version ? : number,pseudo ?: string,  age ?: number, mail ?: string ,telephone? : string ,civilite? : string){
+    constructor(id? : number,version ? : number,pseudo ?: string,  age ?: number, mail ?: string ,telephone? : string ,civilite? : string, ecurie? :Ecurie){
 
     }
 }

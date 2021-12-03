@@ -24,6 +24,7 @@ public class Ecurie {
 	@Version
 	private int version;
 	private String nom;
+	
 	private double argent;
 	private double experience;
 	@OneToMany(mappedBy = "ecurie")
