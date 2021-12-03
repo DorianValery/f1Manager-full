@@ -23,7 +23,7 @@ import { JoueurDirective } from './joueur/joueur.directive';
     AppComponent,
     MenuComponent,
     VoitureInventaireComponent,
-    SaisonComponent
+    SaisonComponent,
     JoueurDirective
   ],
   imports: [
