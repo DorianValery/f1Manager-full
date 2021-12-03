@@ -6,10 +6,17 @@
             <ul *ngFor="let p of ecurie.pilotes">
                 <li>{{p.nom}}</li>
             </ul>
-
-            
         </ul>
     </div>
+
+    <h2>Classement</h2>
+    <div>
+        <button (click)="genererClassement(3)"> Classement</button> 
+            <!-- <ul *ngFor="let p of course.position">
+                <li>{{classement}}</li>
+            </ul> -->
+    </div>
+    <div>{{position1}}</div>
 
 
 

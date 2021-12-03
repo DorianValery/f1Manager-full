@@ -106,6 +106,7 @@ export class Pilote {
 	cashPrize : number;
     popularite : number;
     image: String;
+    position : Position[];
 
     constructor(id? : number,version ? :number,nom ?: string , nombreTour ? : number, tempsRef ? : string, cashPrize ?: number,popularite ?: number, image?: string){
     }
@@ -115,7 +116,7 @@ export class Pilote {
 
     id : number;
     version : number;
-    position : number;
+    position1 : number;
 
     constructor(id? : number,version ? :number,position ?: number ){
 

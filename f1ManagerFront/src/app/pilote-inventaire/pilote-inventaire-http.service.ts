@@ -10,6 +10,7 @@ import { Pilote } from '../model';
 export class PiloteInventaireHttpService {
 
  pilotes: Array<Pilote> = new Array<Pilote>();
+ pilote: Pilote;
   piloteUrl: string;
 
   constructor(private http: HttpClient, private appConfig: AppConfigService) {
@@ -19,6 +20,10 @@ export class PiloteInventaireHttpService {
 
   findPiloteById(id: number): Observable<Pilote>{
   return this.http.get<Pilote>(this.piloteUrl + id);
+  }
+
+  findExperience(){
+    return this.http.get<Pilote>(this.piloteUrl + this.pilote.experience);
   }
 
   findAll(): Array<Pilote> {
