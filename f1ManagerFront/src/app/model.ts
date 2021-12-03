@@ -104,8 +104,9 @@ export class Pilote {
     tempsRef : string;
 	cashPrize : number;
     popularite : number;
+    image: String;
 
-    constructor(id? : number,version ? :number,nom ?: string , nombreTour ? : number, tempsRef ? : string, cashPrize ?: number,popularite ?: number){
+    constructor(id? : number,version ? :number,nom ?: string , nombreTour ? : number, tempsRef ? : string, cashPrize ?: number,popularite ?: number, image?: string){
     }
  }
 

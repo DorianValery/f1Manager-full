@@ -1068,6 +1068,7 @@ public class TestJpa {
 		course1.setPopularite(70);
 		course1.setTempsRef(null);
 		course1.setCashPrize(200000);
+		course1.setImage("../../assets/Circuit-Bahrein-Plan.jpg");
 		
 		Course course2 = new Course();
 		course2.setNom("Imola");
