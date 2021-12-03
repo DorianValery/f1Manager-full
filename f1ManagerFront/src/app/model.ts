@@ -31,6 +31,10 @@ export class Ecurie{
 	nom : string;
 	argent : number;
 	experience : number;
+    pilotes : Pilote[];
+    infrastructures : Infrastructure[];
+    voitures : Voiture[];
+
 
     constructor(id? : number,version ? :number,nom ?: string, argent? : number, experience ?: number )
    {} 
@@ -65,6 +69,15 @@ export class Pilote {
     image: string;
 
     constructor(id? : number,version ? :number,marque ?: string , maniabilite ?: number,vitesse ? : number, poids ?: number, etat ? : boolean, prix ? : number, image?: string){
+    }
+ }
+
+ export class Array<Voiture> extends Voiture {
+
+    voiture : Voiture;
+
+    constructor(voiture : Voiture){
+    super()
     }
  }
 

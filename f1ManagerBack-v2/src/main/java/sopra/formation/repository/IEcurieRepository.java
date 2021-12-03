@@ -16,5 +16,9 @@ public interface IEcurieRepository extends JpaRepository<Ecurie, Long>{
 	
 	@Query("select distinct e from Ecurie e left join fetch e.pilotes p where e.id=:id")
 	Optional<Ecurie> findEcurieWithPilotes(@Param ("id") Long id);
+	@Query("select distinct e from Ecurie e left join fetch e.voitures v where e.id=:id")
+	Optional<Ecurie> findEcurieWithVoitures(@Param ("id") Long id);
+	@Query("select distinct e from Ecurie e left join fetch e.infrastructures i where e.id=:id")
+	Optional<Ecurie> findEcurieWithInfrastructures(@Param ("id") Long id);
 	
 }
