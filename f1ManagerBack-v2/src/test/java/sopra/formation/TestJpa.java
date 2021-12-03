@@ -93,6 +93,7 @@ public class TestJpa {
 		pilote1false.setEtat(false);
 		pilote1false.setPrix(60000);
 		
+		
 		pilote1false = piloteRepo.save(pilote1false);
 		
 		Pilote pilote2false =new Pilote();
@@ -1264,19 +1265,19 @@ public class TestJpa {
 		pilote3true = piloteRepo.save(pilote3true);
 		pilote4true = piloteRepo.save(pilote4true);
 		
-		voiture1.setInventaire(inventaire1);
+		voiture1.setEcurie(ecurieJoueur1);
 		voiture1 = voitureRepo.save(voiture1);
 		
-		voiture2.setInventaire(inventaire1);
+		voiture2.setEcurie(ecurieJoueur1);
 		voiture2 = voitureRepo.save(voiture2);
 		
-		infraMarketing1.setInventaire(inventaire1);
+		infraMarketing1.setEcurie(ecurieJoueur1);
 		infraMarketing1 = infrastructureRepo.save(infraMarketing1);
 		
-		infraPilote1.setInventaire(inventaire1);
+		infraPilote1.setEcurie(ecurieJoueur1);
 		infraPilote1 = infrastructureRepo.save(infraPilote1);
 		
-		infraVoiture1.setInventaire(inventaire1);
+		infraVoiture1.setEcurie(ecurieJoueur1);
 		infraVoiture1 = infrastructureRepo.save(infraVoiture1);
 		
 		inventaire1 = inventaireRepo.save(inventaire1);
