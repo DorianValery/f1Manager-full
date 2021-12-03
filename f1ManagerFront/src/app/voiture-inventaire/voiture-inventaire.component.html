@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
     <div class="card" *ngFor="let voit of list()">
         <img class="card-img-top" [src]="voit.image" alt="Card image cap">
         <div class="card-body" class="text-center">
@@ -13,4 +13,36 @@
             <div><button *ngIf="voit.etat" class="btn btn-primary">Sélectionner</button><button *ngIf="!voit.etat" class="btn btn-primary">Acheter : {{voit.prix}} ฿</button></div>
         </div>
     </div>
+</div> -->
+
+<div class="background">
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <!-- ngfor loop using get dynamic value and ngclass for add acive class -->
+      <div class="carousel-item" *ngFor="let voit of list(); let i = index" [ngClass]="{'active': i === 1}">
+        <div class="card" style="width: 60%;">
+            <img class="card-img-top" [src]="voit.image" alt="Card image cap">
+            <div class="card-body" class="text-center">
+                <h5 class="card-title">{{voit.marque}}</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Maniabilité : {{voit.maniabilite}}</li>
+                    <li class="list-group-item">Vitesse : {{voit.vitesse}}</li>
+                    <li class="list-group-item">Poids : {{voit.poids}}</li>
+                </ul>
+            </div>
+            <div class="card-footer" class="text-center">
+                <div><button *ngIf="voit.etat" class="btn btn-primary">Sélectionner</button><button *ngIf="!voit.etat" class="btn btn-primary">Acheter : {{voit.prix}} ฿</button></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 </div>
