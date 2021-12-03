@@ -1,10 +1,44 @@
-.background{
+.background-image{
     background-image: url("../../assets/fond_ciel_nuage.jpg");
     background-repeat: repeat-y;
+    background-repeat: repeat-x;
     background-size: 100%;
-    size: 100%;
-}
-
-.card-img-top{
     
 }
+.card{
+    background-color:#faf6ef00;  
+}
+.list-group-item{
+    background-color:#faf6ef00;
+    font-family:"Formula1-Regular";  
+}
+
+.carousel-item.active{
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-item-next{
+    display: flex;
+    justify-content: center;
+}
+.carousel-item-prev{
+    display: flex;
+    justify-content: center;
+}
+
+#titre{
+    font-family:"Formula1-Regular";
+    text-align: center;
+}
+#argent{
+    font-family:"Formula1-Regular";
+    text-align: center;
+}
+.card-title{
+    font-family:"Formula1-Regular";
+    font-size: 40pt;
+}
+
+
+
