@@ -42,12 +42,13 @@ export class Pilote {
 	prenom : string;
 	age : number;
 	nationalite : string;
-    civitlite : string;
+    civ : string;
 	experience : number;
 	etat : boolean;
 	prix : number;
+    imagePilote: string ;
 
-    constructor(id? : number,version ? :number,nom ?: string, prenom? : string, age? : number, nationalite? : string, civitlite ? : string ,experience ? : number, etat ? : boolean, prix ? : number){
+    constructor(id? : number,version ? :number,nom ?: string, prenom? : string, age? : number, nationalite? : string, civitlite ? : string ,experience ? : number, etat ? : boolean, prix ? : number, imagePilote ? : string){
 
     }
 }

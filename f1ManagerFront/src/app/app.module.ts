@@ -3,8 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PiloteInventaireComponent } from './pilote-inventaire/pilote-inventaire.component';
 import { AppConfigService } from './app-config.service';
 import { MenuHttpService } from './menu/menu-http.service';
 import { MenuComponent } from './menu/menu.component';
@@ -14,6 +16,8 @@ import { VoitureInventaireService } from './voiture-inventaire/voiture-inventair
 @NgModule({
   declarations: [
     AppComponent,
+    PiloteInventaireComponent
+    AppComponent,
     MenuComponent,
     VoitureInventaireComponent
   ],
@@ -21,6 +25,7 @@ import { VoitureInventaireService } from './voiture-inventaire/voiture-inventair
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    AppRoutingModule,
     AppRoutingModule,
    
   ],

@@ -1,0 +1,112 @@
+
+<!--<div class="card mt-4p">
+    <div class="centre">
+    <div class="card-header bg-info text-black">
+        <h2>Mes pilotes</h2>
+        
+        <div class="card" style="width: 18rem;">
+           <span *ngFor="let pilote of list()"> 
+            <img src={{pilote.imagePilote}} class="card-img-top" alt="pilote">
+            <div class="card-body">
+              <div class="card-text">
+                <p>Nom : {{pilote.nom}}</p>
+                <p>Prenom : {{pilote.prenom}}</p>
+                <p>Age : {{pilote.age}}</p>
+                <p>Nationalite : {{pilote.nationalite}}</p>
+                <p>Civilite : {{pilote.civ}}</p>
+                <p>Experience : {{pilote.experience}}</p>
+                <p *ngIf="!pilote.etat">Prix : {{pilote.prix}}</p>
+                <button *ngIf="!pilote.etat">Selectionner</button>
+            </div>
+            </div>
+        </span> 
+          </div>
+        </div>
+          </div> -->
+        
+<!--Version 2-->
+
+        <!-- <div class="card" style="width: 18rem;">
+           <span *ngFor="let pilote of list()"> 
+            <img src={{pilote.imagePilote}} class="card-img-top" alt="pilote">
+            <div class="card-body">
+              <h5 class="card-title">Pilote {{pilote.id}}</h5>
+              <p class="card-text">Informations sur le pilote {{pilote.id}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Nom : {{pilote.nom}}</li>
+              <li class="list-group-item">Prenom : {{pilote.prenom}}</li>
+              <li class="list-group-item">Age : {{pilote.age}}</li>
+              <li class="list-group-item">Nationalite : {{pilote.nationalite}}</li>
+              <li class="list-group-item">Civilite : {{pilote.civ}}</li>
+              <li class="list-group-item">Experience : {{pilote.experience}}</li>
+              <li class="list-group-item" *ngIf="!pilote.etat">Prix : {{pilote.prix}}</li>
+              <button *ngIf="!pilote.etat">Selectionner</button>
+            </ul>
+    </span> 
+            <div class="card-body">
+                
+            </div>
+          </div>-->
+
+          <div id="bck-img" class="card mt-4p">
+            
+            <div class="card-header  text-black">
+                <h1 id="titre">Mes pilotes
+                    <span id="argent"><h2>Solde : 
+                        <h4></h4><!--{{ecurie.argent}}-->
+                    </h2> <img id="pieces" src="../../assets/pieces.png" alt=""></span>
+                </h1>
+                
+          <!-- Carrousel -->
+          
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item" *ngFor="let pilote of list() ; let i = index" [ngClass]="{'active': i === 1}">
+                    <!-- Card-->
+                    <div class="card" style="width: 18rem;">
+                    <img src={{pilote.imagePilote}} class="card-img-top" alt="pilote">
+                    <div class="card-body">
+                      <h1  class="card-title">Pilote {{pilote.id}} 
+                          <img id="cadenas-ouvert" *ngIf="pilote.etat" src="../../assets/cadenas-ouvert.png" alt="cadenas ouvert">
+                          <img id="cadenas" *ngIf="!pilote.etat" src="../../assets/cadenas.png" alt="cadenas fermé">
+                      </h1>
+                      <p class="card-text">Informations sur le pilote {{pilote.id}}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item"> <span class="infos">Nom : </span>  {{pilote.nom}}</li>
+                      <li class="list-group-item"><span class="infos">Prenom : </span> {{pilote.prenom}}</li>
+                      <li class="list-group-item"><span class="infos">Age : </span> {{pilote.age}}</li>
+                      <li class="list-group-item"><span class="infos">Nationalite : </span> {{pilote.nationalite}}</li>
+                      <li class="list-group-item"><span class="infos">Civilite : </span> {{pilote.civ}}</li>
+                      <li class="list-group-item"><span class="infos">Experience : </span> {{pilote.experience}}</li>
+                      <li class="list-group-item" *ngIf="!pilote.etat" ><span class="infos">Prix : </span>{{pilote.prix}}</li>
+                      <button *ngIf="!pilote.etat">Selectionner</button>
+                    </ul>
+              </div>
+            </div>
+        </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+    
+</div>
+
+          
+          
+
+
+
+
+
+
+          
+
+    
