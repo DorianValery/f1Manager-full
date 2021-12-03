@@ -46,11 +46,12 @@ public class Pilote {
 	 @JoinColumn(name="inventaire_id")
 	 @JsonView(Views.ViewPiloteDetail.class)
 	 private Inventaire inventaire;
+	 private String  imagePilote;
 	 
 	 public Pilote() {}
 	
 	public Pilote(Long id, String nom, String prenom, int age, String nationalite, Civilite civ, double experience,
-			boolean etat, double prix, Ecurie ecurie, List<Position> positions, Inventaire inventaire) {
+			boolean etat, double prix, Ecurie ecurie, List<Position> positions, Inventaire inventaire, String imagePilote ) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -64,6 +65,7 @@ public class Pilote {
 		this.ecurie = ecurie;
 		this.positions = positions;
 		this.inventaire = inventaire;
+		this.imagePilote=imagePilote;
 	}
 	
 	public Pilote(String nom, String prenom, int age, String nationalite, Civilite civ, double experience,
@@ -181,16 +183,22 @@ public class Pilote {
 	public void setVersion(int version) {
 		this.version = version;
 	}
+	
+	public String getImagePilote() {
+		return imagePilote;
+	}
+
+	public void setImagePilote(String imagePilote) {
+		this.imagePilote = imagePilote;
+	}
 
 	@Override
 	public String toString() {
-		return "Pilote [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", age=" + age + ", nationalite="
-				+ nationalite + ", civ=" + civ + ", experience=" + experience + ", etat=" + etat + ", prix=" + prix
-				+ ", ecurie=" + ecurie + ", positions=" + positions + ", inventaire=" + inventaire + "]";
+		return "Pilote [id=" + id + ", version=" + version + ", nom=" + nom + ", prenom=" + prenom + ", age=" + age
+				+ ", nationalite=" + nationalite + ", civ=" + civ + ", experience=" + experience + ", etat=" + etat
+				+ ", prix=" + prix + ", ecurie=" + ecurie + ", positions=" + positions + ", inventaire=" + inventaire
+				+ ", imagePilote=" + imagePilote + "]";
 	}
-	 
-	
-	
-	 
+ 
 
 }
