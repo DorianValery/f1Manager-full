@@ -16,7 +16,7 @@ import { VoitureInventaireService } from './voiture-inventaire/voiture-inventair
 @NgModule({
   declarations: [
     AppComponent,
-    PiloteInventaireComponent
+    PiloteInventaireComponent,
     AppComponent,
     MenuComponent,
     VoitureInventaireComponent
