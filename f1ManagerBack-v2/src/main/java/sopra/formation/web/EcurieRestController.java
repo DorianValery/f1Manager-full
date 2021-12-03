@@ -81,6 +81,18 @@ public class EcurieRestController {
 			}
 		}
 		
+		/*@GetMapping("{id}/argent")
+		@JsonView(Views.ViewEcurieDetail.class)
+		public Ecurie findEcurieWithArgent(@PathVariable Long id) {
+			Optional<Ecurie> optEcurie = ecurieRepo.findEcurieWithArgent(id);
+
+			if (optEcurie.isPresent()) {
+				return optEcurie.get();
+			} else {
+				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Ecurie non trouvé");
+			}
+		}*/
+		
 		@PatchMapping("/{id}")
 		@JsonView(Views.ViewEcurie.class)
 		public Ecurie partialUpdate(@PathVariable Long id, @RequestBody Map<String, Object> updates) {

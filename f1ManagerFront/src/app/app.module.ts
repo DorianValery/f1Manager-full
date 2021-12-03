@@ -12,14 +12,17 @@ import { MenuHttpService } from './menu/menu-http.service';
 import { MenuComponent } from './menu/menu.component';
 import { VoitureInventaireComponent } from './voiture-inventaire/voiture-inventaire.component';
 import { VoitureInventaireService } from './voiture-inventaire/voiture-inventaire.service';
+import { JoueurDirective } from './joueur/joueur.directive';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    PiloteInventaireComponent
+    PiloteInventaireComponent,
     AppComponent,
     MenuComponent,
-    VoitureInventaireComponent
+    VoitureInventaireComponent,
+    JoueurDirective
   ],
   imports: [
     BrowserModule,
