@@ -1,19 +1,32 @@
+@font-face {
+  font-family:"Formula1-Regular";
+  src : url(../../assets/Formula1-Regular.ttf);
+}
+@font-face {
+  font-family:"Formula";
+  src : url(../../assets/Formula.ttf);
+}
+
 #titre{
   font-family:"Formula1-Regular";
   text-align: center;
+  text-transform: uppercase;
+  text-decoration-style: italic;
+  color: red;
+  background-color: black;
+  margin: 0;
 }
 
 #titreCourse{
   font-family:"Formula";
   text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
   color: red;
+  background-color: black;
 }
 
-  @font-face {
-    font-family:"Formula1-Regular";
-    src : url(../../assets/Formula1-Regular.ttf);
-  }
-  @font-face {
-    font-family:"Formula";
-    src : url(../../assets/Formula.ttf);
-  }
+#image{
+  border: solid blue 4px;
+  border-radius: 10%;
+}

@@ -1,6 +1,5 @@
 import { Directive } from '@angular/core';
-import { AppConfigService } from '../app-config.service';
-import { EcurieService } from '../ecurie/ecurie.service';
+
 import { Ecurie } from '../model';
 
 
@@ -11,12 +10,12 @@ export class JoueurDirective {
 
 ecurie:Ecurie;
 
-  constructor(private appConfig: AppConfigService, private ecurieService: EcurieService) { 
+  constructor() { 
 
   }
 
-findEcurie(id:number){
-  return this.ecurieService.findById(id);
-}
+// findEcurie(id:number){
+//   return this.ecurieService.findById(id);
+// }
 
 }

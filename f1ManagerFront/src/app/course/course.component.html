@@ -1,0 +1,16 @@
+<div class="card">
+    
+    <h2>Classement</h2>
+    <div>
+        <ul *ngFor="let ecurie of list()">
+            <ul *ngFor="let p of ecurie.pilotes">
+                <li>{{p.nom}}</li>
+            </ul>
+
+            
+        </ul>
+    </div>
+
+
+
+</div>

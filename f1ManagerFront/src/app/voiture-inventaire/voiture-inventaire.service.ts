@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { AppConfigService } from '../app-config.service';
 import { Voiture } from '../model';
 
@@ -15,6 +16,10 @@ export class VoitureInventaireService {
     this.voitureInventaireUrl=this.appConfig.backEndUrl+"voiture/";
     this.load();
    }
+
+   findVoitureById(id: number): Observable<Voiture>{
+    return this.http.get<Voiture>(this.voitureInventaireUrl + id);
+    }
 
    findAll(): Array<Voiture> {
     return this.voitures;

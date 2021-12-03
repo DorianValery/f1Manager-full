@@ -14,9 +14,10 @@ import sopra.formation.model.Infrastructure;
 import sopra.formation.model.Inventaire;
 import sopra.formation.model.Joueur;
 import sopra.formation.model.Pilote;
+import sopra.formation.model.Position;
+import sopra.formation.model.Type;
 import sopra.formation.model.Voiture;
 import sopra.formation.model.typeInfra;
-import sopra.formation.model.Type;
 import sopra.formation.repository.ICompteRepository;
 import sopra.formation.repository.ICourseRepository;
 import sopra.formation.repository.IEcurieRepository;
@@ -115,7 +116,7 @@ public class TestJpa {
 		pilote3false.setNationalite("Américaine");
 		pilote3false.setCiv(Civilite.MME);
 		pilote3false.setExperience(60);
-		pilote3false.setEtat(false);
+		pilote3false.setEtat(true);
 		pilote3false.setPrix(65000);
 		
 		pilote3false = piloteRepo.save(pilote3false);
@@ -127,37 +128,12 @@ public class TestJpa {
 		pilote4false.setNationalite("Mexicaine");
 		pilote4false.setCiv(Civilite.M);
 		pilote4false.setExperience(70);
-		pilote4false.setEtat(false);
+		pilote4false.setEtat(true);
 		pilote4false.setPrix(80000);
 		
 		pilote4false = piloteRepo.save(pilote4false);
 		
 		//Pilotes 1 et 2 etat possédés
-		
-		Pilote pilote3true =new Pilote();
-		pilote3true.setNom("Pilote3");
-		pilote3true.setPrenom("Pilote3");
-		pilote3true.setAge(25);
-		pilote3true.setNationalite("Espagnole");
-		pilote3true.setCiv(Civilite.M);
-		pilote3true.setExperience(100);
-		pilote3true.setEtat(true);
-		pilote3true.setPrix(3000);
-		
-		pilote3true = piloteRepo.save(pilote3true);
-		
-		Pilote pilote4true =new Pilote();
-		pilote4true.setNom("Pilote4");
-		pilote4true.setPrenom("Pilote4");
-		pilote4true.setAge(25);
-		pilote4true.setNationalite("Suedoise");
-		pilote4true.setCiv(Civilite.MME);
-		pilote4true.setExperience(200);
-		pilote4true.setEtat(true);
-		pilote4true.setPrix(4000);
-		
-		pilote4true = piloteRepo.save(pilote4true);
-		
 
 		Pilote piloteX =new Pilote();
 		piloteX.setNom("X");
@@ -176,8 +152,6 @@ public class TestJpa {
 		listPilote.add(pilote2false);
 		listPilote.add(pilote3false);
 		listPilote.add(pilote4false);
-		listPilote.add(pilote3true);
-		listPilote.add(pilote4true);
 		listPilote.add(piloteX);
 		
 		//PILOTES DES ECURIES
@@ -473,7 +447,7 @@ public class TestJpa {
 		voiture1.setPoids(800);
 		voiture1.setVitesse(300);
 		voiture1.setPrix(300000);
-		voiture1.setEtat(false);
+		voiture1.setEtat(true);
 		voiture1.setImage("../../assets/voiture_surplace 1.gif");
 
 		Voiture voiture2 = new Voiture();
@@ -482,7 +456,7 @@ public class TestJpa {
 		voiture2.setPoids(780);
 		voiture2.setVitesse(305);
 		voiture2.setPrix(400000);
-		voiture2.setEtat(false);
+		voiture2.setEtat(true);
 		voiture2.setImage("../../assets/voiture_surplace 1.gif");
 		
 		Voiture voiture3 = new Voiture();
@@ -1278,13 +1252,9 @@ public class TestJpa {
 		
 		pilote1false.setInventaire(inventaire1);
 		pilote2false.setInventaire(inventaire1);
-		pilote3true.setInventaire(inventaire1);
-		pilote4true.setInventaire(inventaire1);
 		
 		pilote1false = piloteRepo.save(pilote1false);
 		pilote2false = piloteRepo.save(pilote2false);
-		pilote3true = piloteRepo.save(pilote3true);
-		pilote4true = piloteRepo.save(pilote4true);
 		
 		voiture1.setEcurie(ecurieJoueur1);
 		voiture1 = voitureRepo.save(voiture1);
@@ -1303,7 +1273,12 @@ public class TestJpa {
 		
 		inventaire1 = inventaireRepo.save(inventaire1);
 	
+		Position positionPilote1 = new Position();
+		positionPilote1.setPosition(4);
+		positionPilote1.setPilote(pilote1false);
+		positionPilote1.setCourse(course1);
 		
+		positionPilote1 = positionRepo.save(positionPilote1);
 
 		spring.close();
 	}

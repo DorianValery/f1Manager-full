@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { AppConfigService } from '../app-config.service';
 import { Pilote } from '../model';
 
@@ -14,6 +15,10 @@ export class PiloteInventaireHttpService {
   constructor(private http: HttpClient, private appConfig: AppConfigService) {
     this.piloteUrl = this.appConfig.backEndUrl + "pilote/"
     this.load();
+  }
+
+  findPiloteById(id: number): Observable<Pilote>{
+  return this.http.get<Pilote>(this.piloteUrl + id);
   }
 
   findAll(): Array<Pilote> {
