@@ -1,0 +1,27 @@
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    background-color:#f31d1d;
+    border-bottom :solid black 5px;
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 40px;
+    color :black;
+    font-weight:bold;
+    font-family:"Formula1-Regular";
+  }
+
+  .nav-link{
+    color :black;
+  }
+  
+
+  @font-face {
+    font-family:"Formula1-Regular";
+    src : url(./../assets/Formula1-Regular.ttf);
+  }
+  @font-face {
+    font-family:"Formula";
+    src : url(./../assets/Formula.ttf);
+  }
