@@ -1,15 +1,28 @@
+<button (click)="findCourse(1)">
+    Course  
+ </button>
+ <button (click)="findPilote(3)">
+    Pilote
+</button>
+<button (click)="findVoiture(1)">
+    Voiture
+</button>
+
 <div class="card-header  text-black">
     <h1 id="titre">Course {{saisonTest.id}}</h1>
-        <span id="titreCourse"><h2>{{saisonTest.nom}} <br>{{saisonTest.nombreTour}} tours </h2></span>
+        <div id="titreCourse">{{saisonTest.nom}} <br>{{saisonTest.nombreTour}} tours</div>
+<img id="image" src="{{saisonTest.image}}">
 </div>
+     
+    <div id="titre" *ngIf="piloteTest.etat==true">
+        {{piloteTest.prenom}} {{piloteTest.nom}} {{piloteTest.experience}} {{piloteTest.nationalite}}
+    </div>
 
-<img class="card-img-top" src="{{saisonTest.image}}" alt="Card image cap">
-<div>
+    <div id="titre" *ngIf="voitureTest.etat==true">
+        {{voitureTest.marque}} {{voitureTest.maniabilite}} {{voitureTest.vitesse}} {{voitureTest.poids}}
+    </div>
+ 
 
-    <button (click)="findCourse(1)">
-       button   
-    </button>
-</div>
      
      
      
