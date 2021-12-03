@@ -19,8 +19,9 @@ export class Joueur {
 	mail : string;
 	telephone : string;
     civilite : string;
+    ecurie:Ecurie;
 
-    constructor(id? : number,version ? : number,pseudo ?: string,  age ?: number, mail ?: string ,telephone? : string ,civilite? : string){
+    constructor(id? : number,version ? : number,pseudo ?: string,  age ?: number, mail ?: string ,telephone? : string ,civilite? : string, ecurie? :Ecurie){
 
     }
 }
@@ -104,8 +105,9 @@ export class Pilote {
     tempsRef : string;
 	cashPrize : number;
     popularite : number;
+    image: String;
 
-    constructor(id? : number,version ? :number,nom ?: string , nombreTour ? : number, tempsRef ? : string, cashPrize ?: number,popularite ?: number){
+    constructor(id? : number,version ? :number,nom ?: string , nombreTour ? : number, tempsRef ? : string, cashPrize ?: number,popularite ?: number, image?: string){
     }
  }
 

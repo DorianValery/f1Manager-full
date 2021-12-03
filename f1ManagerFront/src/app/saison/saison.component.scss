@@ -1,0 +1,19 @@
+#titre{
+  font-family:"Formula1-Regular";
+  text-align: center;
+}
+
+#titreCourse{
+  font-family:"Formula";
+  text-align: center;
+  color: red;
+}
+
+  @font-face {
+    font-family:"Formula1-Regular";
+    src : url(../../assets/Formula1-Regular.ttf);
+  }
+  @font-face {
+    font-family:"Formula";
+    src : url(../../assets/Formula.ttf);
+  }

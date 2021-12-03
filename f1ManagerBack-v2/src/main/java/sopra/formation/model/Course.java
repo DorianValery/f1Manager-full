@@ -29,7 +29,8 @@ public class Course {
 	private int version;
 	private String nom;
 	private int nombreTour;
-//	Period period;
+	private String image;
+	//	Period period;
 //	long minutes = period.get(ChronoUnit.MINUTES);
 //	long secondes = period.get(ChronoUnit.SECONDS);
 //	long millisecondes = period.get(ChronoUnit.MILLIS);
@@ -142,6 +143,14 @@ public class Course {
 
 	public void setVersion(int version) {
 		this.version = version;
+	}
+	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	@Override

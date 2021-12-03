@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PiloteInventaireComponent } from './pilote-inventaire.component';
+import { SaisonComponent } from './saison.component';
 
-describe('PiloteInventaireComponent', () => {
-  let component: PiloteInventaireComponent;
-  let fixture: ComponentFixture<PiloteInventaireComponent>;
+describe('SaisonComponent', () => {
+  let component: SaisonComponent;
+  let fixture: ComponentFixture<SaisonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PiloteInventaireComponent ]
+      declarations: [ SaisonComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PiloteInventaireComponent);
+    fixture = TestBed.createComponent(SaisonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

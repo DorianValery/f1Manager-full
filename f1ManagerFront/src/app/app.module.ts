@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PiloteInventaireComponent } from './pilote-inventaire/pilote-inventaire.component';
@@ -12,6 +11,10 @@ import { MenuHttpService } from './menu/menu-http.service';
 import { MenuComponent } from './menu/menu.component';
 import { VoitureInventaireComponent } from './voiture-inventaire/voiture-inventaire.component';
 import { VoitureInventaireService } from './voiture-inventaire/voiture-inventaire.service';
+import { SaisonComponent } from './saison/saison.component';
+import { SaisonService } from './saison/saison.service';
+import { JoueurDirective } from './joueur/joueur.directive';
+
 
 @NgModule({
   declarations: [
@@ -19,17 +22,17 @@ import { VoitureInventaireService } from './voiture-inventaire/voiture-inventair
     PiloteInventaireComponent,
     AppComponent,
     MenuComponent,
-    VoitureInventaireComponent
+    VoitureInventaireComponent,
+    SaisonComponent,
+    JoueurDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule,
-    
-   
+    AppRoutingModule, 
   ],
-  providers: [AppConfigService,MenuHttpService, VoitureInventaireService],
+  providers: [AppConfigService,MenuHttpService, VoitureInventaireService, SaisonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

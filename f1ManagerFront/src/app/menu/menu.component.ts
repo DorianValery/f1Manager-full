@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppConfigService } from '../app-config.service';
 import { Ecurie, Pilote } from '../model';
 import { MenuHttpService } from './menu-http.service';
@@ -31,6 +32,10 @@ findEcurie(id : number) {
   this.menuService.findEcurieById(id).subscribe(resp =>{
     this.ecurie = resp;
   },error=> console.log(error))
+}
+
+lancerSaison(){
+
 }
 
   ngOnInit(): void {
