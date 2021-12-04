@@ -43,4 +43,11 @@ export class VoitureInventaireService {
   loadEcurie(id: number): Observable<Ecurie>{
     return this.http.get<Ecurie>(this.ecurieUrl+id);
   }
+
+  saveEcurie(ecurie: Ecurie){
+    this.http.put<Ecurie>(this.ecurieUrl+ecurie.id,ecurie).subscribe(resp=>{
+      this.load();
+      this.loadEcurie(ecurie.id);
+    },error=>console.log(error));
+  }
 }
