@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { EcurieService } from '../ecurie/ecurie.service';
 
 
 
-import { Ecurie, Joueur, Pilote } from '../model';
+
+import { Pilote } from '../model';
 import { PiloteInventaireHttpService } from './pilote-inventaire-http.service';
 
 @Component({
@@ -13,9 +13,9 @@ import { PiloteInventaireHttpService } from './pilote-inventaire-http.service';
 })
 export class PiloteInventaireComponent implements OnInit {
   //pilote: Pilote = null;
-  joueur: Joueur;
+ 
 
-  constructor(private piloteService: PiloteInventaireHttpService, private ecurieService: EcurieService) { }
+  constructor(private piloteService: PiloteInventaireHttpService) { }
   
   ngOnInit(): void {}
 
