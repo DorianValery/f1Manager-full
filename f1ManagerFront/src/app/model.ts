@@ -59,7 +59,7 @@ export class Pilote {
 }
  export class Voiture {
 
-    id : number;
+    id : number; 
     version : number;
 	marque : string;
 	maniabilite: number;
