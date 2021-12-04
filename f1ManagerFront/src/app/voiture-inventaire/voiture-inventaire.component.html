@@ -1,62 +1,76 @@
 <div class="background-image">
 
 
-  <div class="card-header  text-black">
+  <div class="card-header  text-black border-0">
     <h1 id="titre">Mes voitures</h1>
-        <span id="argent"><h2>Solde : </h2><h4><!--{{ecurie.argent}}--></h4></span>
-    
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false">
-    <div class="carousel-inner">
-      <!-- ngfor loop using get dynamic value and ngclass for add acive class -->
-      <div class="carousel-item" *ngFor="let voit of list(); let i = index" [ngClass]="{'active': i === 0}" >
-        <!-- card -->
-        <div class="card" style="width: 70%;">
+    <span id="argent">
+      <h2>Solde : </h2>
+      <h4>
+        <!--{{ecurie.argent}}-->
+      </h4>
+    </span>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false">
+      <div class="carousel-inner">
+        <!-- ngfor loop using get dynamic value and ngclass for add acive class -->
+        <div class="carousel-item" *ngFor="let voit of list(); let i = index" [ngClass]="{'active': i === 0}">
+          <!-- card -->
+          <div class="card border-0" style="width: 70%;">
             <img class="card-img-top" [src]="voit.image" alt="Card image cap">
             <div class="card-body" class="text-center">
-                <h5 class="card-title">{{voit.marque}}</h5>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Maniabilité : {{voit.maniabilite}}</li>
-                    <li class="list-group-item">Vitesse : {{voit.vitesse}}</li>
-                    <li class="list-group-item">Poids : {{voit.poids}}</li>
-                </ul>
+              <h5 class="card-title">{{voit.marque}}</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Maniabilité : {{voit.maniabilite}}</li>
+                <li class="list-group-item">Vitesse : {{voit.vitesse}}</li>
+                <li class="list-group-item">Poids : {{voit.poids}}</li>
+              </ul>
             </div>
+            <div class="btnSelect" *ngIf="!voit.etat">Acheter : {{voit.prix}} ฿</div>
+            <div class="btnSelect" *ngIf="voit.etat" (click)="select(voit)">Sélectionner</div>
             <div class="card-footer" class="text-center">
-                <div><button *ngIf="voit.etat" class="btn btn-primary">Sélectionner</button><button *ngIf="!voit.etat" class="btn btn-primary">Acheter : {{voit.prix}} ฿</button></div>
+              <!--<div><button  *ngIf="voit.etat" >Sélectionner</button>
+                  <button *ngIf="!voit.etat" class="btn btn-primary">Acheter : {{voit.prix}} ฿</button>
+                </div>-->
             </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div *ngIf="ecurie.voitures[0]" class="voitureSelect" [ngClass]="{'voitureSelect1' : choixVoiture==0}"
+      (click)="choixV(0)">
+      <div class="card" style="width: 100%;">
+        <img [src]="ecurie.voitures[0].image" class="voitureSelect" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">{{ecurie.voitures[0].marque}}</p>
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+    <div *ngIf="!ecurie.voitures[0]" class="voitureVide" (click)="choixV(0)" [ngStyle]="{'font-weight': choixVoiture == 0 ? 'bolder' : ''}">Voiture 1</div>
 
-
-  <div class="footer">
-    <div class="voitureSelect">
-    <div  class="card"  style="width: 100%;">
-      <img [src]="voituresEcurie[0].image" class="voitureSelect" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">{{voituresEcurie[0].marque}}</p>
+    <div *ngIf="ecurie.voitures[1]" class="voitureSelect" [ngClass]="{'voitureSelect1' : choixVoiture==1}"
+      (click)="choixV(1)">
+      <div class="card" style="width: 100%;">
+        <img [src]="ecurie.voitures[1].image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">{{ecurie.voitures[1].marque}}</p>
+        </div>
       </div>
     </div>
+    <div *ngIf="!ecurie.voitures[1]" class="voitureVide" (click)="choixV(1)" [ngStyle]="{'font-weight': choixVoiture == 1 ? 'bolder' : ''}">Voiture 2</div>
+    <div class="btnValid" (click)="valider()">Valider</div>
   </div>
-  <div class="voitureSelect">
-    <div  class="card" style="width: 100%;">
-      <img [src]="voituresEcurie[1].image" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">{{voituresEcurie[1].marque}}</p>
-      </div>
-    </div>
-  </div>
-    <div>
-      <button>Valider</button>
-    </div>
-  </div>
-
+  <div class="remplissage"></div>
 </div>

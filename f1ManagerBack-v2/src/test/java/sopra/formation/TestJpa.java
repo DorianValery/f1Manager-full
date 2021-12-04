@@ -457,7 +457,7 @@ public class TestJpa {
 		voiture2.setVitesse(305);
 		voiture2.setPrix(400000);
 		voiture2.setEtat(false);
-		voiture2.setImage("../../assets/voiture_surplace 1.gif");
+		voiture2.setImage("../../assets/voiture_jaune.gif");
 		
 		Voiture voiture3 = new Voiture();
 		voiture3.setMarque("FERRARI");

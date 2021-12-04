@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppConfigService } from '../app-config.service';
-import { Voiture } from '../model';
+import { Ecurie, Voiture } from '../model';
 import { VoitureInventaireService } from './voiture-inventaire.service';
 
 @Component({
@@ -10,7 +10,8 @@ import { VoitureInventaireService } from './voiture-inventaire.service';
 })
 export class VoitureInventaireComponent implements OnInit {
 
-  voituresEcurie: Array<Voiture>;
+  ecurie: Ecurie;
+  choixVoiture: number = 1;
 
   constructor(private appConfig: AppConfigService, private voitureInventaireService: VoitureInventaireService) {
     this.listVoituresEcurie(1);
@@ -25,10 +26,20 @@ export class VoitureInventaireComponent implements OnInit {
 
   listVoituresEcurie(id: number) {
     this.voitureInventaireService.loadEcurie(id).subscribe(response => {
-      this.voituresEcurie = response.voitures;
-      console.log(this.voituresEcurie);
-    }, error => console.log(error));
+      this.ecurie = response;
+      }, error => console.log(error));
   }
 
+  select(voiture: Voiture) {
+    this.ecurie.voitures[this.choixVoiture] = voiture;
+      }
 
+  choixV(id: number) {
+    this.choixVoiture = id;
+  }
+
+  valider()
+  {
+    this.voitureInventaireService.saveEcurie(this.ecurie);
+  }
 }
