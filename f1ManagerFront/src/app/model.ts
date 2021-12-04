@@ -52,8 +52,9 @@ export class Pilote {
 	etat : boolean;
 	prix : number;
     imagePilote: string ;
+    position: Position[];
 
-    constructor(id? : number,version ? :number,nom ?: string, prenom? : string, age? : number, nationalite? : string, civitlite ? : string ,experience ? : number, etat ? : boolean, prix ? : number, imagePilote ? : string){
+    constructor(id? : number,version ? :number,nom ?: string, prenom? : string, age? : number, nationalite? : string, civilite ? : string ,experience ? : number, etat ? : boolean, prix ? : number, imagePilote ? : string, position?: number){
 
     }
 }

@@ -93,6 +93,7 @@ public class TestJpa {
 		pilote1false.setExperience(60);
 		pilote1false.setEtat(false);
 		pilote1false.setPrix(60000);
+		pilote1false.setPosition(1);
 		
 		
 		pilote1false = piloteRepo.save(pilote1false);

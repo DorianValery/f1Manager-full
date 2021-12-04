@@ -29,7 +29,8 @@ public class Pilote {
 	 private String prenom;
 	 private int age;
 	 private String nationalite;
-	 @Enumerated(EnumType.STRING)
+	 private double position;
+	@Enumerated(EnumType.STRING)
 	 @Column(name = "civilite", length = 5)
 	 private Civilite civ;
 	 private double experience;
@@ -190,6 +191,14 @@ public class Pilote {
 	public void setImagePilote(String imagePilote) {
 		this.imagePilote = imagePilote;
 	}
+	
+	 public double getPosition() {
+			return position;
+		}
+
+		public void setPosition(double position) {
+			this.position = position;
+		}
 
 	@Override
 	public String toString() {

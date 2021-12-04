@@ -9,8 +9,8 @@ import { Pilote } from '../model';
 })
 export class PiloteInventaireHttpService {
 
- pilotes: Array<Pilote> = new Array<Pilote>();
- pilote: Pilote;
+  pilotes: Array<Pilote> = new Array<Pilote>();
+  pilote: Pilote;
   piloteUrl: string;
 
   constructor(private http: HttpClient, private appConfig: AppConfigService) {
@@ -20,18 +20,6 @@ export class PiloteInventaireHttpService {
 
   findPiloteById(id: number): Observable<Pilote>{
   return this.http.get<Pilote>(this.piloteUrl + id);
-  }
-
-  findPiloteId(): Pilote{
-    return this.pilote;
-  }
-
-  findExperience(id : number){
-    return this.http.get<Pilote>(this.piloteUrl + id);
-  }
-
-  findByIdExperience(experience: number): Pilote {
-    return this.pilotes.find(pilote => pilote.experience == experience);
   }
 
   findAll(): Array<Pilote> {

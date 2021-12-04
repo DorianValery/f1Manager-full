@@ -1,12 +1,15 @@
 <div class="card">
     
     <h2>Classement</h2>
+    <button (click)="getPosition()"> Position</button>
+    <div>{{position}}</div>
     <div>
         <ul *ngFor="let ecurie of list()">
             <ul *ngFor="let p of ecurie.pilotes">
                 <li>{{p.nom}}</li>
-                <li>{{positionPilote}} = {{p.experience + p.age}}</li>
-            </ul>
+                <li>{{p.position}} </li>
+                <li>{{p.position}} = {{p.experience + p.age}}</li>
+            </ul> 
         </ul>
     
         <ul *ngFor="let ecurie of list()">
@@ -16,11 +19,27 @@
             </ul>
         </ul>
 
+        <button (click)="findPilote(1)">
+            Pilote
+        </button>
+
+        <div id="titre">
+             {{positionPilote}} = {{piloteTest.experience}} 
+        </div>
+
+        <!-- <ul *ngFor="let ecurie of listPilote()">
+            <ul *ngFor="let p of pilote.positions">
+                <li>{{p.nom}}</li>
+                <li>{{p.position1}} </li>
+                <li>{{p.position1}} = {{p.experience + p.age}}</li>
+            </ul> 
+        </ul> -->
+
         {{positionFinale}} = {{positionPilote}} + {{positionVoiture}}
     </div>
 
     <div>
-        
+         
     </div>
 
     <div>

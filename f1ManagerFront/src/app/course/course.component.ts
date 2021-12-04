@@ -13,12 +13,14 @@ import { CourseService } from './course.service';
 export class CourseComponent implements OnInit {
 
   ecuries : Array<Ecurie>;
+  pilotes : Array<Pilote>;
   classement : Array<Position>;
   course: Course;
   positionFinale: number;
   positionPilote: number;
   positionVoiture: number;
-  pilote: Pilote;
+  piloteTest: Pilote;
+  position: number;
 
   constructor(private appConfig: AppConfigService,  private courseService : CourseService, private piloteService: PiloteInventaireHttpService) { }
 
@@ -26,9 +28,20 @@ export class CourseComponent implements OnInit {
     return this.courseService.findAllEcurie();
   }
 
-  findPilote(){
+  listPilote(): Array<Pilote>{
     return this.piloteService.findAll();
   }
+
+  findPilote(id : number) {
+    this.piloteService.findPiloteById(id).subscribe(resp =>{
+      this.piloteTest = resp;
+    },error=> console.log(error))
+  }
+
+  getPosition() {
+   // this.pilote = this.piloteService.findAll();
+    return this.courseService.findPilote();
+      }
 
   // genererClassement(): Array<Pilote> {
   //   return this.piloteService.findByIdExperience(1); 

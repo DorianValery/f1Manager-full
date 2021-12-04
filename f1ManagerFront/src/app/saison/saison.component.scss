@@ -7,6 +7,30 @@
   src : url(../../assets/Formula.ttf);
 }
 
+#contenuPilote{
+  border: solid red 5px;
+  border-radius: 10%;
+  font-family: Formula;
+  font-size: xx-large;
+  color: red;
+  background-color: black;
+  border-radius: 10%;
+}
+
+#contenuVoiture{
+  border: solid green 5px;
+  border-radius: 10%;
+  font-family: Formula;
+  font-size: xx-large;
+  color: green;
+  background-color: black;
+  border-radius: 10%;
+}
+
+#contenuPrincipal{
+  display: flex;
+}
+
 #titre{
   font-family:"Formula1-Regular";
   text-align: center;

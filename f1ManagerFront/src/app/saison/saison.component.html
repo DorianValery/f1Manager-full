@@ -1,26 +1,62 @@
 <button (click)="findCourse(1)">
     Course  
  </button>
- <button (click)="findPilote(3)">
+
+ 
+ <button (click)="findEcurie(1)">
+    Ecurie   
+ </button>
+ <!-- <button (click)="findPilote(3)">
     Pilote
 </button>
 <button (click)="findVoiture(1)">
     Voiture
-</button>
+</button> -->
 
 <div class="card-header  text-black">
     <h1 id="titre">Course {{saisonTest.id}}</h1>
         <div id="titreCourse">{{saisonTest.nom}} <br>{{saisonTest.nombreTour}} tours</div>
-<img id="image" src="{{saisonTest.image}}">
 </div>
-     
-    <div id="titre" *ngIf="piloteTest.etat==true">
-        {{piloteTest.prenom}} {{piloteTest.nom}} {{piloteTest.experience}} {{piloteTest.nationalite}}
-    </div>
 
-    <div id="titre" *ngIf="voitureTest.etat==true">
-        {{voitureTest.marque}} {{voitureTest.maniabilite}} {{voitureTest.vitesse}} {{voitureTest.poids}}
-    </div>
+
+<div id="contenuPrincipal">
+    <img id="image" src="{{saisonTest.image}}">
+   
+
+    <table id="contenuPilote">
+        <thead>
+            <tr>
+                <th>PILOTES</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of ecurie.pilotes">
+                <td>{{p.prenom}}</td>
+                <td>{{p.nom}}</td>
+                <td>{{p.nationalite}}</td>
+                <td>{{p.experience}}</td>
+                <td></td>
+        </tbody>
+    </table>
+
+    <table id="contenuVoiture" class="table">
+        <thead>
+            <tr>
+                <th>VOITURES</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of ecurie.voitures">
+                <td>{{p.marque}}</td>
+                <td>{{p.vitesse}}</td>
+                <td></td>
+        </tbody>
+    </table>
+ 
+</div>
+    
  
 
      

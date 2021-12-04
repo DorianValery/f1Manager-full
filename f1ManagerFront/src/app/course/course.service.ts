@@ -10,13 +10,22 @@ export class CourseService {
 
   ecurieUrl : string;
   ecuries : Array<Ecurie> = new Array<Ecurie>();
+  pilotes : Array<Pilote> = new Array<Pilote>();
   pilote: Pilote;
+  piloteUrl : string;
 
   constructor(private http: HttpClient, private appConfig: AppConfigService) {
     this.ecurieUrl = this.appConfig.backEndUrl + "ecurie/"
     this.loadEcurie();
     }
 
+    findPiloteExperience(experience: number){
+      return this.http.get<Pilote>(this.piloteUrl + experience);
+    }
+
+    findPilote(): Array<Pilote>{
+      return this.pilotes;
+      }
 
   findAllEcurie() : Array<Ecurie>{
     return this.ecuries;
