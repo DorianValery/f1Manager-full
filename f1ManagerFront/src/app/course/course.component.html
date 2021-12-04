@@ -5,18 +5,36 @@
         <ul *ngFor="let ecurie of list()">
             <ul *ngFor="let p of ecurie.pilotes">
                 <li>{{p.nom}}</li>
+                <li>{{positionPilote}} = {{p.experience + p.age}}</li>
             </ul>
         </ul>
+    
+        <ul *ngFor="let ecurie of list()">
+            <ul *ngFor="let v of ecurie.voitures">
+                <li>{{v.marque}}</li>
+                <li>{{positionVoiture}} = {{ (v.maniabilite + v.vitesse)- v.poids/10 }}</li>
+            </ul>
+        </ul>
+
+        {{positionFinale}} = {{positionPilote}} + {{positionVoiture}}
     </div>
 
-    <h2>Classement</h2>
     <div>
-        <button (click)="genererClassement(3)"> Classement</button> 
-            <!-- <ul *ngFor="let p of course.position">
-                <li>{{classement}}</li>
-            </ul> -->
+        
     </div>
-    <div>{{position1}}</div>
+
+    <div>
+       
+    </div>
+
+    <!-- <h2>Classement</h2>
+    <div>
+        <button (click)="findPilote(1)"> Classement</button> 
+             <ul *ngFor="let p of ecuries.pilote">
+                <li>{{p.experience}}</li>
+            </ul> 
+    </div>
+    <div>{{pilote.experience}}</div> -->
 
 
 

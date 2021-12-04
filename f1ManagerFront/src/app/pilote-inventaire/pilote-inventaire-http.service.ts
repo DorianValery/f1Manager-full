@@ -22,8 +22,16 @@ export class PiloteInventaireHttpService {
   return this.http.get<Pilote>(this.piloteUrl + id);
   }
 
-  findExperience(){
-    return this.http.get<Pilote>(this.piloteUrl + this.pilote.experience);
+  findPiloteId(): Pilote{
+    return this.pilote;
+  }
+
+  findExperience(id : number){
+    return this.http.get<Pilote>(this.piloteUrl + id);
+  }
+
+  findByIdExperience(experience: number): Pilote {
+    return this.pilotes.find(pilote => pilote.experience == experience);
   }
 
   findAll(): Array<Pilote> {

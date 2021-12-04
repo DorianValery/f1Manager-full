@@ -4,6 +4,7 @@ import { Course, Ecurie, Pilote, Position } from '../model';
 import { PiloteInventaireHttpService } from '../pilote-inventaire/pilote-inventaire-http.service';
 import { CourseService } from './course.service';
 
+
 @Component({
   selector: 'app-course',
   templateUrl: './course.component.html',
@@ -14,8 +15,9 @@ export class CourseComponent implements OnInit {
   ecuries : Array<Ecurie>;
   classement : Array<Position>;
   course: Course;
-  position: Position;
-  position1: number;
+  positionFinale: number;
+  positionPilote: number;
+  positionVoiture: number;
   pilote: Pilote;
 
   constructor(private appConfig: AppConfigService,  private courseService : CourseService, private piloteService: PiloteInventaireHttpService) { }
@@ -24,10 +26,14 @@ export class CourseComponent implements OnInit {
     return this.courseService.findAllEcurie();
   }
 
-  genererClassement(id: number) {
-    return this.piloteService.findExperience(); 
-    this.classement.push(this.position);
+  findPilote(){
+    return this.piloteService.findAll();
   }
+
+  // genererClassement(): Array<Pilote> {
+  //   return this.piloteService.findByIdExperience(1); 
+  //   this.classement.push(this.position);
+  // }
 
 
   ngOnInit(): void {
