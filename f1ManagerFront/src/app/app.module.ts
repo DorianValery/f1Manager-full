@@ -30,7 +30,7 @@ import { SeConnecterComponent } from './se-connecter/se-connecter.component';
     SaisonComponent,
     JoueurDirective,
     CourseComponent,
-    SeConnecterComponent
+    SeConnecterComponent,
     InfrastructureInventaireComponent
   ],
   imports: [
