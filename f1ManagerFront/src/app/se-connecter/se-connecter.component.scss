@@ -1,0 +1,50 @@
+#bck-img {
+    background-image: url(../../assets/fond_ciel_nuage.jpg);
+    height: 100%;
+}
+.btn, .btn-success, .float-end{
+background-color: black;
+border-color:white;
+color:white;
+}
+.col-12{
+    font-family: "Formula1-Regular";
+}
+#seconnecter{
+    font-family: "Formula1-Regular";
+    color: rgb(71, 68, 68);
+    font-weight: bolder;
+}
+#bienvenue{
+    font-family: "Formula1-Regular";
+    font-weight: bolder;
+}
+.voiture{
+    width: 50%;
+    height: auto;
+}
+.logo{
+    width: 5%;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+}
+.lien{
+    font-weight: bolder;
+    font-family: "Formula1-Regular";
+    text-decoration: underline;
+    color: rgb(9, 9, 65);
+}
+#discord{
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+#facebook{
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+#sinscricre{
+    text-decoration: underline;
+}

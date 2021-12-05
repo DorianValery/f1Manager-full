@@ -18,7 +18,10 @@
   <li class="nav-item">
     <a class="nav-link" [routerLink]="['/jeu']" routerLinkActive="active">Jeu</a>
 </li>
-      
+<form class="d-flex">
+  <button  class="btn btn-primary" [routerLink]="['/seconnecter']" *ngIf="!seconnecterService.compte">Se Connecter</button>
+  <button  class="btn btn-primary" (click)="sedeconnecter()" *ngIf="seconnecterService.compte">Se Déconnecter</button>
+</form> 
   </ul>
 </nav>
 

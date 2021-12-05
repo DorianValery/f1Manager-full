@@ -1,5 +1,7 @@
 package sopra.formation.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 public class Views {
 
 	public static class ViewCommon {
@@ -61,6 +63,9 @@ public class Views {
 	public static class ViewVoitureDetail extends ViewVoiture{
 	}
 	
+	public static class ViewCompteWithRoles extends ViewCompte{
+		
+	}
 
 
 }

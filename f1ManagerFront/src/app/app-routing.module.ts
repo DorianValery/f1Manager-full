@@ -5,9 +5,12 @@ import { InfrastructureInventaireComponent } from './infrastructure-inventaire/i
 import { MenuComponent } from './menu/menu.component';
 import { PiloteInventaireComponent } from './pilote-inventaire/pilote-inventaire.component';
 import { SaisonComponent } from './saison/saison.component';
+import { SeConnecterComponent } from './se-connecter/se-connecter.component';
 import { VoitureInventaireComponent } from './voiture-inventaire/voiture-inventaire.component';
 
 const routes: Routes = [
+  {path: "menu", component: MenuComponent},
+  {path: "seconnecter", component: SeConnecterComponent},
   {path: "pilote", component: PiloteInventaireComponent},
   {path: "ecurie", component : MenuComponent},
   {path: "voiture", component: VoitureInventaireComponent},

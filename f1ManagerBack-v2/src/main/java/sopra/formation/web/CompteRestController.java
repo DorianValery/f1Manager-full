@@ -23,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import sopra.formation.model.Compte;
 import sopra.formation.model.Views;
 import sopra.formation.repository.ICompteRepository;
+import sopra.formation.web.dto.SeConnecterForm;
 
 @RestController
 @RequestMapping("/compte")
@@ -57,6 +58,20 @@ public class CompteRestController {
 	//@JsonView(Views.ViewCompteDetail.class)
 	public Compte detail(@PathVariable Long id) {
 		Optional<Compte> optCompte = compteRepo.findById(id);
+
+		if (optCompte.isPresent()) {
+			return optCompte.get();
+		} else {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Compte non trouvé");
+		}
+	}
+	
+	//se connecter
+	@PostMapping("/seconnecter")
+	//@JsonView(Views.ViewCompteWithRoles.class)
+	@JsonView(Views.ViewCompte.class)
+	public Compte seconnecter(@RequestBody SeConnecterForm seconnecter) {
+		Optional<Compte> optCompte = compteRepo.findByLoginAndPassword(seconnecter.getLogin(), seconnecter.getPassword());
 
 		if (optCompte.isPresent()) {
 			return optCompte.get();

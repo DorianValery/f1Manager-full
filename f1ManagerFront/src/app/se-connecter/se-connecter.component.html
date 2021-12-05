@@ -1,0 +1,44 @@
+<div id="bck-img" class="card mt-4p">
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="login-form bg-light mt-4 p-4">
+            <form action="" method="" class="row g-3">
+                <h3 id="bienvenue">Bienvenue sur F1 Manager!</h3>
+                <h4 id="seconnecter">Se connecter</h4>
+                <div class="col-12">
+                    <label>Login</label>
+                    <input type="text" name="username" class="form-control" placeholder="Nom d'utilisateur" [(ngModel)]="seconnecterForm.login">
+                </div>
+                <div class="col-12">
+                    <label>Mot de passe</label>
+                    <input type="password" name="password" class="form-control" placeholder="Mot de passe" [(ngModel)]="seconnecterForm.password">
+                </div>
+                <div class="col-12">
+                    <button  [routerLink]="['/menu']" routerLinkActive="active" type="submit" class="btn btn-success float-end" (click)="login()">  Commencer à jouer!</button>
+                </div>
+                <div class="col-12">
+                    <span class="text-danger" *ngIf="errorLogin">{{errorLogin}}</span>
+                </div>
+            </form>
+            <hr class="mt-4">
+            <div class="col-12">
+                <p class="text-center mb-0">Nouvel utilisateur ? <a  id="sinscricre" [routerLink]="['/inscription']" routerLinkActive="active">M'inscrire!</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+<img class="voiture" src="../../assets/voiture_rouge.gif" alt="voiture">
+<img class="voiture" src="../../assets/voiture_bleue.gif" alt="voiture">
+</div>
+<br>
+<br>
+<div >
+<span id="discord"><img class="logo" src="../../assets/discorde.png" alt=""><a class="lien" href="https://discord.com/">Nous rejoindre sur discord</a></span>
+<span id="facebook"><img class="logo" src="../../assets/fb.png" alt=""><a class="lien" href="https://fr-fr.facebook.com/">Nous rejoindre sur facebook</a></span>
+</div>
+</div>
+
+<div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>

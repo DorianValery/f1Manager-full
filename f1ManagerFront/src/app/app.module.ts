@@ -17,6 +17,7 @@ import { JoueurDirective } from './joueur/joueur.directive';
 import { CourseComponent } from './course/course.component';
 import { PiloteInventaireHttpService } from './pilote-inventaire/pilote-inventaire-http.service';
 import { InfrastructureInventaireComponent } from './infrastructure-inventaire/infrastructure-inventaire.component';
+import { SeConnecterComponent } from './se-connecter/se-connecter.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { InfrastructureInventaireComponent } from './infrastructure-inventaire/i
     SaisonComponent,
     JoueurDirective,
     CourseComponent,
+    SeConnecterComponent
     InfrastructureInventaireComponent
   ],
   imports: [
