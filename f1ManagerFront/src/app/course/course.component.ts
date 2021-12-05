@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppConfigService } from '../app-config.service';
 import { Course, Ecurie, Pilote, Position } from '../model';
 import { PiloteInventaireHttpService } from '../pilote-inventaire/pilote-inventaire-http.service';
+import { SaisonService } from '../saison/saison.service';
 import { CourseService } from './course.service';
 
 
@@ -21,8 +22,11 @@ export class CourseComponent implements OnInit {
   positionVoiture: number;
   piloteTest: Pilote;
   position: number;
+  nbTour : number=0;
 
-  constructor(private appConfig: AppConfigService,  private courseService : CourseService, private piloteService: PiloteInventaireHttpService) { }
+  constructor(private appConfig: AppConfigService,  private courseService : CourseService, private piloteService: PiloteInventaireHttpService, private saisonService : SaisonService) { 
+    
+  }
 
   list(): Array<Ecurie> {
     return this.courseService.findAllEcurie();
@@ -48,6 +52,11 @@ export class CourseComponent implements OnInit {
   //   this.classement.push(this.position);
   // }
 
+  passerTour(){
+
+    this.saisonService.findCourseById
+    this.nbTour ++;
+  }
 
   ngOnInit(): void {
   }

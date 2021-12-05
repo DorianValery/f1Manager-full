@@ -11,6 +11,8 @@ import { MenuHttpService } from './menu-http.service';
 })
 export class MenuComponent implements OnInit {
 
+
+  
  piloteTest : Pilote;
  ecurie : Ecurie;
 
@@ -34,9 +36,7 @@ findEcurie(id : number) {
   },error=> console.log(error))
 }
 
-lancerSaison(){
 
-}
 
   ngOnInit(): void {
   }

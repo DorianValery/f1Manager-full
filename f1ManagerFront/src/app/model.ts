@@ -32,12 +32,13 @@ export class Ecurie{
 	nom : string;
 	argent : number;
 	experience : number;
+    courseEncours : number;
     pilotes : Pilote[];
     infrastructures : Infrastructure[];
     voitures : Voiture[];
 
 
-    constructor(id? : number,version ? :number,nom ?: string, argent? : number, experience ?: number )
+    constructor(id? : number,version ? :number,nom ?: string, argent? : number, experience ?: number,  courseEncours? : number )
    {} 
 }
 export class Pilote {
