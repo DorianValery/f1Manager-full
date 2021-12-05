@@ -3,38 +3,36 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppConfigService } from '../app-config.service';
 import { EcurieService } from '../ecurie/ecurie.service';
-import { Ecurie, Voiture } from '../model';
+import { Ecurie, Infrastructure } from '../model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class VoitureInventaireService {
+export class InfrastructureInventaireService {
 
-  voitureInventaireUrl: string;
-  voitures: Array<Voiture>;
+  infrastructures: Array<Infrastructure>;
+  infrastructureInventaireUrl: string;
   
 
   constructor(private http: HttpClient, private appConfig: AppConfigService, private ecurieService: EcurieService) {
-    this.voitureInventaireUrl = this.appConfig.backEndUrl + "voiture/";
+    this.infrastructureInventaireUrl = appConfig.backEndUrl + "infrastructure/";
     this.load();
-    }
-
-   findVoitureById(id: number): Observable<Voiture>{
-    return this.http.get<Voiture>(this.voitureInventaireUrl + id);
-    }
-
-   findAll(): Array<Voiture> {
-    return this.voitures;
   }
 
-  load() {
-    this.http.get<Array<Voiture>>(this.voitureInventaireUrl).subscribe(response => {
-      this.voitures = response;
-    }, error => console.log(error));
+
+  findAll(): Array<Infrastructure> {
+    return this.infrastructures;
   }
 
   loadEcurie(id: number): Observable<Ecurie>{
     return this.http.get<Ecurie>(this.ecurieService.ecurieUrl+id);
+  }
+
+  load() {
+    this.http.get<Array<Infrastructure>>(this.infrastructureInventaireUrl).subscribe(response => {
+      this.infrastructures = response;
+      console.log(response);
+    }, error => console.log(error));
   }
 
   saveEcurie(ecurie: Ecurie){
@@ -43,4 +41,6 @@ export class VoitureInventaireService {
       this.loadEcurie(ecurie.id);
     },error=>console.log(error));
   }
+
+
 }
