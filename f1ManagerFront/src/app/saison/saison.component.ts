@@ -16,6 +16,7 @@ import { MenuHttpService } from '../menu/menu-http.service';
 })
 export class SaisonComponent implements OnInit {
 
+
  saisonTest : Course;
  piloteTest: Pilote;
  voitureTest: Voiture;
@@ -29,11 +30,17 @@ export class SaisonComponent implements OnInit {
     return this.courseService.findAllEcurie();
   }
 
+
+
   findEcurie(id : number) {
     this.menuService.findEcurieById(id).subscribe(resp =>{
       this.ecurie = resp;
     },error=> console.log(error))
   }
+
+  // lancerCourse(){
+  //   this.menuService.courseEnCours = this.saisonTest.id;
+  // }
 
   //  findPilote(id : number) {
   //   this.piloteService.findPiloteById(id).subscribe(resp =>{

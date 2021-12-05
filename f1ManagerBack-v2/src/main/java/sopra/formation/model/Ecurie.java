@@ -27,6 +27,7 @@ public class Ecurie {
 	
 	private double argent;
 	private double experience;
+	private int courseEnCours;
 	@OneToMany(mappedBy = "ecurie")
 	//@JsonView(Views.ViewEcurieInfra.class)
 	//@JsonView(Views.ViewEcurieDetail.class)
@@ -47,12 +48,13 @@ public class Ecurie {
 	public Ecurie() {}
 	
 	public Ecurie(Long id, String nom, double argent, double experience, List<Infrastructure> infrastructures,
-			List<Voiture> voitures, List<Pilote> pilotes, List<Course> courses) {
+			List<Voiture> voitures, List<Pilote> pilotes, List<Course> courses, int courseEnCours) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.argent = argent;
 		this.experience = experience;
+		this.courseEnCours= courseEnCours;
 		this.infrastructures = infrastructures;
 		this.voitures = voitures;
 		this.pilotes = pilotes;
@@ -143,6 +145,14 @@ public class Ecurie {
 
 	public void setInfrastructures(List<Infrastructure> infrastructures) {
 		this.infrastructures = infrastructures;
+	}
+
+	public int getCourseEnCours() {
+		return courseEnCours;
+	}
+
+	public void setCourseEnCours(int courseEnCours) {
+		this.courseEnCours = courseEnCours;
 	}
 
 	@Override

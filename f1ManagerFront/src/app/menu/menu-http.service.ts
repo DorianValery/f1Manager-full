@@ -9,6 +9,8 @@ import { Ecurie, Pilote } from '../model';
 })
 export class MenuHttpService {
 
+  // ecurie :Ecurie;
+  // courseEnCours : number;
   piloteUrl : string;
   ecurieUrl : string;
   pilotes : Array<Pilote> = new Array<Pilote>();
@@ -58,6 +60,13 @@ loadPiloteEcurie(){
     this.ecuries = response;
   }, error => console.log(error));
 }
+
+// lancerSaison(id : number){
+//   this.findEcurieById(id).subscribe(resp =>{
+//     this.ecurie =resp
+//     this.courseEnCours= this.ecurie.courseEncours;
+//   },error=> console.log(error))
+// }
 
 ngOnInit(): void {
 }
