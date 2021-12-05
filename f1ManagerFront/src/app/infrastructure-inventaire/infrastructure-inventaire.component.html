@@ -1,0 +1,61 @@
+<div class="background-image">
+    <div class="card-header  text-black border-0">
+      <h1 id="titre">Mes infrastructures</h1>
+      <span id="argent">
+        <h2>Solde : </h2>
+        <h4>
+          <!--{{ecurie.argent}}-->
+        </h4>
+      </span>
+  
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false">
+        <div class="carousel-inner">
+          <!-- ngfor loop using get dynamic value and ngclass for add acive class -->
+          <div class="carousel-item" *ngFor="let inf of list(); let i = index" [ngClass]="{'active': i === 0}">
+            <!-- card -->
+            <div class="card border-0" style="width: 70%;">
+              <!-- <img class="card-img-top" [src]="inf.image" alt="Card image cap"> -->
+              <div class="card-body" class="text-center">
+                <h5 class="card-title">Infrastructure : {{inf.nom}}</h5>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item" *ngIf="inf.type=='P'">Type : Pilote</li>
+                  <li class="list-group-item" *ngIf="inf.type=='V'">Type : Voiture</li>
+                  <li class="list-group-item" *ngIf="inf.type=='M'">Type : Marketing</li>
+                  <li class="list-group-item">Nombre d'ingénieurs : {{inf.nbIngenieurs}}</li>
+                  <li class="list-group-item">Pitstop : {{inf.pitStop}}</li>
+                </ul>
+              </div>
+              <div class="btnSelect" *ngIf="!inf.etat">Acheter : {{inf.prix}} ฿</div>
+              <div class="btnSelect" *ngIf="inf.etat" (click)="select(inf)">Sélectionner</div>
+              <div class="card-footer" class="text-center">
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  
+    <div class="footer">
+      <div *ngIf="ecurie.infrastructures[0]" class="infrastructureSelect" >
+        <div class="card" style="width: 100%;"> 
+          <!-- <img [src]="ecurie.infrastructures[0].image" class="infrastructureSelect" class="card-img-top" alt="..."> -->
+           <div class="card-body">
+            <p class="card-text">{{ecurie.infrastructures[0].nom}}</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!ecurie.infrastructures[0]" class="infrastructureVide"  >Infrastructure</div>
+      <div class="btnValid" (click)="valider()">Valider</div>
+    </div>
+    <div class="remplissage"></div>
+  </div> 
