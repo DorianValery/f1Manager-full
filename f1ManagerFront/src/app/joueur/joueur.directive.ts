@@ -18,11 +18,11 @@ constructor(private appConfig: AppConfigService, private joueurService: JoueurSe
 
 ngOnInit(): void {
 }
-
+/*
 list(): Array<Joueur> {
   return this.joueurService.findAll();
 }
-/*
+
 listEcurie(): Array<Ecurie> {
   return this.ecurieService.findAll();
 }
