@@ -54,7 +54,9 @@ export class PiloteInventaireComponent implements OnInit {
     console.log(this.ecurieService.ecurie);
   }
 
-  acheter() {
+  //version 1
+
+  /*acheter() {
     //verifier que le solde du pilote est suffisant
     if(this.ecurieService.ecurie.argent>this.piloteService.pilote.prix){
       this.ecurieService.ecurie.argent=this.ecurieService.ecurie.argent-this.piloteService.pilote.prix
@@ -62,17 +64,34 @@ export class PiloteInventaireComponent implements OnInit {
       //save  
       if(this.pilote.id) {
           this.piloteService.pilote=this.pilote;
+          this.ecurieService.modify(this.ecurieService.ecurie);
         }
     this.cancel();
+  }*/
+
+  //version 2
+  acheter(id: number){
+
+    this.piloteService.findPiloteById(id).subscribe(response=>{
+    if(this.ecurieService.ecurie.argent>response.prix)
+  {
+    this.ecurieService.ecurie.argent= this.ecurieService.ecurie.argent-response.prix;
+    this.ecurieService.modify(this.ecurieService.ecurie);
+    this.argent=this.ecurieService.ecurie.argent;
+
   }
+  }, error => console.log(error))
 }
-  cancel() {
+
+cancel() {
     this.piloteForm = null;
   }
+}
+  
 
 
   // findJoueurEcurie(id:number){
   //   return this.joueurDirective.findEcurie(id);
   // }
 
-}
+
