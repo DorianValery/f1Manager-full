@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppConfigService } from '../app-config.service';
+import { EcurieService } from '../ecurie/ecurie.service';
 import { Ecurie, Pilote } from '../model';
 import { MenuHttpService } from './menu-http.service';
 
@@ -16,8 +17,8 @@ export class MenuComponent implements OnInit {
  piloteTest : Pilote;
  ecurie : Ecurie;
 
-  constructor(private appConfig: AppConfigService,  private menuService : MenuHttpService) {
-  
+  constructor(private appConfig: AppConfigService,  private menuService : MenuHttpService, private ecurieService : EcurieService) {
+    this.ecurie =this.ecurieService.ecurie;
    }
 
 findPilote(id : number) {

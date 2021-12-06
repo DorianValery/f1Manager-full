@@ -1,53 +1,44 @@
-<div class="card">
-    <div>Tour {{nbTour}} /12</div>
-    <h2>Classement</h2>
-    <button (click)="getPosition()"> Position</button>
-    <div>{{position}}</div>
-    <div>
-        <ul *ngFor="let ecurie of list()">
-            <ul *ngFor="let p of ecurie.pilotes">
-                <li>{{p.nom}}</li>
-                <!-- <li>{{p.position}} </li>
-                <li>{{p.position}} = {{p.experience + p.age}}</li> -->
-            </ul> 
-        </ul>
+
+<div id="tour">Tour {{nbTour}} /12</div>
+
+<div id="contenuPrincipal">
+
+    <div id="actions">
+        <button (click)="findEcurie(1)">REPARATION </button>nom ecurie : {{ecurie?.nom}}
+
+        <button (click)= "findCourse(1)">COURSE</button>
+        </div>
+<div id="tour">Tour {{nbTour}} /{{course?.nombreTour}}</div>
+
+<div id="contenuPrincipal">
+
+    <div id="actions">
+        <button>REPARATION</button>
+        <a><button (click)="passerTour()">PASSER TOUR</button></a>
+    </div>
+
     
-        <ul *ngFor="let ecurie of list()">
-            <ul *ngFor="let v of ecurie.voitures">
-                <li>{{v.marque}}</li>
-                <li>{{positionVoiture}} = {{ (v.maniabilite + v.vitesse)- v.poids/10 }}</li>
-            </ul>
-        </ul>
+   
+                
+            <table id="classement">
+                <thead>
+                    <tr>
+                        <th>CLASSEMENT</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let valeur of scoreGeneral">
+                        <td>{{valeur}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+    
 
         <button (click)="findPilote(1)">
             Pilote
         </button>
 
-        <!-- <div id="titre">
-             {{positionPilote}} = {{piloteTest.experience}} 
-        </div> -->
 
-        <!-- <ul *ngFor="let ecurie of listPilote()">
-            <ul *ngFor="let p of pilote.positions">
-                <li>{{p.nom}}</li>
-                <li>{{p.position1}} </li>
-                <li>{{p.position1}} = {{p.experience + p.age}}</li>
-            </ul> 
-        </ul> -->
-
-        {{positionFinale}} = {{positionPilote}} + {{positionVoiture}}
-    </div>
-    <!-- <h2>Classement</h2>
-    <div>
-        <button (click)="findPilote(1)"> Classement</button> 
-             <ul *ngFor="let p of ecuries.pilote">
-                <li>{{p.experience}}</li>
-            </ul> 
-    </div>
-    <div>{{pilote.experience}}</div> -->
-
-
-
-</div>
-
-<a><button (click)="passerTour()">PASSER TOUR</button></a>

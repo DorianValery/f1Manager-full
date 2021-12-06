@@ -208,3 +208,39 @@ export class SeConnecterForm {
         this.password = password;
     }
 }
+
+export class Tour {
+
+    position: number;
+
+    constructor() {
+
+    }
+}
+
+export class Order {
+    voiture: Voiture;
+    pilote: Pilote;
+    infra: Infrastructure;
+    score: number;
+
+    constructor(voiture?: Voiture, pilote?: Pilote, infra?: Infrastructure, score?: number) {
+        this.voiture = voiture;
+        this.pilote = pilote;
+        this.infra = infra;
+        this.score = score;
+
+    }
+}
+
+// export class Order extends Ecurie {
+    
+//     score: number;
+
+//     constructor(id?: number, version?: number, nom?: string, argent?: number, experience?: number, courseEncours?: number,score?: number) {
+//         super(id, version, nom, argent, experience, courseEncours);
+        
+//         this.score = score;
+
+//     }
+// }
