@@ -19,6 +19,7 @@ import { PiloteInventaireHttpService } from './pilote-inventaire/pilote-inventai
 import { InfrastructureInventaireComponent } from './infrastructure-inventaire/infrastructure-inventaire.component';
 import { SeConnecterComponent } from './se-connecter/se-connecter.component';
 import { InscriptionJoueurComponent } from './inscription-joueur/inscription-joueur.component';
+import { InventaireComponent } from './inventaire/inventaire.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { InscriptionJoueurComponent } from './inscription-joueur/inscription-jou
     SeConnecterComponent,
     InfrastructureInventaireComponent,
     InscriptionJoueurComponent,
+    InventaireComponent,
   ],
   imports: [
     BrowserModule,

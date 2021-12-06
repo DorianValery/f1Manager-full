@@ -16,7 +16,7 @@ export class VoitureInventaireComponent implements OnInit {
   argent: number=this.ecurieService.ecurie.argent;
 
   constructor(private appConfig: AppConfigService, private voitureInventaireService: VoitureInventaireService, private ecurieService: EcurieService ) {
-
+  this.voitures=this.ecurieService.ecurie.voitures;
   }
 
   ngOnInit(): void {
