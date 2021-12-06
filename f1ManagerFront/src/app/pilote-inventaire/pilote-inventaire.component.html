@@ -52,15 +52,14 @@
           <div id="bck-img" class="card mt-4p">
             
             <div class="card-header  text-black">
-                <h1 id="titre">Mes pilotes
-                    <span id="argent"><h2>Solde : 
-                        
-                       <!-- <h4 *ngIf="fonction.joueur *ngFor="let ecurie of findJoueurEcurie({{ecurie.id}})">{{joueur.ecurie.argent}}</h4> -->
-                      
+                <h1 id="titre">Mes pilotes</h1>
+                <span id="argent"><h2>Solde : 
+                  {{ecurie.argent}}
+                   <!-- <h4 *ngIf="fonction.joueur *ngFor="let ecurie of findJoueurEcurie({{ecurie.id}})">{{joueur.ecurie.argent}}</h4> -->
+                  
 
-
-                    </h2> <img id="pieces" src="../../assets/pieces.png" alt=""></span>
-                </h1>
+<img id="pieces" src="../../assets/pieces.png" alt="">
+                </h2> </span>
                 
           <!-- Carrousel -->
           
@@ -85,8 +84,8 @@
                       <li class="list-group-item"><span class="infos">Civilite : </span> {{pilote.civ}}</li>
                       <li class="list-group-item"><span class="infos">Experience : </span> {{pilote.experience}}</li>
                       <li class="list-group-item" *ngIf="!pilote.etat" ><span class="infos">Prix : </span>{{pilote.prix}}</li>
-                      <button *ngIf="pilote.etat">Selectionner</button>
-                      <button *ngIf="!pilote.etat" (click)=acheter()>Acheter</button> <!--ngIf inventaire.etat? si modif inventaire?-->
+                      <button *ngIf="pilote.etat" (click)="select(pilote)" >Selectionner</button>
+                      <button *ngIf="!pilote.etat" (click)=acheter(pilote.id) >Acheter</button> <!--ngIf inventaire.etat? si modif inventaire?-->
 
                     </ul>
               </div>
@@ -103,6 +102,33 @@
           </div>
         </div>
     
+<!-- Choisir pilotes-->
+
+   <div class="footer">
+    <div *ngIf="pilotes[0]" class="piloteSelect" [ngClass]="{'piloteSelect1' : choixPilote==0}"
+      (click)="choixV(0)">
+      <div class="card" style="width: 100%;">
+        <img [src]="pilotes[0].imagePilote" class="piloteSelect" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">{{pilotes[0].prenom}}<span> </span>{{pilotes[0].nom}}</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!pilotes[0]" class="piloteVide" (click)="choixV(0)" [ngStyle]="{'font-weight': choixPilote == 0 ? 'bolder' : ''}">Pilote 1</div>
+
+    <div *ngIf="pilotes[1]" class="piloteSelect" [ngClass]="{'piloteSelect1' : choixPilote==1}"
+      (click)="choixV(1)">
+      <div class="card" style="width: 100%;">
+        <img [src]="pilotes[1].imagePilote" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">{{pilotes[1].prenom}}<span> </span>{{pilotes[1].nom}}</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!pilotes[1]" class="piloteVide" (click)="choixV(1)" [ngStyle]="{'font-weight': choixPilote == 1 ? 'bolder' : ''}">Pilote 2</div>
+    <div class="btnValid" (click)="valider()">Valider</div>
+  </div>
+
 </div>
 
           
