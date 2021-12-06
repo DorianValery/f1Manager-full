@@ -1,0 +1,21 @@
+#bck-img {
+    background-image: url(../../assets/fond_ciel_nuage.jpg);
+    height: 100%;
+}
+.card .mt-4p{
+    display: flex;
+    align-items: center;
+}
+.card, .text-white, .bg-dark, .mb-3{
+    font-family: "Formula1-Regular";
+}
+.card-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
