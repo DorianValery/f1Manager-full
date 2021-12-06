@@ -14,7 +14,7 @@
                     <input type="password" name="password" class="form-control" placeholder="Mot de passe" [(ngModel)]="seconnecterForm.password">
                 </div>
                 <div class="col-12">
-                    <button  [routerLink]="['/menu']" routerLinkActive="active" type="submit" class="btn btn-success float-end" (click)="login()">  Commencer à jouer!</button>
+                    <button  type="submit" class="btn btn-success float-end" (click)="login()">  Commencer à jouer!</button>
                 </div>
                 <div class="col-12">
                     <span class="text-danger" *ngIf="errorLogin">{{errorLogin}}</span>

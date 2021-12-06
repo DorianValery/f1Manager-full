@@ -10,6 +10,7 @@ import { Ecurie} from '../model';
 export class EcurieService {
   
   ecuries: Array<Ecurie> = new Array<Ecurie>();
+  ecurie:Ecurie;
   ecurieUrl: string;
 
   constructor(private http: HttpClient, private appConfig: AppConfigService) {
@@ -34,6 +35,12 @@ export class EcurieService {
     this.http.get<Array<Ecurie>>(this.ecurieUrl).subscribe(response => {
       this.ecuries = response;
     }, error => console.log(error));
+  }
+
+  loadEcurie(id:number){
+    this.http.get<Ecurie>(this.ecurieUrl + id).subscribe(response=>{
+      this.ecurie=response;
+    },error => console.log(error))
   }
 
 }

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵclearResolutionOfComponentResourcesQueue } from '@angular/core';
 import { AppConfigService } from '../app-config.service';
-import { Ecurie, Voiture } from '../model';
+import { EcurieService } from '../ecurie/ecurie.service';
+import { Ecurie, Inventaire, Voiture } from '../model';
 import { VoitureInventaireService } from './voiture-inventaire.service';
 
 @Component({
@@ -12,8 +13,10 @@ export class VoitureInventaireComponent implements OnInit {
 
   ecurie: Ecurie;
   choixVoiture: number = 1;
+  voitures: Array<Voiture>=new Array<Voiture>();
 
-  constructor(private appConfig: AppConfigService, private voitureInventaireService: VoitureInventaireService) {
+
+  constructor(private appConfig: AppConfigService, private voitureInventaireService: VoitureInventaireService, private ecurieService: EcurieService ) {
     this.listVoituresEcurie(1);
   }
 
@@ -22,6 +25,7 @@ export class VoitureInventaireComponent implements OnInit {
 
   list(): Array<Voiture> {
     return this.voitureInventaireService.findAll();
+    
   }
 
   listVoituresEcurie(id: number) {
@@ -31,7 +35,7 @@ export class VoitureInventaireComponent implements OnInit {
   }
 
   select(voiture: Voiture) {
-    this.ecurie.voitures[this.choixVoiture] = voiture;
+    this.voitures.splice(this.choixVoiture, 1, voiture );
       }
 
   choixV(id: number) {
@@ -40,6 +44,12 @@ export class VoitureInventaireComponent implements OnInit {
 
   valider()
   {
-    this.voitureInventaireService.saveEcurie(this.ecurie);
+    this.ecurieService.ecurie.voitures=this.voitures;
+    console.log(this.voitures);
+    console.log(this.ecurieService.ecurie);
+    
   }
+
+
+  
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute,Router } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
+import { EcurieService } from '../ecurie/ecurie.service';
+import { JoueurService } from '../joueur/joueur.service';
 import { SeConnecterForm } from '../model';
 import { SeConnecterHttpService } from './se-connecter-http.service';
 
@@ -12,7 +16,7 @@ export class SeConnecterComponent implements OnInit {
   seconnecterForm: SeConnecterForm = new SeConnecterForm();
   errorLogin: String;
 
-  constructor(private seconnecterService: SeConnecterHttpService) { }
+  constructor(private seconnecterService: SeConnecterHttpService, private joueurService: JoueurService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +24,8 @@ export class SeConnecterComponent implements OnInit {
   login() {
     this.seconnecterService.seconnecter(this.seconnecterForm).subscribe(resp => {
       this.seconnecterService.compte = resp;
+      this.joueurService.loadJoueur(resp.id);
+      this.router.navigate(['/menu']);
       this.errorLogin = null;
     }, error => {
       console.log(error);
