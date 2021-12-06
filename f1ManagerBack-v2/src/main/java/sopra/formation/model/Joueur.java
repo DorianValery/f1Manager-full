@@ -34,7 +34,7 @@ public class Joueur {
 	private Inventaire inventaire;
 	@OneToOne
 	@JoinColumn(name="ecurie_id")
-	@JsonView(Views.ViewJoueurDetail.class)
+	@JsonView(Views.ViewJoueur.class)
 	private Ecurie ecurie;
 	@OneToOne (mappedBy = "joueur")
 	@JsonView(Views.ViewJoueurDetail.class)

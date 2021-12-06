@@ -24,7 +24,7 @@ export class SeConnecterComponent implements OnInit {
   login() {
     this.seconnecterService.seconnecter(this.seconnecterForm).subscribe(resp => {
       this.seconnecterService.compte = resp;
-      this.joueurService.loadJoueur(resp.id);
+      this.joueurService.loadJoueur(resp.joueur.id);
       this.router.navigate(['/menu']);
       this.errorLogin = null;
     }, error => {

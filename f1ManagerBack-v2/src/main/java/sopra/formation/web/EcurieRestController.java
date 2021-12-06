@@ -1,5 +1,6 @@
 package sopra.formation.web;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -23,6 +24,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
+import sopra.formation.model.Course;
 import sopra.formation.model.Ecurie;
 import sopra.formation.model.Pilote;
 import sopra.formation.model.Views;
@@ -115,7 +117,7 @@ public class EcurieRestController {
 			}
 		}*/
 		
-		@PatchMapping("/{id}")
+		/*@PatchMapping("/{id}")
 		@JsonView(Views.ViewEcurie.class)
 		public Ecurie partialUpdate(@PathVariable Long id, @RequestBody Map<String, Object> updates) {
 			if (!ecurieRepo.existsById(id)) {
@@ -124,6 +126,36 @@ public class EcurieRestController {
 
 			Ecurie ecurieFind = ecurieRepo.findById(id).get();
 
+
+			ecurieFind = ecurieRepo.save(ecurieFind);
+
+			return ecurieFind;
+		}*/
+		
+		
+		@PatchMapping("/{id}")
+		@JsonView(Views.ViewEcurie.class)
+		public Ecurie partialUpdate(@PathVariable Long id, @RequestBody Map<String, Object> updates) {
+			if (!ecurieRepo.existsById(id)) {
+				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Ecurie non trouvée");
+			}
+			
+			Ecurie ecurieFind = ecurieRepo.findById(id).get();
+
+			if (updates.containsKey("nom")) {
+				ecurieFind.setNom((String) updates.get("nom"));
+			}
+			
+			if (updates.containsKey("argent")) {
+				ecurieFind.setArgent((Integer) updates.get("argent"));
+			}
+			
+			if (updates.containsKey("experience")) {
+				ecurieFind.setExperience((Integer) updates.get("experience"));
+			}
+			if (updates.containsKey("courseEnCours")) {
+				ecurieFind.setCourseEnCours((int) updates.get("courseEnCours"));
+			}
 
 			ecurieFind = ecurieRepo.save(ecurieFind);
 
