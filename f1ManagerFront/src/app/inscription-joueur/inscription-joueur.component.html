@@ -1,0 +1,60 @@
+<div id="bck-img" class="card mt-4p">
+
+    <div class="p-2 bd-highlight">
+      <div class="card text-white bg-dark mb-3 " style="max-width: 74rem;">
+        <div class="card-header">Bienvenue sur F1 Manager!</div>
+        <div class="card-body">
+          <h5 class="card-title">F1 Manager, c'est quoi?</h5><br>
+          <p class="card-text"> F1 manager est un jeu de simulation de course de Formule 1. Ton objectif, si tu décides de rejoindre l'aventure, sera d'obtenir le meilleur classement à la fin de chaque saison de Formule 1. Pour cela, tu devras affronter une IA, et faire les meilleurs choix pour gagner. </p>
+          <p> Tu pourras personnaliser ta propre écurie de Formule 1 grâce à ton inventaire personnel. En effet, par le biais de cet inventaire, il te sera possible de débloquer au fur et à mesure des voitures et des pilotes de plus en plus performants.</p>
+          <p>Plus tu obtiendras un classement élevé lors des courses, plus ta cagnotte personnelle augmentera. Tu pourras alors t'offrir les meilleurs pilotes.</p>
+        </div>
+      </div>
+      <div class="card text-white bg-dark mb-3 " style="max-width: 74rem;">
+        <div class="card-body">
+          <h5 class="card-title">Convaincu ? Rejoins l'aventure F1 Manager en complétant le formulaire ci-dessous!</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-2 bd-highlight">
+      <form class="row g-3">
+        <div class="col-md-5">
+            <label for="inputAddress2" class="form-label">Pseudo</label>
+            <input type="text" class="form-control" id="inputPseudo" placeholder="Choisi ton nom d'utilisateur">
+        </div>
+        <div class="col-md-5">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control" id="inputPassword4" placeholder="Mot de passe">
+        </div>
+        <div class="col-10">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Entre ton email">
+        </div>
+        
+        <div class="col-md-4">
+          <label for="inputCity" class="form-label">Age</label>
+          <input type="nuber" class="form-control" id="inputAge" placeholder="Age">
+        </div>
+
+        <div class="col-md-2">
+            <label for="civilite">Civilite:</label>
+            <select class="form-control" id="civilite" [(ngModel)]="joueurForm.civilite">
+                <option value="">Choisir une civilité</option>
+                <option *ngFor="let civilite of civilites" [value]="civilite">{{civilite}}</option>
+            </select>
+        </div>
+        
+        <div class="col-12">
+          <button (click)="save()" type="submit" class="btn btn-danger" [routerLink]="['/seconnecter']" routerLinkActive="active">Débuter l'aventure</button>
+         
+          <button (click)="cancel()" type="button" class="btn btn-dark float-end" [routerLink]="['/seconnecter']" routerLinkActive="active">Annuler</button>
+        </div>
+
+        
+      </form>
+    </div>
+</div>
+<div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
