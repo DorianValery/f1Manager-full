@@ -11,28 +11,24 @@ import { VoitureInventaireService } from './voiture-inventaire.service';
 })
 export class VoitureInventaireComponent implements OnInit {
 
-  ecurie: Ecurie;
   choixVoiture: number = 1;
   voitures: Array<Voiture>=new Array<Voiture>();
-
+  argent: number=this.ecurieService.ecurie.argent;
 
   constructor(private appConfig: AppConfigService, private voitureInventaireService: VoitureInventaireService, private ecurieService: EcurieService ) {
-    this.listVoituresEcurie(1);
+
   }
 
   ngOnInit(): void {
+
   }
 
   list(): Array<Voiture> {
+
     return this.voitureInventaireService.findAll();
-    
+   
   }
 
-  listVoituresEcurie(id: number) {
-    this.voitureInventaireService.loadEcurie(id).subscribe(response => {
-      this.ecurie = response;
-      }, error => console.log(error));
-  }
 
   select(voiture: Voiture) {
     this.voitures.splice(this.choixVoiture, 1, voiture );
@@ -44,12 +40,20 @@ export class VoitureInventaireComponent implements OnInit {
 
   valider()
   {
-    this.ecurieService.ecurie.voitures=this.voitures;
-    console.log(this.voitures);
-    console.log(this.ecurieService.ecurie);
-    
+    this.ecurieService.ecurie.voitures=this.voitures;   
   }
 
+  acheter(id: number){
 
+      this.voitureInventaireService.findVoitureById(id).subscribe(response=>{
+      if(this.ecurieService.ecurie.argent>response.prix)
+    {
+      this.ecurieService.ecurie.argent= this.ecurieService.ecurie.argent-response.prix;
+      this.ecurieService.modify(this.ecurieService.ecurie);
+      this.argent=this.ecurieService.ecurie.argent;
+
+    }
+    }, error => console.log(error))
+  }
   
 }

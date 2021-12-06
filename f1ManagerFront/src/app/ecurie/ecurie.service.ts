@@ -29,7 +29,12 @@ export class EcurieService {
  findByArgent(argent: number): Observable<Ecurie> {
     return this.http.get<Ecurie>(this.ecurieUrl + argent);
   }
-  
+
+  modify(ecurie: Ecurie){
+         this.http.put<Ecurie>(this.ecurieUrl+this.ecurie.id, ecurie).subscribe(response=>{
+       this.loadEcurie(this.ecurie.id);
+     }, error => console.log(error));
+    }
 
   load() {
     this.http.get<Array<Ecurie>>(this.ecurieUrl).subscribe(response => {
@@ -38,7 +43,7 @@ export class EcurieService {
   }
 
   loadEcurie(id:number){
-    this.http.get<Ecurie>(this.ecurieUrl + id).subscribe(response=>{
+      this.http.get<Ecurie>(this.ecurieUrl + id).subscribe(response=>{
       this.ecurie=response;
     },error => console.log(error))
   }
