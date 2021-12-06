@@ -2,7 +2,7 @@
   <div class="card-header  text-black border-0">
     <h1 id="titre">Mes voitures</h1>
     <span id="argent">
-      <h2>Solde : {{ecurie.argent}}</h2>
+      <h2>Solde : {{argent}}</h2>
     </span>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false">
@@ -20,7 +20,7 @@
                 <li class="list-group-item">Poids : {{voit.poids}}</li>
               </ul>
             </div>
-            <div class="btnSelect" *ngIf="!voit.etat">Acheter : {{voit.prix}} ฿</div>
+            <div class="btnSelect" *ngIf="!voit.etat" (click)="acheter(voit.id)">Acheter : {{voit.prix}} ฿</div>
             <div class="btnSelect" *ngIf="voit.etat" (click)="select(voit)">Sélectionner</div>
             <div class="card-footer" class="text-center">
               <!--<div><button  *ngIf="voit.etat" >Sélectionner</button>
