@@ -1,0 +1,94 @@
+@font-face {
+    font-family:"Formula1-Regular";
+    src : url(../../assets/Formula1-Regular.ttf);
+  }
+  @font-face {
+    font-family:"Formula";
+    src : url(../../assets/Formula.ttf);
+  }
+  
+  #contenuPilote{
+    border: solid red 5px;
+    border-radius: 10%;
+    font-family: Formula;
+    font-size: xx-large;
+    color: red;
+    background-color: black;
+    border-radius: 10%;
+  }
+  
+  #contenuVoiture{
+    border: solid green 5px;
+    border-radius: 10%;
+    font-family: Formula;
+    font-size: xx-large;
+    color: green;
+    background-color: black;
+    border-radius: 10%;
+  }
+  
+  #contenuPrincipal{
+    display: flex;
+  }
+  
+  #titre{
+    font-family:"Formula1-Regular";
+    font-size: xx-large;
+    text-align: center;
+  }
+
+  #tour{
+    font-family:"Formula1-Regular";
+    font-size: xx-large;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration-style: italic;
+    color: red;
+    background-color: black;
+    margin: 0;
+  }
+
+  #actions{
+     // background-image: url(../../assets/infrastructure2.jpg);
+      border : solid blue 10px;
+      border-radius : 3%;
+      color :blue;
+      width : 33%;
+      height : 100%;
+  }
+
+  #voiture{
+   // background-image: url(../../assets/Fond-accueil.jpg);
+    border : solid rgb(236, 5, 5) 10px;
+    border-radius : 3%;
+    color: rgb(236, 5, 5);
+    width : 34%;
+    height : 100%;
+}
+  
+  #classement{
+    font-family:"Formula";
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    color: red;
+    background-color: black;
+    border : solid rgb(52, 153, 5) 10px;
+    border-radius : 10%;
+    width : 33%;
+    height : 100%;
+  }
+
+  #bouton{
+    font-family:"Formula";
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    color: red;
+    background-color: black;
+  }
+  
+  #image{
+    border: solid blue 4px;
+    border-radius: 10%;
+  }

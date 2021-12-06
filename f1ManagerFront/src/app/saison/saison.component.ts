@@ -57,6 +57,7 @@ export class SaisonComponent implements OnInit {
 findCourse(id : number) {
   this.saisonService.findCourseById(id).subscribe(resp =>{
     this.saisonTest = resp;
+    //sessionStorage.setItem("course",this.saisonTest)
   },error=> console.log(error))
 }
 
