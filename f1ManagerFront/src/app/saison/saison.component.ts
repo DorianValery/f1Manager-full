@@ -20,9 +20,9 @@ export class SaisonComponent implements OnInit {
  saisonTest : Course;
  piloteTest: Pilote;
  voitureTest: Voiture;
- ecurie : Ecurie;
+ ecurie : Ecurie = this.ecurieService.ecurie;
 
-  constructor(private appConfig: AppConfigService,  private saisonService :SaisonService, private courseService: CourseService, private menuService : MenuHttpService) {
+  constructor(private appConfig: AppConfigService,  private saisonService :SaisonService, private courseService: CourseService, private ecurieService : EcurieService) {
   
    }
 
@@ -30,10 +30,9 @@ export class SaisonComponent implements OnInit {
     return this.courseService.findAllEcurie();
   }
 
-
-
+  
   findEcurie(id : number) {
-    this.menuService.findEcurieById(id).subscribe(resp =>{
+    this.ecurieService.findById(id).subscribe(resp =>{
       this.ecurie = resp;
     },error=> console.log(error))
   }
