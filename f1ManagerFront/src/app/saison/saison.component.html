@@ -40,12 +40,14 @@
             </tbody>
         </table>
 
-        <a href="jeu/"> <button id="bouton"> LANCER LA COURSE ! </button> </a>
+        <a [routerLink]="['jeu/']" routerLinkActive="active"> <button id="bouton"> LANCER LA COURSE ! </button> </a><!--href="jeu/"-->
         
     </div>
  
 </div> 
-
+<div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
 
 
 
