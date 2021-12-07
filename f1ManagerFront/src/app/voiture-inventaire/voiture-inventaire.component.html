@@ -8,7 +8,7 @@
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false">
       <div class="carousel-inner">
         <!-- ngfor loop using get dynamic value and ngclass for add acive class -->
-        <div class="carousel-item" *ngFor="let voit of list(); let i = index" [ngClass]="{'active': i === 0}">
+        <div class="carousel-item"  *ngFor="let voit of list(); let i = index" [ngClass]="{'active': (i === 0 && active==0) || voit.id==active}">
           <!-- card -->
           <div class="card border-0" style="width: 70%;">
             <img class="card-img-top" [src]="voit.image" alt="Card image cap">
@@ -20,8 +20,8 @@
                 <li class="list-group-item">Poids : {{voit.poids}}</li>
               </ul>
             </div>
-            <div class="btnSelect" *ngIf="!voit.etat" (click)="acheter(voit.id)">Acheter : {{voit.prix}} ฿</div>
-            <div class="btnSelect" *ngIf="voit.etat" (click)="select(voit)">Sélectionner</div>
+            <button class="btnSelect" *ngIf="!voit.etat" (click)="acheter(voit.id)">Acheter : {{voit.prix}} ฿</button>
+            <button class="btnSelect" *ngIf="voit.etat" (click)="select(voit)">Sélectionner</button>
             <div class="card-footer" class="text-center">
               <!--<div><button  *ngIf="voit.etat" >Sélectionner</button>
                   <button *ngIf="!voit.etat" class="btn btn-primary">Acheter : {{voit.prix}} ฿</button>
@@ -53,7 +53,7 @@
         </div>
       </div>
     </div>
-    <div *ngIf="!voitures[0]" class="voitureVide" (click)="choixV(0)" [ngStyle]="{'font-weight': choixVoiture == 0 ? 'bolder' : ''}">Voiture 1</div>
+    <button *ngIf="!voitures[0]" class="voitureVide" (click)="choixV(0)" [ngStyle]="{'font-weight': choixVoiture == 0 ? 'bolder' : ''}">Voiture 1</button>
 
     <div *ngIf="voitures[1]" class="voitureSelect" [ngClass]="{'voitureSelect1' : choixVoiture==1}"
       (click)="choixV(1)">
@@ -64,8 +64,8 @@
         </div>
       </div>
     </div>
-    <div *ngIf="!voitures[1]" class="voitureVide" (click)="choixV(1)" [ngStyle]="{'font-weight': choixVoiture == 1 ? 'bolder' : ''}">Voiture 2</div>
-    <div class="btnValid" (click)="valider()">Valider</div>
+    <button *ngIf="!voitures[1]" class="voitureVide" (click)="choixV(1)" [ngStyle]="{'font-weight': choixVoiture == 1 ? 'bolder' : ''}">Voiture 2</button>
+    <button class="btnValid" (click)="valider()" [routerLink]="['/ecurie']" routerLinkActive="active">Valider</button>
   </div>
   <div class="remplissage"></div>
 </div>
