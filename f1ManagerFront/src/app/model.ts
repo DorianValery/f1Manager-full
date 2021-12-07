@@ -1,3 +1,5 @@
+import { CourseService } from "./course/course.service";
+
 export class Compte {
 
     id: number;
@@ -176,12 +178,19 @@ export class Position {
 
     id: number;
     version: number;
-    position1: number;
+    course : Course;
+    position : number;
+    ecurie : Ecurie;
 
-    constructor(id?: number, version?: number, position1?: number) {
+    
+
+    constructor(id?: number, version?: number,course ?: Course, position? : number,ecurie? : Ecurie ) {
         this.id = id;
         this.version = version;
-        this.position1 = position1;
+        this.ecurie=ecurie;
+        this.course=course;
+        this.position=position;
+        
     }
 }
 export class Inventaire {

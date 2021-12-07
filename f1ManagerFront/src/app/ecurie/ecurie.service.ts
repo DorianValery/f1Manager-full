@@ -37,7 +37,7 @@ export class EcurieService {
 
   modify(ecurie: Ecurie){
          this.http.put<Ecurie>(this.ecurieUrl+this.ecurie.id, ecurie).subscribe(response=>{
-       this.loadEcurie(this.ecurie.id);
+      //  this.loadEcurie(this.ecurie.id);
      }, error => console.log(error));
     }
 

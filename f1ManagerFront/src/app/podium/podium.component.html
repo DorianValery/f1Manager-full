@@ -11,8 +11,8 @@
         <tbody>
             <tr *ngFor ="let v of score();let i = index">
                              
-                <td>{{i+1}} - {{v.ecurie}}</td>
-                <td *ngIf="i < 3">{{i+1}} - {{v.ecurie}}</td>
+                <td>{{i+1}} - {{v.ecurie.nom}}</td>
+                <td *ngIf="i < 3">{{i+1}} - {{v.ecurie.nom}}</td>
                 <td></td>
             </tr>
             
@@ -28,10 +28,12 @@
         </thead>
         <tbody>
             <tr *ngFor ="let v of score();let i = index">
-                <td *ngIf="v.ecurie == ecurie.nom; else elseBlock">{{i+1}}<ng-template #elseBlock></ng-template></td>
+                <td *ngIf="v.ecurie == ecurie.nom; else elseBlock">{{i+1}} <ng-template #elseBlock></ng-template></td>
             </tr>
         </tbody>
     </table>
+
+    <div><button (click)="courseSuivante()">REVENIR A LA SAISON</button></div>
 
 
 

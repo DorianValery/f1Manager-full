@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AppConfigService } from '../app-config.service';
-import { Ecurie, Pilote } from '../model';
+import { Ecurie, Pilote, Position } from '../model';
 
 
 @Injectable({
@@ -10,23 +10,29 @@ import { Ecurie, Pilote } from '../model';
 export class CourseService {
 
   ecurieUrl : string;
+  positionUrl : string;
   ecuries : Array<Ecurie> = new Array<Ecurie>();
   pilotes : Array<Pilote> = new Array<Pilote>();
   pilote: Pilote;
   piloteUrl : string;
   scoreGeneral: any[] = [];
   scoreFin : any[] = [];
+  position : Position = new Position();
+  
   
 
   constructor(private http: HttpClient, private appConfig: AppConfigService) {
     this.ecurieUrl = this.appConfig.backEndUrl + "ecurie/"
+    this.positionUrl = this.appConfig.backEndUrl + "position/"
     this.loadEcurie();
     }
 
-    saveScore(){
-      
+    saveScore(position : Position){
+      return this.http.post<Position>(this.positionUrl,position).subscribe(resp => {
+       
+        
+      }, error => console.log(error));
     }
-
     findPiloteExperience(experience: number){
       return this.http.get<Pilote>(this.piloteUrl + experience);
     }
@@ -79,9 +85,9 @@ export class CourseService {
 
 
       let score : number = (scoreVoiture + scorePilote + scoreInfra) * (1 + (Math.random()/10));
-      let nomEcurie : string = element.nom;
+      let ecurie : Ecurie = element;
       
-      this.scoreGeneral.push({"ecurie":nomEcurie,"score": score});
+      this.scoreGeneral.push({"ecurie":ecurie,"score": score});
             
     }
 

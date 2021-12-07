@@ -28,6 +28,9 @@ public class Position {
 	@JsonView(Views.ViewPosition.class)
 	private Course course;
 	private int position;
+	@ManyToOne
+	@JsonView(Views.ViewPosition.class)
+	private Ecurie ecurie;
 	
 	public Position(Long id, Pilote pilote, Course course, int position) {
 		super();
@@ -79,6 +82,14 @@ public class Position {
 
 	public void setVersion(int version) {
 		this.version = version;
+	}
+	
+	public Ecurie getEcurie() {
+		return ecurie;
+	}
+
+	public void setEcurie(Ecurie ecurie) {
+		this.ecurie = ecurie;
 	}
 
 	@Override

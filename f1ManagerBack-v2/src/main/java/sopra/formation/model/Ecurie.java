@@ -44,6 +44,8 @@ public class Ecurie {
 	//@JsonView(Views.ViewEcurieCourses.class)
 	//@JsonView(Views.ViewEcurieDetail.class)
 	private List<Course> courses;
+	@OneToMany(mappedBy = "ecurie")
+	private List<Position> position;
 	
 	public Ecurie() {}
 	
@@ -153,6 +155,14 @@ public class Ecurie {
 
 	public void setCourseEnCours(int courseEnCours) {
 		this.courseEnCours = courseEnCours;
+	}
+
+	public List<Position> getPosition() {
+		return position;
+	}
+
+	public void setPosition(List<Position> position) {
+		this.position = position;
 	}
 
 	@Override
