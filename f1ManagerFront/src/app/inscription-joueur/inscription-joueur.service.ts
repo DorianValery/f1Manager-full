@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppConfigService } from '../app-config.service';
-import { Joueur } from '../model';
+import { Compte, Joueur } from '../model';
+import { SeConnecterHttpService } from '../se-connecter/se-connecter-http.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,10 @@ export class InscriptionJoueurService {
   joueurs: Array<Joueur> = new Array<Joueur>();
   joueurUrl: string;
 
-  constructor(private http: HttpClient, private appConfig: AppConfigService) {
+  constructor(private http: HttpClient, private appConfig: AppConfigService, private seConnecter: SeConnecterHttpService) {
     this.joueurUrl = this.appConfig.backEndUrl + "joueur/"
     this.load();
   }
-
   findById(id: number): Observable<Joueur> {
     return this.http.get<Joueur>(this.joueurUrl + id);
   }

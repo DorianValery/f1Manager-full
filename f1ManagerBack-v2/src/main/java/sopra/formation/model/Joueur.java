@@ -27,7 +27,7 @@ public class Joueur {
 	private String telephone;
 	@Enumerated(EnumType.STRING)
 	@Column(name = "civilite", length = 5)
-	private Civilite civ;
+	private Civilite civilite;
 	@OneToOne
 	@JoinColumn(name="inventaire_id")
 	@JsonView(Views.ViewJoueurDetail.class)
@@ -42,7 +42,7 @@ public class Joueur {
 	
 	public Joueur() {}
 	
-	public Joueur(long id, String pseudo, int age, String mail, String telephone, Civilite civ, Inventaire inventaire,
+	public Joueur(long id, String pseudo, int age, String mail, String telephone, Civilite civilite, Inventaire inventaire,
 			Ecurie ecurie) {
 		super();
 		this.id = id;
@@ -50,19 +50,19 @@ public class Joueur {
 		this.age = age;
 		this.mail = mail;
 		this.telephone = telephone;
-		this.civ = civ;
+		this.civilite = civilite;
 		this.inventaire = inventaire;
 		this.ecurie = ecurie;
 	}
 
-	public Joueur(String pseudo, int age, String mail, String telephone, Civilite civ, Inventaire inventaire,
+	public Joueur(String pseudo, int age, String mail, String telephone, Civilite civilite, Inventaire inventaire,
 			Ecurie ecurie) {
 		super();
 		this.pseudo = pseudo;
 		this.age = age;
 		this.mail = mail;
 		this.telephone = telephone;
-		this.civ = civ;
+		this.civilite = civilite;
 	}
 	
 	public long getId() {
@@ -105,12 +105,12 @@ public class Joueur {
 		this.telephone = telephone;
 	}
 
-	public Civilite getCiv() {
-		return civ;
+	public Civilite getCivilite() {
+		return civilite;
 	}
 
-	public void setCiv(Civilite civ) {
-		this.civ = civ;
+	public void setCiv(Civilite civilite) {
+		this.civilite = civilite;
 	}
 
 	public Inventaire getInventaire() {
@@ -148,7 +148,7 @@ public class Joueur {
 	@Override
 	public String toString() {
 		return "Joueur [id=" + id + ", pseudo=" + pseudo + ", age=" + age + ", mail=" + mail + ", telephone="
-				+ telephone + ", civ=" + civ + ", inventaire=" + inventaire + ", ecurie=" + ecurie + "]";
+				+ telephone + ", civ=" + civilite + ", inventaire=" + inventaire + ", ecurie=" + ecurie + "]";
 	}
 	
 	

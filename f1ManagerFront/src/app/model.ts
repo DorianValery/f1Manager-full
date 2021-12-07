@@ -43,19 +43,19 @@ export class Ecurie {
     nom: string;
     argent: number;
     experience: number;
-    courseEncours: number;
+    courseEnCours: number;
     pilotes: Pilote[];
     infrastructures: Infrastructure[];
     voitures: Voiture[];
 
 
-    constructor(id?: number, version?: number, nom?: string, argent?: number, experience?: number, courseEncours?: number, pilotes?: Pilote[], infrastructures?: Infrastructure[], voitures?: Voiture[]) {
+    constructor(id?: number, version?: number, nom?: string, argent?: number, experience?: number, courseEnCours?: number, pilotes?: Pilote[], infrastructures?: Infrastructure[], voitures?: Voiture[]) {
         this.id = id;
         this.version = version;
         this.nom = nom;
         this.argent = argent;
         this.experience = experience;
-        this.courseEncours = courseEncours;
+        this.courseEnCours = courseEnCours;
         this.pilotes = pilotes;
         this.infrastructures = infrastructures;
         this.voitures = voitures;
