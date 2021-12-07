@@ -91,7 +91,7 @@ public class TestJpa {
 		pilote1false.setNationalite("Finlandaise");
 		pilote1false.setCiv(Civilite.M);
 		pilote1false.setExperience(60);
-		pilote1false.setEtat(false);
+		//pilote1false.setEtat(false);
 		pilote1false.setPrix(60000);
 		pilote1false.setPosition(1);
 		
@@ -105,7 +105,7 @@ public class TestJpa {
 		pilote2false.setNationalite("Anglaise");
 		pilote2false.setCiv(Civilite.MME);
 		pilote2false.setExperience(63);
-		pilote2false.setEtat(false);
+		//pilote2false.setEtat(false);
 		pilote2false.setPrix(65000);
 		
 		pilote2false = piloteRepo.save(pilote2false);
@@ -117,7 +117,7 @@ public class TestJpa {
 		pilote3false.setNationalite("Américaine");
 		pilote3false.setCiv(Civilite.MME);
 		pilote3false.setExperience(60);
-		pilote3false.setEtat(true);
+		//pilote3false.setEtat(true);
 		pilote3false.setPrix(65000);
 		
 		pilote3false = piloteRepo.save(pilote3false);
@@ -129,7 +129,7 @@ public class TestJpa {
 		pilote4false.setNationalite("Mexicaine");
 		pilote4false.setCiv(Civilite.M);
 		pilote4false.setExperience(70);
-		pilote4false.setEtat(true);
+		//pilote4false.setEtat(true);
 		pilote4false.setPrix(80000);
 		
 		pilote4false = piloteRepo.save(pilote4false);
@@ -143,7 +143,7 @@ public class TestJpa {
 		piloteX.setNationalite("X");
 		piloteX.setCiv(Civilite.M);
 		piloteX.setExperience(500);
-		piloteX.setEtat(false);
+		//piloteX.setEtat(false);
 		piloteX.setPrix(2000000);
 		
 		piloteX = piloteRepo.save(piloteX);
@@ -165,7 +165,7 @@ public class TestJpa {
 		pilote1.setNationalite("Japonaise");
 		pilote1.setCiv(Civilite.M);
 		pilote1.setExperience(60);
-		pilote1.setEtat(false);
+		//pilote1.setEtat(false);
 		pilote1.setPrix(100000);
 		pilote1.setImagePilote("./../assets/pilote 1.png");
 		
@@ -176,7 +176,7 @@ public class TestJpa {
 		pilote2.setNationalite("Chinoise");
 		pilote2.setCiv(Civilite.M);
 		pilote2.setExperience(65);
-		pilote2.setEtat(false);
+		//pilote2.setEtat(false);
 		pilote2.setPrix(100000);
 		pilote2.setImagePilote("./../assets/pilote 2.png");
 		
@@ -187,7 +187,7 @@ public class TestJpa {
 		pilote3.setNationalite("Néerlandaise");
 		pilote3.setCiv(Civilite.M);
 		pilote3.setExperience(95);
-		pilote3.setEtat(false);
+		//pilote3.setEtat(false);
 		pilote3.setPrix(150000);
 		pilote3.setImagePilote("./../assets/pilote 3.png");
 		
@@ -198,7 +198,7 @@ public class TestJpa {
 		pilote4.setNationalite("Américiaine");
 		pilote4.setCiv(Civilite.MME);
 		pilote4.setExperience(90);
-		pilote4.setEtat(false);
+		//pilote4.setEtat(false);
 		pilote4.setPrix(150000);
 		pilote4.setImagePilote("./../assets/pilote 4.png");
 		
@@ -209,7 +209,7 @@ public class TestJpa {
 		pilote5.setNationalite("Française");
 		pilote5.setCiv(Civilite.M);
 		pilote5.setExperience(150);
-		pilote5.setEtat(false);
+	//	pilote5.setEtat(false);
 		pilote5.setPrix(200000);
 		pilote5.setImagePilote("./../assets/pilote 5.png");
 		
@@ -220,7 +220,7 @@ public class TestJpa {
 		pilote6.setNationalite("Anglaise");
 		pilote6.setCiv(Civilite.MME);
 		pilote6.setExperience(95);
-		pilote6.setEtat(false);
+		//pilote6.setEtat(false);
 		pilote6.setPrix(170000);
 		pilote6.setImagePilote("./../assets/pilote 6.png");
 		
@@ -231,7 +231,7 @@ public class TestJpa {
 		pilote7.setNationalite("Coréenne");
 		pilote7.setCiv(Civilite.M);
 		pilote7.setExperience(80);
-		pilote7.setEtat(false);
+		//pilote7.setEtat(false);
 		pilote7.setPrix(120000);
 		pilote7.setImagePilote("./../assets/pilote 7.png");
 		
@@ -242,7 +242,7 @@ public class TestJpa {
 		pilote8.setNationalite("Coréenne");
 		pilote8.setCiv(Civilite.M);
 		pilote8.setExperience(85);
-		pilote8.setEtat(false);
+		//pilote8.setEtat(false);
 		pilote8.setPrix(140000);
 		pilote8.setImagePilote("./../assets/pilote 8.png");
 		
@@ -253,7 +253,7 @@ public class TestJpa {
 		pilote9.setNationalite("Mexicaine");
 		pilote9.setCiv(Civilite.M);
 		pilote9.setExperience(60);
-		pilote9.setEtat(false);
+		//pilote9.setEtat(false);
 		pilote9.setPrix(95000);
 		pilote9.setImagePilote("./../assets/pilote 9.png");
 		
@@ -264,7 +264,7 @@ public class TestJpa {
 		pilote10.setNationalite("Mexicaine");
 		pilote10.setCiv(Civilite.M);
 		pilote10.setExperience(65);
-		pilote10.setEtat(false);
+		//pilote10.setEtat(false);
 		pilote10.setPrix(100000);
 		pilote10.setImagePilote("./../assets/pilote 10.png");
 		
@@ -275,7 +275,7 @@ public class TestJpa {
 		pilote11.setNationalite("Italienne");
 		pilote11.setCiv(Civilite.M);
 		pilote11.setExperience(200);
-		pilote11.setEtat(false);
+		//pilote11.setEtat(false);
 		pilote11.setPrix(300000);
 		pilote11.setImagePilote("./../assets/pilote 11.png");
 		
@@ -286,7 +286,7 @@ public class TestJpa {
 		pilote12.setNationalite("Allemande");
 		pilote12.setCiv(Civilite.MME);
 		pilote12.setExperience(205);
-		pilote12.setEtat(false);
+		//pilote12.setEtat(false);
 		pilote12.setPrix(310000);
 		pilote12.setImagePilote("./../assets/pilote 12.png");
 		
@@ -297,7 +297,7 @@ public class TestJpa {
 		pilote13.setNationalite("Suisse");
 		pilote13.setCiv(Civilite.M);
 		pilote13.setExperience(220);
-		pilote13.setEtat(false);
+		//pilote13.setEtat(false);
 		pilote13.setPrix(400000);
 		pilote13.setImagePilote("./../assets/pilote 13.png");
 		
@@ -308,7 +308,7 @@ public class TestJpa {
 		pilote14.setNationalite("Allemande");
 		pilote14.setCiv(Civilite.M);
 		pilote14.setExperience(240);
-		pilote14.setEtat(false);
+		//pilote14.setEtat(false);
 		pilote14.setPrix(430000);
 		pilote14.setImagePilote("./../assets/pilote 14.png");
 		
@@ -319,7 +319,7 @@ public class TestJpa {
 		pilote15.setNationalite("Italienne");
 		pilote15.setCiv(Civilite.M);
 		pilote15.setExperience(120);
-		pilote15.setEtat(false);
+		//pilote15.setEtat(false);
 		pilote15.setPrix(140000);
 		pilote15.setImagePilote("./../assets/pilote 15.png");
 		
@@ -330,7 +330,7 @@ public class TestJpa {
 		pilote16.setNationalite("Italienne");
 		pilote16.setCiv(Civilite.MME);
 		pilote16.setExperience(120);
-		pilote16.setEtat(false);
+		//pilote16.setEtat(false);
 		pilote16.setPrix(130000);
 		pilote16.setImagePilote("./../assets/pilote 16.png");
 		
@@ -341,7 +341,7 @@ public class TestJpa {
 		pilote17.setNationalite("Anglaise");
 		pilote17.setCiv(Civilite.M);
 		pilote17.setExperience(150);
-		pilote17.setEtat(false);
+		//pilote17.setEtat(false);
 		pilote17.setPrix(180000);
 		pilote17.setImagePilote("./../assets/pilote 17.png");
 		
@@ -352,7 +352,7 @@ public class TestJpa {
 		pilote18.setNationalite("Anglaise");
 		pilote18.setCiv(Civilite.M);
 		pilote18.setExperience(124);
-		pilote18.setEtat(false);
+		//pilote18.setEtat(false);
 		pilote18.setPrix(170000);
 		pilote18.setImagePilote("./../assets/pilote 18.png");
 
@@ -363,7 +363,7 @@ public class TestJpa {
 		pilote19.setNationalite("Mexicaine");
 		pilote19.setCiv(Civilite.MME);
 		pilote19.setExperience(117);
-		pilote19.setEtat(false);
+		//pilote19.setEtat(false);
 		pilote19.setPrix(170000);
 		pilote19.setImagePilote("./../assets/pilote 19.png");
 		
@@ -375,7 +375,7 @@ public class TestJpa {
 		pilote20.setNationalite("Anglaise");
 		pilote20.setCiv(Civilite.M);
 		pilote20.setExperience(128);
-		pilote20.setEtat(false);
+		//pilote20.setEtat(false);
 		pilote20.setPrix(180000);
 		pilote20.setImagePilote("./../assets/pilote 20.png");
 		

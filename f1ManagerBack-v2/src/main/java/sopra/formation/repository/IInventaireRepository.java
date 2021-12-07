@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import sopra.formation.model.Inventaire;
-import sopra.formation.model.Voiture;
 
 public interface IInventaireRepository extends JpaRepository<Inventaire, Long>{
 //findAllInventaire
@@ -18,4 +17,7 @@ public interface IInventaireRepository extends JpaRepository<Inventaire, Long>{
 	
 	@Query("select distinct i.infrastructure.id from Inventaire i  where i.joueur.id=:id and i.infrastructure != null")
 	List <Integer> finddAllInventaireByIdJoueurWithInfrastructure(@Param("id") Long id);
+	
+	@Query("select distinct i.pilote.id from Inventaire i  where i.joueur.id=:id and i.pilote != null")
+	List <Integer> finddAllInventaireByIdJoueurWithPilote(@Param("id") Long id);
 }

@@ -34,7 +34,6 @@ public class Pilote {
 	 @Column(name = "civilite", length = 5)
 	 private Civilite civ;
 	 private double experience;
-	 private boolean etat;
 	 private double prix;
 	 @ManyToOne
 	 @JsonView(Views.ViewPiloteDetail.class)
@@ -50,7 +49,7 @@ public class Pilote {
 	 public Pilote() {}
 	
 	public Pilote(Long id, String nom, String prenom, int age, String nationalite, Civilite civ, double experience,
-			boolean etat, double prix, Ecurie ecurie, List<Position> positions, List<Inventaire> inventaires, String imagePilote ) {
+			 double prix, Ecurie ecurie, List<Position> positions, List<Inventaire> inventaires, String imagePilote ) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -59,7 +58,6 @@ public class Pilote {
 		this.nationalite = nationalite;
 		this.civ = civ;
 		this.experience = experience;
-		this.etat = etat;
 		this.prix = prix;
 		this.ecurie = ecurie;
 		this.positions = positions;
@@ -68,14 +66,14 @@ public class Pilote {
 	}
 	
 	public Pilote(String nom, String prenom, int age, String nationalite, Civilite civ, double experience,
-			boolean etat, double prix) {
+			 double prix) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.age = age;
 		this.nationalite = nationalite;
 		this.civ = civ;
 		this.experience = experience;
-		this.etat = etat;
+		
 		this.prix = prix;
 	}
 
@@ -135,13 +133,7 @@ public class Pilote {
 		this.experience = experience;
 	}
 
-	public boolean isEtat() {
-		return etat;
-	}
 
-	public void setEtat(boolean etat) {
-		this.etat = etat;
-	}
 
 	public double getPrix() {
 		return prix;
@@ -205,7 +197,7 @@ public class Pilote {
 		public String toString() {
 			return "Pilote [id=" + id + ", version=" + version + ", nom=" + nom + ", prenom=" + prenom + ", age=" + age
 					+ ", nationalite=" + nationalite + ", position=" + position + ", civ=" + civ + ", experience="
-					+ experience + ", etat=" + etat + ", prix=" + prix + ", ecurie=" + ecurie + ", positions="
+					+ experience + ", etat=" +  ", prix=" + prix + ", ecurie=" + ecurie + ", positions="
 					+ positions + ", inventaires=" + inventaires + ", imagePilote=" + imagePilote + "]";
 		}
 

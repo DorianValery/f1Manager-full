@@ -31,7 +31,7 @@ export class PiloteInventaireHttpService {
   load() {
     this.http.get<Array<Pilote>>(this.piloteUrl).subscribe(response => {    
       this.pilotes = response;
-      this.inventaireService.loadInfrastructures().subscribe(resp => {
+      this.inventaireService.loadPilotes().subscribe(resp => {
           this.pilotes.forEach(i => {
             if(resp.includes(i.id)) {
               i.etat = true;
