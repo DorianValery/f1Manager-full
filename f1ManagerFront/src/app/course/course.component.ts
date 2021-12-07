@@ -18,17 +18,20 @@ export class CourseComponent implements OnInit {
   ecuries: Array<Ecurie> = new Array<Ecurie>();
   pilotes: Array<Pilote>;
   classement: Array<Order> = new Array<Order>();
-  course: Course = new Course();
+  course : Course;
 
+  map = new Map<string, number>();
   order: Order = new Order();
   order2: Order = new Order();
   order3: Order = new Order();
 
 
-  scoreGeneral: number[] = [];
+  scoreGeneral: any[] = [];
+  info : string []=[];
 
   ecurie: Ecurie = new Ecurie();
-
+  ecurieJoueur : Ecurie = this.ecurieService.ecurie;
+  courseID : number = this.ecurieService.ecurie.courseEnCours;
   positionFinale: number;
   positionPilote: number;
   positionVoiture: number;
@@ -40,9 +43,11 @@ export class CourseComponent implements OnInit {
   constructor(private appConfig: AppConfigService, private menuService: MenuHttpService, private courseService: CourseService, private ecurieService: EcurieService, private piloteService: PiloteInventaireHttpService, private saisonService: SaisonService) {
     this.listcourse()
     this.listEcurie()
-    this.saisonService.findCourseById(1);
-    this.findCourse(1);
-    this.menuService.findEcurieById(1);
+    this.findCourse(this.courseID);
+    console.log(this.courseID);
+    this.ecuries =this.list();
+    console.log(this.ecuries)
+    
     
     console.log(this.ecuries)
   }
@@ -65,12 +70,7 @@ export class CourseComponent implements OnInit {
     return this.ecurie = this.ecurieService.ecurie
 
   }
-  findCourse(id: number) {
-    this.saisonService.findCourseById(id).subscribe(resp => {
-      this.course = resp;
-      //sessionStorage.setItem("course",this.saisonTest)
-    }, error => console.log(error))
-  }
+  
 
   findPilote(id: number) {
     this.piloteService.findPiloteById(id).subscribe(resp => {
@@ -95,20 +95,19 @@ export class CourseComponent implements OnInit {
 
     console.log(this.scoreGeneral + "fini");
     this.nbTour++;
+  }
 
-
+  findCourse(courseID : number) {
+    this.saisonService.findCourseById(courseID).subscribe(resp =>{
+      this.course = resp;
+      console.log(this.course);
+      //sessionStorage.setItem("course",this.saisonTest)
+    },error=> console.log(error))
   }
 
   findEcurie(id: number) {
     this.menuService.findEcurieById(id).subscribe(resp => {
       this.ecurie = resp;
-      this.ecuries.push(this.ecurie);
-      this.ecuries.push(this.ecurie);
-      this.ecuries.push(this.ecurie);
-      this.ecuries.push(this.ecurie);
-
-      this.ecuries.push(this.ecurie);
-      this.ecuries.push(this.ecurie);
     }, error => console.log(error))
   }
 
@@ -116,8 +115,9 @@ export class CourseComponent implements OnInit {
   }
 
   algoPosition() {
-    this.scoreGeneral = []
+    this.scoreGeneral = [];
 
+    this.info = [];
     this.classement = new Array<Order>();
 
     // this.order.voiture = new Voiture(1, 0, "test", 50, 250, 600, true, null, null);
@@ -173,37 +173,57 @@ export class CourseComponent implements OnInit {
 
     console.log(this.classement)
 
-
+    
+    
     for (let element of this.ecuries) {
+     
 
       for (let el of element.voitures) {
-        var scoreVoiture: number = ((el.maniabilite + el.vitesse) - el.poids / 10)
+        var scoreVoiture: number =0 ;
+        scoreVoiture += ((el.maniabilite + el.vitesse) - el.poids / 10) 
+        console.log(scoreVoiture)
       }
       for (let el of element.pilotes) {
-        var scorePilote: number = (el.experience)
+        var scorePilote: number=0 ;
+        scorePilote+= (el.experience) 
+        console.log(scorePilote)
       }
       for (let el of element.infrastructures) {
-        var scoreInfra: number = (el.experience + el.nbIngenieurs + el.pitStop)
-      }
+        var scoreInfra: number=0 ;
+        scoreInfra += (el.experience + el.nbIngenieurs + el.pitStop)
+        console.log(scoreInfra)
+      } 
+     
+     
+      
+      
 
 
       //(((element.voiture.maniabilite + element.voiture.vitesse) - element.voiture.poids / 10) + (element.pilote.experience) + (element.infra.nbIngenieurs) + element.infra.pitStop) * (1 + Math.random());
 
 
+      let score : number = (scoreVoiture + scorePilote + scoreInfra) * (1 + (Math.random()/10));
+      let nomEcurie : string = element.nom;
+      
+      this.scoreGeneral.push({"ecurie":nomEcurie,"score": score});
+      
 
-      this.scoreGeneral.push((scoreVoiture + scorePilote + scoreInfra) * (1 + Math.random()))
+    
+     
 
 
-      console.log(this.scoreGeneral)
+      
     }
-
-
+    this.scoreGeneral = this.scoreGeneral.sort((a, b) => b.score - a.score);
+      console.log(this.scoreGeneral)
+      console.log(this.info)
+      console.log(this.map)
 
     // this.scoreGeneral.push(this.order.score);
 
     // console.log(this.order.score)
 
-    this.scoreGeneral = this.scoreGeneral.sort((a, b) => b - a);
+   
     console.log(this.scoreGeneral + "ok")
 
 

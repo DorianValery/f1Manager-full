@@ -4,9 +4,9 @@
 <div id="contenuPrincipal">
 
     <div id="actions">
-        <button (click)="findEcurie(1)">REPARATION </button>nom ecurie : {{ecurie?.nom}}
+        <button >REPARATION </button>nom ecurie : {{ecurie?.nom}}
 
-        <button (click)= "findCourse(1)">COURSE</button>
+        <button >COURSE</button>
         </div>
 <div id="tour">Tour {{nbTour}} /{{course?.nombreTour}}</div>
 
@@ -14,7 +14,8 @@
 
     <div id="actions">
         <button>REPARATION</button>
-        <a><button (click)="passerTour()">PASSER TOUR</button></a>
+        <a><button *ngIf="nbTour < course?.nombreTour" (click)="passerTour()">PASSER TOUR</button></a>
+        <a href="/voiture"><button *ngIf="nbTour >= course?.nombreTour" >PODIUM</button> </a>
     </div>
 
     
@@ -24,21 +25,19 @@
                 <thead>
                     <tr>
                         <th>CLASSEMENT</th>
-                        <th></th>
+                        <th>CLASSEMENT V2</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let valeur of scoreGeneral">
-                        <td>{{valeur}}</td>
-                        <td></td>
+                    <tr *ngFor="let valeur of scoreGeneral; let i = index">
+                        <td>{{i+1}} - {{valeur.ecurie}}</td>
+                        
+                       
                     </tr>
                 </tbody>
             </table>
     </div>
     
 
-        <button (click)="findPilote(1)">
-            Pilote
-        </button>
-
+      
 

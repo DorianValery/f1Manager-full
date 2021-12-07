@@ -12,18 +12,13 @@ export class SaisonService {
   saisonUrl : string;
   courses : Array<Course> = new Array<Course>();
   course : Course;
+  
 
-  constructor(private http: HttpClient, private appConfig: AppConfigService) {
+   constructor(private http: HttpClient, private appConfig: AppConfigService) {
     this.saisonUrl = this.appConfig.backEndUrl + "course/"
     this.loadSaison();
     // this.findPiloteEtatById()
    }
-
-
-
-findCourseById(id : number) : Observable<Course> {
-  return this.http.get<Course>(this.saisonUrl + id);
-  }
 
 findAllCourse(): Array<Course> {
   return this.courses;
@@ -33,6 +28,10 @@ findAllCourse(): Array<Course> {
 {
   return null;
 }
+
+findCourseById(id : number) : Observable<Course> {
+  return this.http.get<Course>(this.saisonUrl + id);
+  }
 
 
 // loadPilote(){
