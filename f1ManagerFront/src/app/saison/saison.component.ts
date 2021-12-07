@@ -17,13 +17,17 @@ import { MenuHttpService } from '../menu/menu-http.service';
 export class SaisonComponent implements OnInit {
 
 
- saisonTest : Course;
- piloteTest: Pilote;
- voitureTest: Voiture;
- ecurie : Ecurie = this.ecurieService.ecurie;
+  piloteTest: Pilote;
+  voitureTest: Voiture;
+  courseTest : Course;
+  ecurie : Ecurie = this.ecurieService.ecurie;
+  courseID : number = this.ecurieService.ecurie.courseEnCours;
 
   constructor(private appConfig: AppConfigService,  private saisonService :SaisonService, private courseService: CourseService, private ecurieService : EcurieService) {
-  
+    
+    this.findCourse(this.courseID);
+    console.log(this.courseID);
+    console.log( this.ecurieService.ecurie);
    }
 
    list(): Array<Ecurie> {
@@ -53,9 +57,10 @@ export class SaisonComponent implements OnInit {
   //   },error=> console.log(error))
   // }
 
-findCourse(id : number) {
-  this.saisonService.findCourseById(id).subscribe(resp =>{
-    this.saisonTest = resp;
+findCourse(courseID : number) {
+  this.saisonService.findCourseById(courseID).subscribe(resp =>{
+    this.courseTest = resp;
+    console.log(this.courseTest);
     //sessionStorage.setItem("course",this.saisonTest)
   },error=> console.log(error))
 }

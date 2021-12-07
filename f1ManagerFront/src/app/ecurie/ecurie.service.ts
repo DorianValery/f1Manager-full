@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppConfigService } from '../app-config.service';
-import { Ecurie} from '../model';
+import { Course, Ecurie} from '../model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,7 @@ export class EcurieService {
   ecuries: Array<Ecurie> = new Array<Ecurie>();
   ecurie:Ecurie;
   ecurieUrl: string;
+  course : Course;
 
   constructor(private http: HttpClient, private appConfig: AppConfigService) {
     this.ecurieUrl = this.appConfig.backEndUrl + "ecurie/"
@@ -29,6 +30,10 @@ export class EcurieService {
  findByArgent(argent: number): Observable<Ecurie> {
     return this.http.get<Ecurie>(this.ecurieUrl + argent);
   }
+
+  findCourseById(id : number) : Observable<Course> {
+    return this.http.get<Course>(this.ecurieUrl + id);
+    }
 
   modify(ecurie: Ecurie){
          this.http.put<Ecurie>(this.ecurieUrl+this.ecurie.id, ecurie).subscribe(response=>{

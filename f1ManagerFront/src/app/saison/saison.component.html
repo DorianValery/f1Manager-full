@@ -1,29 +1,10 @@
-<!-- <button (click)="findCourse(1)">
-    Course  
- </button>
-
- 
- <button (click)="findEcurie(1)">
-    Ecurie   
- </button> -->
- <!-- <button (click)="findPilote(3)">
-    Pilote
-</button>
-<button (click)="findVoiture(1)">
-    Voiture
-</button> -->
-
-
-
-<div *ngfor="let c of findCourse(1)">
-    <div class="card-header  text-black">
-        <h1 id="titre">Course {{c?.id}}</h1>
-            <div id="titreCourse">{{c?.nom}} <br>{{c?.nombreTour}} tours</div>
-    </div> 
+<div class="card-header  text-black">
+    <h1 id="titre">Course {{courseTest?.id}}</h1>
+        <div id="titreCourse">{{courseTest?.nom}} <br>{{courseTest?.nombreTour}} tours</div>
 </div>
 
 <div id="contenuPrincipal">
-    <img id="image" src="{{saisonTest?.image}}">
+    <img id="image" src="{{courseTest?.image}}">
    
 
     <table id="contenuPilote">
@@ -60,12 +41,7 @@
  
 </div> 
 
-<!-- <a href="jeu/"><button >LANCER LA COURSE</button></a> -->
 
-
-<!-- <a href="jeu/"><button (click)="lancerCourse(saisonTest.id)">LANCER LA COURSE</button></a> -->
-    
- 
 
      
      
