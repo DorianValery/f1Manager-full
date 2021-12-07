@@ -211,7 +211,7 @@ public class TestJpa {
 		pilote5.setExperience(150);
 		pilote5.setEtat(false);
 		pilote5.setPrix(200000);
-		pilote5.setImagePilote("./../assets/pilote 4.png");
+		pilote5.setImagePilote("./../assets/pilote 5.png");
 		
 		Pilote pilote6 =new Pilote();
 		pilote6.setNom("ELIZABETH");
@@ -222,7 +222,7 @@ public class TestJpa {
 		pilote6.setExperience(95);
 		pilote6.setEtat(false);
 		pilote6.setPrix(170000);
-		pilote6.setImagePilote("./../assets/pilote 5.png");
+		pilote6.setImagePilote("./../assets/pilote 6.png");
 		
 		Pilote pilote7 =new Pilote();
 		pilote7.setNom("CHAN");
@@ -233,7 +233,7 @@ public class TestJpa {
 		pilote7.setExperience(80);
 		pilote7.setEtat(false);
 		pilote7.setPrix(120000);
-		pilote7.setImagePilote("./../assets/pilote 6.png");
+		pilote7.setImagePilote("./../assets/pilote 7.png");
 		
 		Pilote pilote8 =new Pilote();
 		pilote8.setNom("LEE");
@@ -244,7 +244,7 @@ public class TestJpa {
 		pilote8.setExperience(85);
 		pilote8.setEtat(false);
 		pilote8.setPrix(140000);
-		pilote8.setImagePilote("./../assets/pilote 7.png");
+		pilote8.setImagePilote("./../assets/pilote 8.png");
 		
 		Pilote pilote9 =new Pilote();
 		pilote9.setNom("PEREZ");
@@ -255,7 +255,7 @@ public class TestJpa {
 		pilote9.setExperience(60);
 		pilote9.setEtat(false);
 		pilote9.setPrix(95000);
-		pilote9.setImagePilote("./../assets/pilote 8.png");
+		pilote9.setImagePilote("./../assets/pilote 9.png");
 		
 		Pilote pilote10 =new Pilote();
 		pilote10.setNom("PEDRO");
@@ -266,7 +266,7 @@ public class TestJpa {
 		pilote10.setExperience(65);
 		pilote10.setEtat(false);
 		pilote10.setPrix(100000);
-		pilote10.setImagePilote("./../assets/pilote 9.png");
+		pilote10.setImagePilote("./../assets/pilote 10.png");
 		
 		Pilote pilote11 =new Pilote();
 		pilote11.setNom("GIANLUIGI");
@@ -277,7 +277,7 @@ public class TestJpa {
 		pilote11.setExperience(200);
 		pilote11.setEtat(false);
 		pilote11.setPrix(300000);
-		pilote11.setImagePilote("./../assets/pilote 10.png");
+		pilote11.setImagePilote("./../assets/pilote 11.png");
 		
 		Pilote pilote12 =new Pilote();
 		pilote12.setNom("MERKEL");
@@ -288,7 +288,7 @@ public class TestJpa {
 		pilote12.setExperience(205);
 		pilote12.setEtat(false);
 		pilote12.setPrix(310000);
-		pilote12.setImagePilote("");
+		pilote12.setImagePilote("./../assets/pilote 12.png");
 		
 		Pilote pilote13 =new Pilote();
 		pilote13.setNom("BERN");
@@ -299,7 +299,7 @@ public class TestJpa {
 		pilote13.setExperience(220);
 		pilote13.setEtat(false);
 		pilote13.setPrix(400000);
-		pilote13.setImagePilote("");
+		pilote13.setImagePilote("./../assets/pilote 13.png");
 		
 		Pilote pilote14 =new Pilote();
 		pilote14.setNom("SCHUMACHER");
@@ -310,7 +310,7 @@ public class TestJpa {
 		pilote14.setExperience(240);
 		pilote14.setEtat(false);
 		pilote14.setPrix(430000);
-		pilote14.setImagePilote("");
+		pilote14.setImagePilote("./../assets/pilote 14.png");
 		
 		Pilote pilote15 =new Pilote();
 		pilote15.setNom("FERRARI");
@@ -321,7 +321,7 @@ public class TestJpa {
 		pilote15.setExperience(120);
 		pilote15.setEtat(false);
 		pilote15.setPrix(140000);
-		pilote15.setImagePilote("");
+		pilote15.setImagePilote("./../assets/pilote 15.png");
 		
 		Pilote pilote16 =new Pilote();
 		pilote16.setNom("DINO");
@@ -332,7 +332,7 @@ public class TestJpa {
 		pilote16.setExperience(120);
 		pilote16.setEtat(false);
 		pilote16.setPrix(130000);
-		pilote16.setImagePilote("");
+		pilote16.setImagePilote("./../assets/pilote 16.png");
 		
 		Pilote pilote17 =new Pilote();
 		pilote17.setNom("JOHNSON");
@@ -343,7 +343,7 @@ public class TestJpa {
 		pilote17.setExperience(150);
 		pilote17.setEtat(false);
 		pilote17.setPrix(180000);
-		pilote17.setImagePilote("");
+		pilote17.setImagePilote("./../assets/pilote 17.png");
 		
 		Pilote pilote18 =new Pilote();
 		pilote18.setNom("HUNTER");
@@ -354,7 +354,7 @@ public class TestJpa {
 		pilote18.setExperience(124);
 		pilote18.setEtat(false);
 		pilote18.setPrix(170000);
-		pilote18.setImagePilote("");
+		pilote18.setImagePilote("./../assets/pilote 18.png");
 
 		Pilote pilote19 =new Pilote();
 		pilote19.setNom("CARLOS");
@@ -365,7 +365,7 @@ public class TestJpa {
 		pilote19.setExperience(117);
 		pilote19.setEtat(false);
 		pilote19.setPrix(170000);
-		pilote19.setImagePilote("");
+		pilote19.setImagePilote("./../assets/pilote 19.png");
 		
 		
 		Pilote pilote20 =new Pilote();
@@ -377,7 +377,7 @@ public class TestJpa {
 		pilote20.setExperience(128);
 		pilote20.setEtat(false);
 		pilote20.setPrix(180000);
-		pilote20.setImagePilote("");
+		pilote20.setImagePilote("./../assets/pilote 20.png");
 		
 		pilote1 = piloteRepo.save(pilote1);
 		pilote2 = piloteRepo.save(pilote2);
