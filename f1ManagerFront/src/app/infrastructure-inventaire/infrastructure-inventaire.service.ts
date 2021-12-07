@@ -25,10 +25,6 @@ export class InfrastructureInventaireService {
     return this.infrastructures;
   }
 
-  loadEcurie(id: number): Observable<Ecurie>{
-    return this.http.get<Ecurie>(this.ecurieService.ecurieUrl+id);
-  }
-
   load() 
   {
     this.http.get<Array<Infrastructure>>(this.infrastructureInventaireUrl).subscribe(response => {    

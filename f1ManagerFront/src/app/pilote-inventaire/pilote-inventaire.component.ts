@@ -26,7 +26,7 @@ export class PiloteInventaireComponent implements OnInit {
   pilote : Pilote;
 
   constructor(private appConfig: AppConfigService, private piloteService: PiloteInventaireHttpService,private ecurieService: EcurieService, private inventaireService: InventaireService, private joueurService: JoueurService) { 
-    this.listPilotesEcurie(1);
+   this.ecurie=this.ecurieService.ecurie;
   }
   
   ngOnInit(): void {}
