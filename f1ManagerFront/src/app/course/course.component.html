@@ -4,9 +4,9 @@
 <div id="contenuPrincipal">
 
     <div id="actions">
-        <button (click)="findEcurie(1)">REPARATION </button>nom ecurie : {{ecurie?.nom}}
+        <button >REPARATION </button>nom ecurie : {{ecurie?.nom}}
 
-        <button (click)= "findCourse(1)">COURSE</button>
+        <button >COURSE</button>
         </div>
 <div id="tour">Tour {{nbTour}} /{{course?.nombreTour}}</div>
 
@@ -28,8 +28,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let valeur of scoreGeneral">
-                        <td>{{valeur}}</td>
+                    <tr *ngFor="let valeur of scoreGeneral; let i = index">
+                        <td>{{i+1}} - {{valeur}}</td>
                         <td></td>
                     </tr>
                 </tbody>

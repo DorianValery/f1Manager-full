@@ -15,10 +15,10 @@ export class MenuComponent implements OnInit {
 
   
  piloteTest : Pilote;
- ecurie : Ecurie;
+ ecurie : Ecurie =  this.ecurieService.ecurie;
 
   constructor(private appConfig: AppConfigService,  private menuService : MenuHttpService, private ecurieService : EcurieService) {
-    this.ecurie =this.ecurieService.ecurie;
+   
    }
 
 findPilote(id : number) {
