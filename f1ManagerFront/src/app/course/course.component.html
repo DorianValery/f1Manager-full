@@ -14,7 +14,8 @@
 
     <div id="actions">
         <button>REPARATION</button>
-        <a><button (click)="passerTour()">PASSER TOUR</button></a>
+        <a><button *ngIf="nbTour < course?.nombreTour" (click)="passerTour()">PASSER TOUR</button></a>
+        <a href="/voiture"><button *ngIf="nbTour >= course?.nombreTour" >PODIUM</button> </a>
     </div>
 
     
@@ -24,21 +25,19 @@
                 <thead>
                     <tr>
                         <th>CLASSEMENT</th>
-                        <th></th>
+                        <th>CLASSEMENT V2</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let valeur of scoreGeneral; let i = index">
-                        <td>{{i+1}} - {{valeur}}</td>
-                        <td></td>
+                        <td>{{i+1}} - {{valeur.ecurie}}</td>
+                        
+                       
                     </tr>
                 </tbody>
             </table>
     </div>
     
 
-        <button (click)="findPilote(1)">
-            Pilote
-        </button>
-
+      
 
