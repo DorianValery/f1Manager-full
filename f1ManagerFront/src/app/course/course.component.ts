@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AppConfigService } from '../app-config.service';
 import { EcurieService } from '../ecurie/ecurie.service';
 import { MenuHttpService } from '../menu/menu-http.service';
-import { Course, Ecurie, Infrastructure, Order, Pilote, Position, Voiture } from '../model';
+import { Course, Ecurie, Infrastructure, Pilote, Position, Voiture } from '../model';
 import { PiloteInventaireHttpService } from '../pilote-inventaire/pilote-inventaire-http.service';
 import { SaisonService } from '../saison/saison.service';
 import { CourseService } from './course.service';
@@ -153,7 +153,7 @@ export class CourseComponent implements OnInit {
       
       
 
-    // this.scoreGeneral.push(this.order.score);
+    
 
   }
 
