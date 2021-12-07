@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccueilComponent } from './accueil/accueil.component';
 import { CourseComponent } from './course/course.component';
 import { InfrastructureInventaireComponent } from './infrastructure-inventaire/infrastructure-inventaire.component';
 import { InscriptionJoueurComponent } from './inscription-joueur/inscription-joueur.component';
@@ -11,6 +12,7 @@ import { SeConnecterComponent } from './se-connecter/se-connecter.component';
 import { VoitureInventaireComponent } from './voiture-inventaire/voiture-inventaire.component';
 
 const routes: Routes = [
+  {path: "accueil", component: AccueilComponent},
   {path: "menu", component: MenuComponent},
   {path: "seconnecter", component: SeConnecterComponent},
   {path: "inscription", component: InscriptionJoueurComponent},
