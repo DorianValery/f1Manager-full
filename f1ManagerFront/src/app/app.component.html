@@ -10,14 +10,17 @@
           <a class="nav-link" [routerLink]="['/infrastructure']" routerLinkActive="active">Infrastructure</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/ecurie']" routerLinkActive="active">Saison</a>
+        <a class="nav-link" [routerLink]="['/ecurie']" routerLinkActive="active">Ecurie</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/course']" routerLinkActive="active">Saison</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" [routerLink]="['/jeu']" routerLinkActive="active">Jeu</a>
-</li>
+      <a class="nav-link" [routerLink]="['/course']" routerLinkActive="active">Course</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/jeu']" routerLinkActive="active">Jeu</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/podium']" routerLinkActive="active">Podium</a>
+    </li>
 <form class="d-flex">
   <button  class="btn btn-primary" [routerLink]="['/seconnecter']" *ngIf="!seconnecterService.compte">Se Connecter</button>
   <button  class="btn btn-primary" [routerLink]="['/seconnecter']" (click)="sedeconnecter()" *ngIf="seconnecterService.compte">Se Déconnecter</button>
