@@ -80,6 +80,14 @@ public class InventaireRestController {
 		return listInfrastructures;
 
 	}
+	
+	@GetMapping("{id}/idPilotes")
+	@JsonView(Views.ViewInventaireDetail.class)
+	public List<Integer> findPilotesByIDJoueur(@PathVariable Long id) {
+		List<Integer> listPilotes = inventaireRepo.finddAllInventaireByIdJoueurWithPilote(id);
+		return listPilotes;
+
+	}
 
 	@PostMapping("")
 	@JsonView(Views.ViewInventaire.class)

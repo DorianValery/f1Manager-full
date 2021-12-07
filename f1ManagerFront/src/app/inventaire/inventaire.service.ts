@@ -35,4 +35,8 @@ create(inventaire: Inventaire): Observable<Inventaire> {
  loadInfrastructures(){
   return this.http.get<Array<number>>(this.inventaireUrl+this.joueurService.joueur.id+"/idInfrastructures");
 }
+
+loadPilotes(){
+  return this.http.get<Array<number>>(this.inventaireUrl+this.joueurService.joueur.id+"/idPilotes");
+}
 }
