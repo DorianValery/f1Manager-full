@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 import sopra.formation.model.Inventaire;
 import sopra.formation.model.Views;
+import sopra.formation.model.Voiture;
 import sopra.formation.repository.IInventaireRepository;
 
 @RestController
@@ -62,6 +63,22 @@ public class InventaireRestController {
 		} else {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Inventaire non trouvé");
 		}
+	}
+	
+	@GetMapping("{id}/idVoitures")
+	@JsonView(Views.ViewInventaireDetail.class)
+	public List<Integer> findVoituresByIDJoueur(@PathVariable Long id) {
+		List<Integer> listVoitures = inventaireRepo.finddAllInventaireByIdJoueurWithVoitures(id);
+		return listVoitures;
+
+	}
+	
+	@GetMapping("{id}/idInfrastructures")
+	@JsonView(Views.ViewInventaireDetail.class)
+	public List<Integer> findInfrastructuresByIDJoueur(@PathVariable Long id) {
+		List<Integer> listInfrastructures = inventaireRepo.finddAllInventaireByIdJoueurWithInfrastructure(id);
+		return listInfrastructures;
+
 	}
 
 	@PostMapping("")

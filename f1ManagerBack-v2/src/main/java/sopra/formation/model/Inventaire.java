@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Version;
@@ -21,35 +23,36 @@ public class Inventaire {
 	private Long id;
 	@Version
 	private int version;
-	private int argentDisponible;
-	@OneToOne(mappedBy = "inventaire")
+	
+	@ManyToOne
+	@JoinColumn(name="joueur_id")
 	@JsonView(Views.ViewInventaire.class)
 	private Joueur joueur;
-	@OneToMany(mappedBy ="inventaire")
+	@ManyToOne
+	@JoinColumn(name="infrastructure_id")
 	@JsonView(Views.ViewInventaire.class)
-	private List<Infrastructure> infrastructure;
-	@OneToMany(mappedBy = "inventaire")
+	private Infrastructure infrastructure;
+	@ManyToOne
+	@JoinColumn(name="voiture_id")
 	@JsonView(Views.ViewInventaire.class)
-	private List <Voiture> voitures;
-	@OneToMany(mappedBy ="inventaire")
+	private  Voiture voiture;
+	@ManyToOne
+	@JoinColumn(name="pilote_id")
 	@JsonView(Views.ViewInventaireDetail.class)
-	private List<Pilote> pilotes;
+	private Pilote pilote;
 	
-	public Inventaire(Long id, int argentDisponible, Joueur joueur, List<Infrastructure> infrastructure,
-			List<Voiture> voitures, List<Pilote> pilotes) {
+	public Inventaire(Long id,  Joueur joueur, Infrastructure infrastructure,
+			Voiture voiture, Pilote pilote) {
 		super();
 		this.id = id;
-		this.argentDisponible = argentDisponible;
+		
 		this.joueur = joueur;
 		this.infrastructure = infrastructure;
-		this.voitures = voitures;
-		this.pilotes = pilotes;
+		this.voiture = voiture;
+		this.pilote = pilote;
 	}
 	
 
-	public Inventaire(int argentDisponible) {
-		this.argentDisponible = argentDisponible;
-	}
 
 
 	public Inventaire() {
@@ -64,13 +67,7 @@ public class Inventaire {
 		this.id = id;
 	}
 
-	public int getArgentDisponible() {
-		return argentDisponible;
-	}
 
-	public void setArgentDisponible(int argentDisponible) {
-		this.argentDisponible = argentDisponible;
-	}
 
 	public Joueur getJoueur() {
 		return joueur;
@@ -80,29 +77,36 @@ public class Inventaire {
 		this.joueur = joueur;
 	}
 
-	public List<Infrastructure> getInfrastructure() {
+
+	public Infrastructure getInfrastructure() {
 		return infrastructure;
 	}
 
-	public void setInfrastructure(List<Infrastructure> infrastructure) {
+
+	public void setInfrastructure(Infrastructure infrastructure) {
 		this.infrastructure = infrastructure;
 	}
 
-	public List<Voiture> getVoitures() {
-		return voitures;
+
+	public Voiture getVoiture() {
+		return voiture;
 	}
 
-	public void setVoitures(List<Voiture> voitures) {
-		this.voitures = voitures;
+
+	public void setVoiture(Voiture voiture) {
+		this.voiture = voiture;
 	}
 
-	public List<Pilote> getPilotes() {
-		return pilotes;
+
+	public Pilote getPilote() {
+		return pilote;
 	}
 
-	public void setPilotes(List<Pilote> pilotes) {
-		this.pilotes = pilotes;
+
+	public void setPilote(Pilote pilote) {
+		this.pilote = pilote;
 	}
+
 
 	public int getVersion() {
 		return version;
@@ -114,11 +118,16 @@ public class Inventaire {
 	}
 
 
+
+
 	@Override
 	public String toString() {
-		return "Inventaire [id=" + id + ", argentDisponible=" + argentDisponible + ", joueur=" + joueur
-				+ ", infrastructure=" + infrastructure + ", voitures=" + voitures + ", pilotes=" + pilotes + "]";
+		return "Inventaire [id=" + id + ", version=" + version + ", joueur=" + joueur + ", infrastructure="
+				+ infrastructure + ", voiture=" + voiture + ", pilote=" + pilote + "]";
 	}
+
+
+
 	
 	
 	

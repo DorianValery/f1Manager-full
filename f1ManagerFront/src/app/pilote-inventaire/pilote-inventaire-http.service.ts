@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppConfigService } from '../app-config.service';
 import { EcurieService } from '../ecurie/ecurie.service';
+import { InventaireService } from '../inventaire/inventaire.service';
 import { Ecurie, Pilote } from '../model';
 
 @Injectable({
@@ -14,7 +15,7 @@ export class PiloteInventaireHttpService {
   pilote: Pilote;
   piloteUrl: string;
 
-  constructor(private http: HttpClient, private appConfig: AppConfigService, private ecurieService: EcurieService) {
+  constructor(private http: HttpClient, private appConfig: AppConfigService, private ecurieService: EcurieService, private inventaireService: InventaireService) {
     this.piloteUrl = this.appConfig.backEndUrl + "pilote/"
     this.load();
   }
@@ -28,8 +29,16 @@ export class PiloteInventaireHttpService {
   }
 
   load() {
-    this.http.get<Array<Pilote>>(this.piloteUrl).subscribe(response => {
+    this.http.get<Array<Pilote>>(this.piloteUrl).subscribe(response => {    
       this.pilotes = response;
+      this.inventaireService.loadInfrastructures().subscribe(resp => {
+          this.pilotes.forEach(i => {
+            if(resp.includes(i.id)) {
+              i.etat = true;
+            }
+          });
+      }, err => console.log(err));
+  
     }, error => console.log(error));
   }
 

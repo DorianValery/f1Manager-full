@@ -1,5 +1,7 @@
 package sopra.formation.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -8,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Version;
 
@@ -28,10 +31,9 @@ public class Joueur {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "civilite", length = 5)
 	private Civilite civ;
-	@OneToOne
-	@JoinColumn(name="inventaire_id")
+	@OneToMany(mappedBy="joueur")
 	@JsonView(Views.ViewJoueurDetail.class)
-	private Inventaire inventaire;
+	private List<Inventaire> inventaires;
 	@OneToOne
 	@JoinColumn(name="ecurie_id")
 	@JsonView(Views.ViewJoueur.class)
@@ -42,7 +44,7 @@ public class Joueur {
 	
 	public Joueur() {}
 	
-	public Joueur(long id, String pseudo, int age, String mail, String telephone, Civilite civ, Inventaire inventaire,
+	public Joueur(long id, String pseudo, int age, String mail, String telephone, Civilite civ, List<Inventaire> inventaires,
 			Ecurie ecurie) {
 		super();
 		this.id = id;
@@ -51,7 +53,7 @@ public class Joueur {
 		this.mail = mail;
 		this.telephone = telephone;
 		this.civ = civ;
-		this.inventaire = inventaire;
+		this.inventaires = inventaires;
 		this.ecurie = ecurie;
 	}
 
@@ -113,12 +115,12 @@ public class Joueur {
 		this.civ = civ;
 	}
 
-	public Inventaire getInventaire() {
-		return inventaire;
+	public List<Inventaire> getInventaires() {
+		return inventaires;
 	}
 
-	public void setInventaire(Inventaire inventaire) {
-		this.inventaire = inventaire;
+	public void setInventaires(List<Inventaire> inventaires) {
+		this.inventaires = inventaires;
 	}
 
 	public Ecurie getEcurie() {
@@ -147,10 +149,13 @@ public class Joueur {
 
 	@Override
 	public String toString() {
-		return "Joueur [id=" + id + ", pseudo=" + pseudo + ", age=" + age + ", mail=" + mail + ", telephone="
-				+ telephone + ", civ=" + civ + ", inventaire=" + inventaire + ", ecurie=" + ecurie + "]";
+		return "Joueur [id=" + id + ", version=" + version + ", pseudo=" + pseudo + ", age=" + age + ", mail=" + mail
+				+ ", telephone=" + telephone + ", civ=" + civ + ", inventaires=" + inventaires + ", ecurie=" + ecurie
+				+ ", compte=" + compte + "]";
 	}
-	
+
+
+
 	
 	
 }

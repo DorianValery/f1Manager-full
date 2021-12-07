@@ -1,11 +1,14 @@
 package sopra.formation.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Version;
 
@@ -25,19 +28,17 @@ public class Infrastructure {
 	private int nbIngenieurs;
 	private int pitStop;
 	private double experience;
-	private boolean etat;
 	private double prix;
 	@ManyToOne
 	@JoinColumn(name="ecurie_id")
 	@JsonView(Views.ViewInfrastructureDetail.class)
 	private Ecurie ecurie;
-	@ManyToOne
-	@JoinColumn(name="inventaire")
+	@OneToMany(mappedBy="infrastructure")
 	@JsonView(Views.ViewInfrastructureDetail.class)
-	private Inventaire inventaire;
+	private List<Inventaire> inventaires;
 	
 	public Infrastructure(Long id, String nom, typeInfra type, int nbIngenieurs, int pitStop, double experience,
-			boolean etat, double prix, Ecurie ecurie, Inventaire inventaire) {
+			boolean etat, double prix, Ecurie ecurie, List<Inventaire> inventaires) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -45,14 +46,13 @@ public class Infrastructure {
 		this.nbIngenieurs = nbIngenieurs;
 		this.pitStop = pitStop;
 		this.experience = experience;
-		this.etat = etat;
 		this.prix = prix;
 		this.ecurie = ecurie;
-		this.inventaire = inventaire;
+		this.inventaires = inventaires;
 	}
 	
 	public Infrastructure(Long id, String nom, typeInfra type, int nbIngenieurs, int pitStop, double experience,
-			boolean etat, double prix) {
+		 double prix) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -60,7 +60,6 @@ public class Infrastructure {
 		this.nbIngenieurs = nbIngenieurs;
 		this.pitStop = pitStop;
 		this.experience = experience;
-		this.etat = etat;
 		this.prix = prix;
 	}
 
@@ -116,13 +115,7 @@ public class Infrastructure {
 		this.experience = experience;
 	}
 
-	public boolean isEtat() {
-		return etat;
-	}
 
-	public void setEtat(boolean etat) {
-		this.etat = etat;
-	}
 
 	public double getPrix() {
 		return prix;
@@ -140,12 +133,13 @@ public class Infrastructure {
 		this.ecurie = ecurie;
 	}
 
-	public Inventaire getInventaire() {
-		return inventaire;
+
+	public List<Inventaire> getInventaires() {
+		return inventaires;
 	}
 
-	public void setInventaire(Inventaire inventaire) {
-		this.inventaire = inventaire;
+	public void setInventaires(List<Inventaire> inventaires) {
+		this.inventaires = inventaires;
 	}
 
 	public int getVersion() {
@@ -158,10 +152,12 @@ public class Infrastructure {
 
 	@Override
 	public String toString() {
-		return "Infrastructure [id=" + id + ", nom=" + nom + ", type=" + type + ", nbingenieurs=" + nbIngenieurs
-				+ ", pitStop=" + pitStop + ", experience=" + experience + ", etat=" + etat + ", prix=" + prix
-				+ ", ecurie=" + ecurie + ", inventaire=" + inventaire + "]";
+		return "Infrastructure [id=" + id + ", version=" + version + ", nom=" + nom + ", type=" + type
+				+ ", nbIngenieurs=" + nbIngenieurs + ", pitStop=" + pitStop + ", experience=" + experience + ", etat="
+				 + ", prix=" + prix + ", ecurie=" + ecurie + ", inventaires=" + inventaires + "]";
 	}
+
+
 	
 	
 }

@@ -156,7 +156,7 @@ public class TestJpa {
 		listPilote.add(piloteX);
 		
 		//PILOTES DES ECURIES
-		Inventaire inventaire1 = new Inventaire(50);
+		//Inventaire inventaire1 = new Inventaire(50);
 		
 		Pilote pilote1 =new Pilote();
 		pilote1.setNom("SUSHI");
@@ -449,7 +449,7 @@ public class TestJpa {
 		voiture1.setVitesse(300);
 		voiture1.setPrix(300000);
 		voiture1.setImage("../../assets/voiture_bleue.gif");
-		voiture1.setEtat(true);
+		//voiture1.setEtat(true);
 
 		Voiture voiture2 = new Voiture();
 		voiture2.setMarque("LOTUS");
@@ -457,7 +457,7 @@ public class TestJpa {
 		voiture2.setPoids(780);
 		voiture2.setVitesse(305);
 		voiture2.setPrix(400000);
-		voiture2.setEtat(false);
+		//voiture2.setEtat(false);
 		voiture2.setImage("../../assets/voiture_jaune.gif");
 		
 		Voiture voiture3 = new Voiture();
@@ -466,7 +466,7 @@ public class TestJpa {
 		voiture3.setPoids(774);
 		voiture3.setVitesse(315);
 		voiture3.setPrix(420000);
-		voiture3.setEtat(false);
+		//voiture3.setEtat(false);
 		voiture3.setImage("../../assets/voiture_rouge.gif");
 		
 		Voiture voiture4= new Voiture();
@@ -475,7 +475,7 @@ public class TestJpa {
 		voiture4.setPoids(780);
 		voiture4.setVitesse(320);
 		voiture4.setPrix(380000);
-		voiture4.setEtat(false);
+		//voiture4.setEtat(false);
 		voiture4.setImage("../../assets/voiture_orange.gif");
 		
 		Voiture voiture5= new Voiture();
@@ -484,7 +484,7 @@ public class TestJpa {
 		voiture5.setPoids(810);
 		voiture5.setVitesse(297);
 		voiture5.setPrix(400000);
-		voiture5.setEtat(false);
+		//voiture5.setEtat(false);
 		voiture5.setImage("../../assets/voiture_verte.gif");
 	
 		Voiture voiture6= new Voiture();
@@ -493,7 +493,7 @@ public class TestJpa {
 		voiture6.setPoids(770);
 		voiture6.setVitesse(330);
 		voiture6.setPrix(500000);
-		voiture6.setEtat(false);
+		//voiture6.setEtat(false);
 		voiture6.setImage("../../assets/voiture_rouge.gif");
 		
 		Voiture voiture7= new Voiture();
@@ -502,7 +502,7 @@ public class TestJpa {
 		voiture7.setPoids(765);
 		voiture7.setVitesse(335);
 		voiture7.setPrix(500000);
-		voiture7.setEtat(false);
+		//voiture7.setEtat(false);
 		voiture7.setImage("../../assets/voiture_rose.gif");
 		
 		Voiture voiture8= new Voiture();
@@ -511,7 +511,7 @@ public class TestJpa {
 		voiture8.setPoids(755);
 		voiture8.setVitesse(350);
 		voiture8.setPrix(620000);
-		voiture8.setEtat(false);
+		//voiture8.setEtat(false);
 		voiture8.setImage("../../assets/voiture_bleue.gif");
 			
 		voiture1 = voitureRepo.save(voiture1);
@@ -570,7 +570,7 @@ public class TestJpa {
 		infraPilote1.setNom("infraPilote1");
 		infraPilote1.setNbIngenieurs(5);
 		infraPilote1.setPrix(100000);
-		infraPilote1.setEtat(false);
+		//infraPilote1.setEtat(false);
 		infraPilote1.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture1 = new Infrastructure();
@@ -579,7 +579,7 @@ public class TestJpa {
 		infraVoiture1.setNbIngenieurs(5);
 		infraVoiture1.setPitStop(7);
 		infraVoiture1.setPrix(120000);
-		infraVoiture1.setEtat(false);
+		//infraVoiture1.setEtat(false);
 		infraVoiture1.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing1 = new Infrastructure();
@@ -587,7 +587,7 @@ public class TestJpa {
 		infraMarketing1.setNom("infraMarketing1");
 		infraMarketing1.setNbIngenieurs(2);
 		infraMarketing1.setPrix(100000);
-		infraMarketing1.setEtat(false);
+		//infraMarketing1.setEtat(false);
 		infraMarketing1.setType(typeInfra.M);
 		
 		infraPilote1 = infrastructureRepo.save(infraPilote1);
@@ -606,7 +606,7 @@ public class TestJpa {
 		infraPilote2.setNom("infraPilote2");
 		infraPilote2.setNbIngenieurs(5);
 		infraPilote2.setPrix(0);
-		infraPilote2.setEtat(false);
+		//infraPilote2.setEtat(false);
 		infraPilote2.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture2 = new Infrastructure();
@@ -615,7 +615,7 @@ public class TestJpa {
 		infraVoiture2.setNbIngenieurs(6);
 		infraVoiture2.setPitStop(4);
 		infraVoiture2.setPrix(0);
-		infraVoiture2.setEtat(false);
+		//infraVoiture2.setEtat(false);
 		infraVoiture2.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing2 = new Infrastructure();
@@ -623,7 +623,7 @@ public class TestJpa {
 		infraMarketing2.setNom("infraMarketing2");
 		infraMarketing2.setNbIngenieurs(2);
 		infraMarketing2.setPrix(0);
-		infraMarketing2.setEtat(false);
+		//infraMarketing2.setEtat(false);
 		infraMarketing2.setType(typeInfra.M);
 		
 		infraPilote2 = infrastructureRepo.save(infraPilote2);
@@ -642,7 +642,7 @@ public class TestJpa {
 		infraPilote3.setNom("infraPilote3");
 		infraPilote3.setNbIngenieurs(6);
 		infraPilote3.setPrix(0);
-		infraPilote3.setEtat(false);
+		//infraPilote3.setEtat(false);
 		infraPilote3.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture3 = new Infrastructure();
@@ -651,7 +651,7 @@ public class TestJpa {
 		infraVoiture3.setNbIngenieurs(5);
 		infraVoiture3.setPitStop(5);
 		infraVoiture3.setPrix(0);
-		infraVoiture3.setEtat(false);
+		//infraVoiture3.setEtat(false);
 		infraVoiture3.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing3 = new Infrastructure();
@@ -659,7 +659,7 @@ public class TestJpa {
 		infraMarketing3.setNom("infraMarketing3");
 		infraMarketing3.setNbIngenieurs(3);
 		infraMarketing3.setPrix(0);
-		infraMarketing3.setEtat(false);
+		//infraMarketing3.setEtat(false);
 		infraMarketing3.setType(typeInfra.M);
 		
 		infraPilote3 = infrastructureRepo.save(infraPilote3);
@@ -678,7 +678,7 @@ public class TestJpa {
 		infraPilote4.setNom("infraPilote4");
 		infraPilote4.setNbIngenieurs(7);
 		infraPilote4.setPrix(0);
-		infraPilote4.setEtat(false);
+		//infraPilote4.setEtat(false);
 		infraPilote4.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture4 = new Infrastructure();
@@ -687,7 +687,7 @@ public class TestJpa {
 		infraVoiture4.setNbIngenieurs(6);
 		infraVoiture4.setPitStop(4);
 		infraVoiture4.setPrix(0);
-		infraVoiture4.setEtat(false);
+		//infraVoiture4.setEtat(false);
 		infraVoiture4.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing4 = new Infrastructure();
@@ -695,7 +695,7 @@ public class TestJpa {
 		infraMarketing4.setNom("infraMarketing4");
 		infraMarketing4.setNbIngenieurs(3);
 		infraMarketing4.setPrix(0);
-		infraMarketing4.setEtat(false);
+		//infraMarketing4.setEtat(false);
 		infraMarketing4.setType(typeInfra.M);
 		
 		infraPilote4 = infrastructureRepo.save(infraPilote4);
@@ -714,7 +714,7 @@ public class TestJpa {
 		infraPilote5.setNom("infraPilote5");
 		infraPilote5.setNbIngenieurs(5);
 		infraPilote5.setPrix(0);
-		infraPilote5.setEtat(false);
+		//infraPilote5.setEtat(false);
 		infraPilote5.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture5 = new Infrastructure();
@@ -723,7 +723,7 @@ public class TestJpa {
 		infraVoiture5.setNbIngenieurs(5);
 		infraVoiture5.setPitStop(7);
 		infraVoiture5.setPrix(0);
-		infraVoiture5.setEtat(false);
+		//infraVoiture5.setEtat(false);
 		infraVoiture5.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing5 = new Infrastructure();
@@ -731,7 +731,7 @@ public class TestJpa {
 		infraMarketing5.setNom("infraMarketing5");
 		infraMarketing5.setNbIngenieurs(2);
 		infraMarketing5.setPrix(0);
-		infraMarketing5.setEtat(false);
+		//infraMarketing5.setEtat(false);
 		infraMarketing5.setType(typeInfra.M);
 		
 		infraPilote5 = infrastructureRepo.save(infraPilote5);
@@ -750,7 +750,7 @@ public class TestJpa {
 		infraPilote6.setNom("infraPilote6");
 		infraPilote6.setNbIngenieurs(4);
 		infraPilote6.setPrix(0);
-		infraPilote6.setEtat(false);
+		//infraPilote6.setEtat(false);
 		infraPilote6.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture6 = new Infrastructure();
@@ -759,7 +759,7 @@ public class TestJpa {
 		infraVoiture6.setNbIngenieurs(6);
 		infraVoiture6.setPitStop(6);
 		infraVoiture6.setPrix(0);
-		infraVoiture6.setEtat(false);
+		//infraVoiture6.setEtat(false);
 		infraVoiture6.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing6 = new Infrastructure();
@@ -767,7 +767,7 @@ public class TestJpa {
 		infraMarketing6.setNom("infraMarketing6");
 		infraMarketing6.setNbIngenieurs(2);
 		infraMarketing6.setPrix(0);
-		infraMarketing6.setEtat(false);
+		//infraMarketing6.setEtat(false);
 		infraMarketing6.setType(typeInfra.M);
 		
 		infraPilote6 = infrastructureRepo.save(infraPilote6);
@@ -786,7 +786,7 @@ public class TestJpa {
 		infraPilote7.setNom("infraPilote7");
 		infraPilote7.setNbIngenieurs(7);
 		infraPilote7.setPrix(0);
-		infraPilote7.setEtat(false);
+		//infraPilote7.setEtat(false);
 		infraPilote7.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture7 = new Infrastructure();
@@ -795,7 +795,7 @@ public class TestJpa {
 		infraVoiture7.setNbIngenieurs(7);
 		infraVoiture7.setPitStop(3);
 		infraVoiture7.setPrix(0);
-		infraVoiture7.setEtat(false);
+		//infraVoiture7.setEtat(false);
 		infraVoiture7.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing7 = new Infrastructure();
@@ -803,7 +803,7 @@ public class TestJpa {
 		infraMarketing7.setNom("infraMarketing7");
 		infraMarketing7.setNbIngenieurs(3);
 		infraMarketing7.setPrix(0);
-		infraMarketing7.setEtat(false);
+		//infraMarketing7.setEtat(false);
 		infraMarketing7.setType(typeInfra.M);
 		
 		infraPilote7 = infrastructureRepo.save(infraPilote7);
@@ -822,7 +822,7 @@ public class TestJpa {
 		infraPilote8.setNom("infraPilote8");
 		infraPilote8.setNbIngenieurs(5);
 		infraPilote8.setPrix(0);
-		infraPilote8.setEtat(false);
+	//	infraPilote8.setEtat(false);
 		infraPilote8.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture8 = new Infrastructure();
@@ -831,7 +831,7 @@ public class TestJpa {
 		infraVoiture8.setNbIngenieurs(6);
 		infraVoiture8.setPitStop(7);
 		infraVoiture8.setPrix(0);
-		infraVoiture8.setEtat(false);
+		//infraVoiture8.setEtat(false);
 		infraVoiture8.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing8 = new Infrastructure();
@@ -839,7 +839,7 @@ public class TestJpa {
 		infraMarketing8.setNom("infraMarketing8");
 		infraMarketing8.setNbIngenieurs(4);
 		infraMarketing8.setPrix(0);
-		infraMarketing8.setEtat(false);
+		//infraMarketing8.setEtat(false);
 		infraMarketing8.setType(typeInfra.M);
 		
 		infraPilote8 = infrastructureRepo.save(infraPilote8);
@@ -858,7 +858,7 @@ public class TestJpa {
 		infraPilote9.setNom("infraPilote9");
 		infraPilote9.setNbIngenieurs(5);
 		infraPilote9.setPrix(0);
-		infraPilote9.setEtat(false);
+		//infraPilote9.setEtat(false);
 		infraPilote9.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture9 = new Infrastructure();
@@ -867,7 +867,7 @@ public class TestJpa {
 		infraVoiture9.setNbIngenieurs(6);
 		infraVoiture9.setPitStop(5);
 		infraVoiture9.setPrix(0);
-		infraVoiture9.setEtat(false);
+		//infraVoiture9.setEtat(false);
 		infraVoiture9.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing9 = new Infrastructure();
@@ -875,7 +875,7 @@ public class TestJpa {
 		infraMarketing9.setNom("infraMarketing9");
 		infraMarketing9.setNbIngenieurs(3);
 		infraMarketing9.setPrix(0);
-		infraMarketing9.setEtat(false);
+		//infraMarketing9.setEtat(false);
 		infraMarketing9.setType(typeInfra.M);
 		
 		infraPilote9 = infrastructureRepo.save(infraPilote9);
@@ -894,7 +894,7 @@ public class TestJpa {
 		infraPilote10.setNom("infraPilote10");
 		infraPilote10.setNbIngenieurs(6);
 		infraPilote10.setPrix(0);
-		infraPilote10.setEtat(false);
+		//infraPilote10.setEtat(false);
 		infraPilote10.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture10 = new Infrastructure();
@@ -903,7 +903,7 @@ public class TestJpa {
 		infraVoiture10.setNbIngenieurs(6);
 		infraVoiture10.setPitStop(5);
 		infraVoiture10.setPrix(0);
-		infraVoiture10.setEtat(false);
+		//infraVoiture10.setEtat(false);
 		infraVoiture10.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing10 = new Infrastructure();
@@ -911,7 +911,7 @@ public class TestJpa {
 		infraMarketing10.setNom("infraMarketing10");
 		infraMarketing10.setNbIngenieurs(3);
 		infraMarketing10.setPrix(0);
-		infraMarketing10.setEtat(false);
+		//infraMarketing10.setEtat(false);
 		infraMarketing10.setType(typeInfra.M);
 		
 		infraPilote10 = infrastructureRepo.save(infraPilote10);
@@ -1042,18 +1042,18 @@ public class TestJpa {
 		//Inventaires
 		
 		
-		Inventaire inventaire2 = new Inventaire(0);
-		Inventaire inventaire3 = new Inventaire(0);
-		Inventaire inventaire4 = new Inventaire(0);
+		//Inventaire inventaire2 = new Inventaire(0);
+		//Inventaire inventaire3 = new Inventaire(0);
+		//Inventaire inventaire4 = new Inventaire(0);
 		
-		inventaire1.setPilotes(listPilote);
-		inventaire1.setInfrastructure(listInfrastructure3);
-		inventaire1.setVoitures(listVoiture10);
+		//inventaire1.setPilotes(listPilote);
+		//inventaire1.setInfrastructure(listInfrastructure3);
+		//inventaire1.setVoitures(listVoiture10);
 		
-		inventaire1 = inventaireRepo.save(inventaire1);
-		inventaire2 = inventaireRepo.save(inventaire2);
-		inventaire3 = inventaireRepo.save(inventaire3);
-		inventaire4 = inventaireRepo.save(inventaire4);
+//		inventaire1 = inventaireRepo.save(inventaire1);
+//		inventaire2 = inventaireRepo.save(inventaire2);
+//		inventaire3 = inventaireRepo.save(inventaire3);
+//		inventaire4 = inventaireRepo.save(inventaire4);
 	
 		//Course
 		
@@ -1229,7 +1229,7 @@ public class TestJpa {
 		joueur1.setTelephone("0606060606");
 		joueur1.setCiv(Civilite.M);
 		joueur1.setEcurie(ecurieJoueur1);
-		joueur1.setInventaire(inventaire1);
+		//joueur1.setInventaire(inventaire1);
 		
 		joueur1 = joueurRepo.save(joueur1);
 		compteJoueur1.setJoueur(joueur1);
@@ -1242,7 +1242,7 @@ public class TestJpa {
 		joueur2.setTelephone("0606060606");
 		joueur2.setCiv(Civilite.MME);
 		joueur2.setEcurie(ecurieJoueur2);
-		joueur2.setInventaire(inventaire2);
+		//joueur2.setInventaire(inventaire2);
 		
 		joueur2 = joueurRepo.save(joueur2);
 		compteJoueur2.setJoueur(joueur2);
@@ -1251,8 +1251,8 @@ public class TestJpa {
 		pilote1false.setEcurie(ecurieJoueur1);
 		pilote2false.setEcurie(ecurieJoueur2);
 		
-		pilote1false.setInventaire(inventaire1);
-		pilote2false.setInventaire(inventaire1);
+		//pilote1false.setInventaire(inventaire1);
+		//pilote2false.setInventaire(inventaire1);
 		
 		pilote1false = piloteRepo.save(pilote1false);
 		pilote2false = piloteRepo.save(pilote2false);
@@ -1272,7 +1272,7 @@ public class TestJpa {
 		infraVoiture1.setEcurie(ecurieJoueur1);
 		infraVoiture1 = infrastructureRepo.save(infraVoiture1);
 		
-		inventaire1 = inventaireRepo.save(inventaire1);
+		//inventaire1 = inventaireRepo.save(inventaire1);
 	
 		Position positionPilote1 = new Position();
 		positionPilote1.setPosition(4);

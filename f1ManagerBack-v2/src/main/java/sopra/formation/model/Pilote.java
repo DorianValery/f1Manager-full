@@ -42,16 +42,15 @@ public class Pilote {
 	 @OneToMany(mappedBy = "pilote")
 	 @JsonView(Views.ViewPiloteDetail.class)
 	 private List <Position> positions;
-	 @ManyToOne
-	 @JoinColumn(name="inventaire_id")
+	 @OneToMany(mappedBy = "pilote")
 	 @JsonView(Views.ViewPiloteDetail.class)
-	 private Inventaire inventaire;
+	 private List<Inventaire> inventaires;
 	 private String  imagePilote;
 	 
 	 public Pilote() {}
 	
 	public Pilote(Long id, String nom, String prenom, int age, String nationalite, Civilite civ, double experience,
-			boolean etat, double prix, Ecurie ecurie, List<Position> positions, Inventaire inventaire, String imagePilote ) {
+			boolean etat, double prix, Ecurie ecurie, List<Position> positions, List<Inventaire> inventaires, String imagePilote ) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -64,7 +63,7 @@ public class Pilote {
 		this.prix = prix;
 		this.ecurie = ecurie;
 		this.positions = positions;
-		this.inventaire = inventaire;
+		this.inventaires = inventaires;
 		this.imagePilote=imagePilote;
 	}
 	
@@ -168,12 +167,14 @@ public class Pilote {
 		this.positions = positions;
 	}
 
-	public Inventaire getInventaire() {
-		return inventaire;
+
+
+	public List<Inventaire> getInventaires() {
+		return inventaires;
 	}
 
-	public void setInventaire(Inventaire inventaire) {
-		this.inventaire = inventaire;
+	public void setInventaires(List<Inventaire> inventaires) {
+		this.inventaires = inventaires;
 	}
 
 	public int getVersion() {
@@ -200,13 +201,15 @@ public class Pilote {
 			this.position = position;
 		}
 
-	@Override
-	public String toString() {
-		return "Pilote [id=" + id + ", version=" + version + ", nom=" + nom + ", prenom=" + prenom + ", age=" + age
-				+ ", nationalite=" + nationalite + ", civ=" + civ + ", experience=" + experience + ", etat=" + etat
-				+ ", prix=" + prix + ", ecurie=" + ecurie + ", positions=" + positions + ", inventaire=" + inventaire
-				+ ", imagePilote=" + imagePilote + "]";
-	}
+		@Override
+		public String toString() {
+			return "Pilote [id=" + id + ", version=" + version + ", nom=" + nom + ", prenom=" + prenom + ", age=" + age
+					+ ", nationalite=" + nationalite + ", position=" + position + ", civ=" + civ + ", experience="
+					+ experience + ", etat=" + etat + ", prix=" + prix + ", ecurie=" + ecurie + ", positions="
+					+ positions + ", inventaires=" + inventaires + ", imagePilote=" + imagePilote + "]";
+		}
+
+
  
 
 }

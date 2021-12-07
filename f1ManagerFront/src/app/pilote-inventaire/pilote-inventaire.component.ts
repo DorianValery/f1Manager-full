@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AppConfigService } from '../app-config.service';
 import { EcurieService } from '../ecurie/ecurie.service';
+import { InventaireService } from '../inventaire/inventaire.service';
+import { JoueurService } from '../joueur/joueur.service';
 
 
 
 
-import { Ecurie, Pilote } from '../model';
+import { Ecurie, Inventaire, Pilote } from '../model';
 import { PiloteInventaireHttpService } from './pilote-inventaire-http.service';
 
 @Component({
@@ -23,7 +25,7 @@ export class PiloteInventaireComponent implements OnInit {
   prix : number;
   pilote : Pilote;
 
-  constructor(private appConfig: AppConfigService, private piloteService: PiloteInventaireHttpService,private ecurieService: EcurieService) { 
+  constructor(private appConfig: AppConfigService, private piloteService: PiloteInventaireHttpService,private ecurieService: EcurieService, private inventaireService: InventaireService, private joueurService: JoueurService) { 
     this.listPilotesEcurie(1);
   }
   
@@ -70,17 +72,30 @@ export class PiloteInventaireComponent implements OnInit {
   }*/
 
   //version 2
-  acheter(id: number){
+//   acheter(id: number){
 
-    this.piloteService.findPiloteById(id).subscribe(response=>{
-    if(this.ecurieService.ecurie.argent>response.prix)
-  {
-    this.ecurieService.ecurie.argent= this.ecurieService.ecurie.argent-response.prix;
+//     this.piloteService.findPiloteById(id).subscribe(response=>{
+//     if(this.ecurieService.ecurie.argent>response.prix)
+//   {
+//     this.ecurieService.ecurie.argent= this.ecurieService.ecurie.argent-response.prix;
+//     this.ecurieService.modify(this.ecurieService.ecurie);
+//     this.argent=this.ecurieService.ecurie.argent;
+
+//   }
+//   }, error => console.log(error))
+// }
+
+
+
+acheter(pilote: Pilote){
+  if (this.ecurieService.ecurie.argent > pilote.prix){
+    this.ecurieService.ecurie.argent = this.ecurieService.ecurie.argent - pilote.prix;
     this.ecurieService.modify(this.ecurieService.ecurie);
-    this.argent=this.ecurieService.ecurie.argent;
-
+    this.ecurie.argent = this.ecurieService.ecurie.argent;
+    this.inventaireService.create(new Inventaire(null, null, this.joueurService.joueur, pilote)).subscribe(resp => {
+      this.piloteService.load();
+    }, error => console.log(error));
   }
-  }, error => console.log(error))
 }
 
 cancel() {

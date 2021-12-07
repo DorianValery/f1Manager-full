@@ -86,7 +86,7 @@
                       <li class="list-group-item" *ngIf="!pilote.etat" ><span class="infos">Prix : </span>{{pilote.prix}}</li>
                      </ul>
                      <button class="btnSelect" *ngIf="pilote.etat" (click)="select(pilote)" >Selectionner</button>
-                     <button class="btnSelect" *ngIf="!pilote.etat" (click)=acheter(pilote.id) >Acheter</button> <!--ngIf inventaire.etat? si modif inventaire?-->
+                     <button class="btnSelect" *ngIf="!pilote.etat" (click)=acheter(pilote) >Acheter</button> <!--ngIf inventaire.etat? si modif inventaire?-->
 
               </div>
             </div>

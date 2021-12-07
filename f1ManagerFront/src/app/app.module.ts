@@ -20,8 +20,9 @@ import { InfrastructureInventaireComponent } from './infrastructure-inventaire/i
 import { SeConnecterComponent } from './se-connecter/se-connecter.component';
 import { InscriptionJoueurComponent } from './inscription-joueur/inscription-joueur.component';
 import { PodiumComponent } from './podium/podium.component';
-import { InventaireComponent } from './inventaire/inventaire.component';
-import { PodiumComponent } from './podium/podium.component';
+
+
+
 
 
 @NgModule({
@@ -38,7 +39,6 @@ import { PodiumComponent } from './podium/podium.component';
     InfrastructureInventaireComponent,
     InscriptionJoueurComponent,
     PodiumComponent,
-    InventaireComponent,
     PodiumComponent,
   ],
   imports: [

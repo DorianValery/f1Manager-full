@@ -43,7 +43,6 @@ export class JoueurService {
   loadJoueur(id: number) {
     this.http.get<Joueur>(this.joueurUrl + id).subscribe(response => {
       this.joueur = response;
-      console.log(response);
       this.ecurieService.loadEcurie(response.ecurie.id);
     })
   }
