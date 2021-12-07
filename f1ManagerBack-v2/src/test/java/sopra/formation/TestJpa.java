@@ -942,6 +942,7 @@ public class TestJpa {
 		ecurieJoueur1.setNom("EcurieJoueur1");
 		ecurieJoueur1.setArgent(500000000);
 		ecurieJoueur1.setExperience(500);
+		ecurieJoueur1.setCourseEnCours(1);
 		
 		ecurieJoueur1 = ecurieRepo.save(ecurieJoueur1);
 		
@@ -949,6 +950,7 @@ public class TestJpa {
 		ecurieJoueur2.setNom("Ecurie2");
 		ecurieJoueur2.setArgent(40000);
 		ecurieJoueur2.setExperience(400);
+		ecurieJoueur2.setCourseEnCours(1);
 		
 		ecurieJoueur2 = ecurieRepo.save(ecurieJoueur2);
 		
@@ -961,6 +963,7 @@ public class TestJpa {
 		ecurie1.setInfrastructure(listInfrastructure1);
 		ecurie1.setVoitures(listVoiture1);
 		ecurie1.setPilotes(listPilote1);
+		ecurie1.setCourseEnCours(1);
 		
 		Ecurie ecurie2 = new Ecurie();
 		ecurie2.setNom("LEGENDARY");
@@ -1059,7 +1062,7 @@ public class TestJpa {
 		
 		Course course1 = new Course();
 		course1.setNom("Bahrein International Circuit");
-		course1.setNombreTour(56);
+		course1.setNombreTour(12);
 		course1.setPopularite(70);
 		course1.setTempsRef(null);
 		course1.setCashPrize(200000);
@@ -1067,133 +1070,133 @@ public class TestJpa {
 		
 		Course course2 = new Course();
 		course2.setNom("Imola");
-		course2.setNombreTour(63);
+		course2.setNombreTour(10);
 		course2.setPopularite(60);
 		course2.setTempsRef(null);
 		course2.setCashPrize(150000);
 
 		Course course3 = new Course();
 		course3.setNom("Portimao");
-		course3.setNombreTour(66);
+		course3.setNombreTour(9);
 		course3.setPopularite(50);
 		course3.setTempsRef(null);
 		course3.setCashPrize(140000);
 		
 		Course course4 = new Course();
 		course4.setNom("Catalunya");
-		course4.setNombreTour(66);
+		course4.setNombreTour(12);
 		course4.setPopularite(65);
 		course4.setTempsRef(null);
 		course4.setCashPrize(180000);
 		
 		Course course5 = new Course();
 		course5.setNom("Monaco");
-		course5.setNombreTour(78);
+		course5.setNombreTour(14);
 		course5.setPopularite(90);
 		course5.setTempsRef(null);
 		course5.setCashPrize(250000);
 		
 		Course course6 = new Course();
 		course6.setNom("Baku City Circuit");
-		course6.setNombreTour(51);
+		course6.setNombreTour(12);
 		course6.setPopularite(55);
 		course6.setTempsRef(null);
 		course6.setCashPrize(150000);
 		
 		Course course7 = new Course();
 		course7.setNom("Paul Ricard");
-		course7.setNombreTour(53);
+		course7.setNombreTour(14);
 		course7.setPopularite(60);
 		course7.setTempsRef(null);
 		course7.setCashPrize(170000);
 		
 		Course course8 = new Course();
 		course8.setNom("Red Bull Ring");
-		course8.setNombreTour(71);
+		course8.setNombreTour(8);
 		course8.setPopularite(55);
 		course8.setTempsRef(null);
 		course8.setCashPrize(145000);
 		
 		Course course9 = new Course();
 		course9.setNom("Silverstone");
-		course9.setNombreTour(52);
+		course9.setNombreTour(7);
 		course9.setPopularite(65);
 		course9.setTempsRef(null);
 		course9.setCashPrize(175000);
 		
 		Course course10 = new Course();
 		course10.setNom("Hungagoring");
-		course10.setNombreTour(70);
+		course10.setNombreTour(3);
 		course10.setPopularite(60);
 		course10.setTempsRef(null);
 		course10.setCashPrize(170000);
 		
 		Course course11 = new Course();
 		course11.setNom("Spa-Francorchamps");
-		course11.setNombreTour(44);
+		course11.setNombreTour(4);
 		course11.setPopularite(80);
 		course11.setTempsRef(null);
 		course11.setCashPrize(220000);
 		
 		Course course12 = new Course();
 		course12.setNom("Zandvoort");
-		course12.setNombreTour(72);
+		course12.setNombreTour(10);
 		course12.setPopularite(60);
 		course12.setTempsRef(null);
 		course12.setCashPrize(180000);
 		
 		Course course13 = new Course();
 		course13.setNom("Monza");
-		course13.setNombreTour(53);
+		course13.setNombreTour(8);
 		course13.setPopularite(75);
 		course13.setTempsRef(null);
 		course13.setCashPrize(200000);
 		
 		Course course14 = new Course();
 		course14.setNom("Sochi");
-		course14.setNombreTour(53);
+		course14.setNombreTour(9);
 		course14.setPopularite(60);
 		course14.setTempsRef(null);
 		course14.setCashPrize(170000);
 		
 		Course course15 = new Course();
 		course15.setNom("Istanbul");
-		course15.setNombreTour(58);
+		course15.setNombreTour(7);
 		course15.setPopularite(50);
 		course15.setTempsRef(null);
 		course15.setCashPrize(150000);
 		
 		Course course16 = new Course();
 		course16.setNom("Circuit of the Americas");
-		course16.setNombreTour(56);
+		course16.setNombreTour(6);
 		course16.setPopularite(70);
 		course16.setTempsRef(null);
 		course16.setCashPrize(185000);
 		
 		Course course17 = new Course();
 		course17.setNom("Mexico");
-		course17.setNombreTour(71);
+		course17.setNombreTour(7);
 		course17.setPopularite(70);
 		course17.setTempsRef(null);
 		course17.setCashPrize(180000);
 		
 		Course course18 = new Course();
 		course18.setNom("Interlagos");
-		course18.setNombreTour(71);
+		course18.setNombreTour(10);
 		course18.setPopularite(70);
 		course18.setTempsRef(null);
 		course18.setCashPrize(180000);
 		
 		Course course19 = new Course();
 		course19.setNom("Qatar");
-		course19.setNombreTour(57);
+		course19.setNombreTour(11);
 		course19.setPopularite(65);
 		course19.setTempsRef(null);
 		course19.setCashPrize(175000);
 		
 		Course course20 = new Course();
 		course20.setNom("Yas Marina Circuit");
-		course20.setNombreTour(55);
+		course20.setNombreTour(10);
 		course20.setPopularite(80);
 		course20.setTempsRef(null);
 		course20.setCashPrize(200000);
