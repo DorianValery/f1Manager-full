@@ -19,35 +19,38 @@
 
     <div class="p-2 bd-highlight">
       <form class="row g-3">
-        <div class="col-md-5">
-            <label for="inputAddress2" class="form-label">Pseudo</label>
-            <input type="text" class="form-control" id="inputPseudo" placeholder="Choisi ton nom d'utilisateur">
+          
+       <div class="col-md-5">
+            <label for="inputAddress2" class="form-label">Login</label>
+            <input type="text" class="form-control" id="inputPseudo" placeholder="Choisi ton nom d'utilisateur" >
         </div>
         <div class="col-md-5">
           <label for="inputPassword4" class="form-label">Password</label>
-          <input type="password" class="form-control" id="inputPassword4" placeholder="Mot de passe">
+          <input type="password" class="form-control" id="inputPassword4" placeholder="Mot de passe" >
         </div>
+        
         <div class="col-10">
             <label for="inputEmail4" class="form-label">Email</label>
             <input type="email" class="form-control" id="inputEmail4" placeholder="Entre ton email">
+       
         </div>
         
         <div class="col-md-4">
-          <label for="inputCity" class="form-label">Age</label>
-          <input type="nuber" class="form-control" id="inputAge" placeholder="Age">
+          <label for="inputAge" class="form-label">Age</label>
+          <input type="number" class="form-control" id="inputAge" placeholder="Age"  >
         </div>
 
-        <div class="col-md-2">
-            <label for="civilite">Civilite:</label>
-            <select class="form-control" id="civilite" [(ngModel)]="joueurForm.civilite">
+        <div class="col-md-4">
+            <label for="civilite">Civilité:</label>
+            <select class="form-control" id="civilite" >
                 <option value="">Choisir une civilité</option>
                 <option *ngFor="let civilite of civilites" [value]="civilite">{{civilite}}</option>
             </select>
         </div>
         
         <div class="col-12">
-          <button (click)="save()" type="submit" class="btn btn-danger" [routerLink]="['/seconnecter']" routerLinkActive="active">Débuter l'aventure</button>
          
+            <button (click)="save()" type="submit" class="btn btn-danger" >Débuter l'aventure</button>
           <button (click)="cancel()" type="button" class="btn btn-dark float-end" [routerLink]="['/seconnecter']" routerLinkActive="active">Annuler</button>
         </div>
 

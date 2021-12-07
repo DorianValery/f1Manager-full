@@ -19,7 +19,7 @@ const routes: Routes = [
   {path: "voiture", component: VoitureInventaireComponent},
   {path: "infrastructure", component: InfrastructureInventaireComponent},
   {path: "course", component: SaisonComponent},
-  {path: "jeu", component: CourseComponent},
+  {path: "course/jeu", component: CourseComponent},
   {path: "podium", component: PodiumComponent},
 ];
 
