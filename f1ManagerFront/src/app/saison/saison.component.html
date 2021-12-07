@@ -4,42 +4,48 @@
 </div>
 
 <div id="contenuPrincipal">
+    
     <img id="image" src="{{courseTest?.image}}">
    
+    <div id="contenuSecondaire">
+        <table id="contenuPilote">
+            <thead>
+                <tr>
+                    <th>PILOTES</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of ecurie?.pilotes">
+                    <td>{{p.prenom}}</td>
+                    <td>{{p.nom}}</td>
+                    <td>{{p.nationalite}}</td>
+                    <td>{{p.experience}}</td>
+                    <td></td>
+            </tbody>
+        </table>
 
-    <table id="contenuPilote">
-        <thead>
-            <tr>
-                <th>PILOTES</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let p of ecurie?.pilotes">
-                <td>{{p.prenom}}</td>
-                <td>{{p.nom}}</td>
-                <td>{{p.nationalite}}</td>
-                <td>{{p.experience}}</td>
-                <td></td>
-        </tbody>
-    </table>
+        <table id="contenuVoiture" class="table">
+            <thead>
+                <tr>
+                    <th>VOITURES</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let v of ecurie?.voitures">
+                    <td>{{v.marque}}</td>
+                    <td>{{v.vitesse}}</td>
+                    <td></td>
+            </tbody>
+        </table>
 
-    <table id="contenuVoiture" class="table">
-        <thead>
-            <tr>
-                <th>VOITURES</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let v of ecurie?.voitures">
-                <td>{{v.marque}}</td>
-                <td>{{v.vitesse}}</td>
-                <td></td>
-        </tbody>
-    </table> 
+        <a href="jeu/"> <button id="bouton"> LANCER LA COURSE ! </button> </a>
+        
+    </div>
  
 </div> 
+
 
 
 
