@@ -4,14 +4,35 @@
         <thead>
             <tr>
                 <th>POSITION</th>
+                <th>PODIUM</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor ="let v of score()">
-                <td>{{v.ecurie}}</td>
+            <tr *ngFor ="let v of score();let i = index">
+                             
+                <td>{{i+1}} - {{v.ecurie}}</td>
+                <td *ngIf="i < 3">{{i+1}} - {{v.ecurie}}</td>
+                <td></td>
+            </tr>
+            
+        </tbody>
+
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Votre Position</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor ="let v of score();let i = index">
+                <td *ngIf="v.ecurie == ecurie.nom; else elseBlock">{{i+1}}<ng-template #elseBlock></ng-template></td>
             </tr>
         </tbody>
     </table>
+
 
 
 </div>
