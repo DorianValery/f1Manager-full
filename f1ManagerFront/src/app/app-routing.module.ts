@@ -5,6 +5,7 @@ import { InfrastructureInventaireComponent } from './infrastructure-inventaire/i
 import { InscriptionJoueurComponent } from './inscription-joueur/inscription-joueur.component';
 import { MenuComponent } from './menu/menu.component';
 import { PiloteInventaireComponent } from './pilote-inventaire/pilote-inventaire.component';
+import { PodiumComponent } from './podium/podium.component';
 import { SaisonComponent } from './saison/saison.component';
 import { SeConnecterComponent } from './se-connecter/se-connecter.component';
 import { VoitureInventaireComponent } from './voiture-inventaire/voiture-inventaire.component';
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: "voiture", component: VoitureInventaireComponent},
   {path: "infrastructure", component: InfrastructureInventaireComponent},
   {path: "course", component: SaisonComponent},
-  {path: "jeu", component: CourseComponent}
+  {path: "jeu", component: CourseComponent},
+  {path: "podium", component: PodiumComponent},
 ];
 
 @NgModule({

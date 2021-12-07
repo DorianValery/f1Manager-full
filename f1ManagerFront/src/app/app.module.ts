@@ -20,6 +20,7 @@ import { InfrastructureInventaireComponent } from './infrastructure-inventaire/i
 import { SeConnecterComponent } from './se-connecter/se-connecter.component';
 import { InscriptionJoueurComponent } from './inscription-joueur/inscription-joueur.component';
 import { PodiumComponent } from './podium/podium.component';
+import { RouterModule } from '@angular/router';
 
 
 

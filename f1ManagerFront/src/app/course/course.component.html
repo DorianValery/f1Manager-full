@@ -15,7 +15,7 @@
     <div id="actions">
         <button>REPARATION</button>
         <a><button *ngIf="nbTour < course?.nombreTour" (click)="passerTour()">PASSER TOUR</button></a>
-        <a href="/voiture"><button *ngIf="nbTour >= course?.nombreTour" >PODIUM</button> </a>
+        <a routerLink="/podium"><button *ngIf="nbTour >= course?.nombreTour" (click)="finCourse()">PODIUM</button> </a>
     </div>
 
     

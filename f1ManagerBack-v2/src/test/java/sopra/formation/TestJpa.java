@@ -940,7 +940,7 @@ public class TestJpa {
 		
 		Ecurie ecurieJoueur1 = new Ecurie();
 		ecurieJoueur1.setNom("EcurieJoueur1");
-		ecurieJoueur1.setArgent(50000);
+		ecurieJoueur1.setArgent(500000000);
 		ecurieJoueur1.setExperience(500);
 		
 		ecurieJoueur1 = ecurieRepo.save(ecurieJoueur1);
