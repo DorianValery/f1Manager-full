@@ -22,6 +22,9 @@ import { InscriptionJoueurComponent } from './inscription-joueur/inscription-jou
 import { PodiumComponent } from './podium/podium.component';
 
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +38,7 @@ import { PodiumComponent } from './podium/podium.component';
     SeConnecterComponent,
     InfrastructureInventaireComponent,
     InscriptionJoueurComponent,
+    PodiumComponent,
     PodiumComponent,
   ],
   imports: [

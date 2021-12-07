@@ -1,11 +1,14 @@
 package sopra.formation.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
 import com.fasterxml.jackson.annotation.JsonView;
@@ -23,30 +26,29 @@ public class Voiture {
 	private int maniabilite;
 	private int vitesse;
 	private int poids;
-	private boolean etat;
+	//private boolean etat;
 	private int prix;
 	private String image ;
 	@ManyToOne
 	@JoinColumn(name="ecurie_id")
 	@JsonView(Views.ViewVoitureDetail.class)
 	private Ecurie ecurie;
-	@ManyToOne
-	@JoinColumn(name="inventaire_id")
+	@OneToMany(mappedBy = "voiture")
 	@JsonView(Views.ViewVoitureDetail.class)
-	private Inventaire inventaire;
+	private List<Inventaire> inventaires;
 	
-	public Voiture(Long id, String marque, int maniabilite, int vitesse, int poids, boolean etat, int prix,
-			Ecurie ecurie, Inventaire inventaire) {
+	public Voiture(Long id, String marque, int maniabilite, int vitesse, int poids, /*boolean etat,*/ int prix,
+			Ecurie ecurie, List<Inventaire> inventaires) {
 		super();
 		this.id = id;
 		this.marque = marque;
 		this.maniabilite = maniabilite;
 		this.vitesse = vitesse;
 		this.poids = poids;
-		this.etat = etat;
+		//this.etat = etat;
 		this.prix = prix;
 		this.ecurie = ecurie;
-		this.inventaire = inventaire;
+		this.inventaires = inventaires;
 	}
 
 	public Voiture() {
@@ -59,7 +61,7 @@ public class Voiture {
 		this.maniabilite = maniabilite;
 		this.vitesse = vitesse;
 		this.poids = poids;
-		this.etat = etat;
+		//this.etat = etat;
 		this.prix = prix;
 	}
 
@@ -103,13 +105,13 @@ public class Voiture {
 		this.poids = poids;
 	}
 
-	public boolean isEtat() {
+	/*public boolean isEtat() {
 		return etat;
 	}
 
 	public void setEtat(boolean etat) {
 		this.etat = etat;
-	}
+	}*/
 
 	public int getPrix() {
 		return prix;
@@ -127,14 +129,14 @@ public class Voiture {
 		this.ecurie = ecurie;
 	}
 
-	public Inventaire getInventaire() {
-		return inventaire;
+
+	public List<Inventaire> getInventaires() {
+		return inventaires;
 	}
 
-	public void setInventaire(Inventaire inventaire) {
-		this.inventaire = inventaire;
+	public void setInventaires(List<Inventaire> inventaires) {
+		this.inventaires = inventaires;
 	}
-	
 
 	public int getVersion() {
 		return version;
@@ -154,10 +156,12 @@ public class Voiture {
 
 	@Override
 	public String toString() {
-		return "Voiture [id=" + id + ", marque=" + marque + ", maniabilite=" + maniabilite + ", vitesse=" + vitesse
-				+ ", poids=" + poids + ", etat=" + etat + ", prix=" + prix + ", ecurie=" + ecurie + ", inventaire="
-				+ inventaire + "]";
+		return "Voiture [id=" + id + ", version=" + version + ", marque=" + marque + ", maniabilite=" + maniabilite
+				+ ", vitesse=" + vitesse + ", poids=" + poids + ", etat=" +  ", prix=" + prix + ", image=" + image
+				+ ", ecurie=" + ecurie + ", inventaires=" + inventaires + "]";
 	}
+
+
 	
 	
 	

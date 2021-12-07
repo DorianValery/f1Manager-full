@@ -2,16 +2,16 @@
     <div class="card-header  text-black border-0">
       <h1 id="titre">Mes infrastructures</h1>
       <span id="argent">
-        <h2>Solde : {{ecurie.argent}}</h2>
+        <h2>Solde : {{ecurie.argent}}<img id="pieces" src="../../assets/pieces.png" alt=""></h2>
       </span>
   
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false">
         <div class="carousel-inner">
-          <!-- ngfor loop using get dynamic value and ngclass for add acive class -->
+   
           <div class="carousel-item" *ngFor="let inf of list(); let i = index" [ngClass]="{'active': i === 0}">
-            <!-- card -->
+         
             <div class="card border-0" style="width: 70%;">
-              <!-- <img class="card-img-top" [src]="inf.image" alt="Card image cap"> -->
+            
               <div class="card-body" class="text-center">
                 <h5 class="card-title">Infrastructure : {{inf.nom}}</h5>
                 <ul class="list-group list-group-flush">
@@ -22,7 +22,7 @@
                   <li class="list-group-item">Pitstop : {{inf.pitStop}}</li>
                 </ul>
               </div>
-              <div class="btnSelect" *ngIf="!inf.etat">Acheter : {{inf.prix}} ฿</div>
+              <div class="btnSelect" *ngIf="!inf.etat" (click)="acheter(inf)">Acheter : {{inf.prix}} ฿</div>
               <div class="btnSelect" *ngIf="inf.etat" (click)="select(inf)">Sélectionner</div>
               <div class="card-footer" class="text-center">
               </div>
@@ -45,7 +45,7 @@
     <div class="footer">
       <div *ngIf="ecurie.infrastructures[0]" class="infrastructureSelect" >
         <div class="card" style="width: 100%;"> 
-          <!-- <img [src]="ecurie.infrastructures[0].image" class="infrastructureSelect" class="card-img-top" alt="..."> -->
+        
            <div class="card-body">
             <p class="card-text">{{ecurie.infrastructures[0].nom}}</p>
           </div>

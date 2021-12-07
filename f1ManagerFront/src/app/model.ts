@@ -188,12 +188,19 @@ export class Inventaire {
 
     id: number;
     version: number;
-    argentDisponible: number;
+    joueur: Joueur;
+    pilote: Pilote;
+    voiture: Voiture;
+    infrastructure: Infrastructure;
+    
 
-    constructor(id?: number, version?: number, argentDisponible?: number) {
+    constructor(id?: number, version?: number, joueur?: Joueur,pilote?: Pilote, voiture?: Voiture, infrastructure?: Infrastructure ) {
         this.id = id;
         this.version = version;
-        this.argentDisponible = argentDisponible;
+        this.joueur = joueur;
+        this.pilote = pilote;
+        this.voiture = voiture;
+        this.infrastructure = infrastructure;
     }
 }
 
