@@ -19,6 +19,7 @@ import { PiloteInventaireHttpService } from './pilote-inventaire/pilote-inventai
 import { InfrastructureInventaireComponent } from './infrastructure-inventaire/infrastructure-inventaire.component';
 import { SeConnecterComponent } from './se-connecter/se-connecter.component';
 import { InscriptionJoueurComponent } from './inscription-joueur/inscription-joueur.component';
+import { PodiumComponent } from './podium/podium.component';
 import { InventaireComponent } from './inventaire/inventaire.component';
 import { PodiumComponent } from './podium/podium.component';
 
@@ -36,6 +37,7 @@ import { PodiumComponent } from './podium/podium.component';
     SeConnecterComponent,
     InfrastructureInventaireComponent,
     InscriptionJoueurComponent,
+    PodiumComponent,
     InventaireComponent,
     PodiumComponent,
   ],
