@@ -35,4 +35,13 @@ nav ul {
 background-color: black;
 border-color:white;
   }
+  #logo{
+    height:70px ;
+    width:77px;
+    transition: transform .1s;
+    cursor: pointer;
+  }
+  #logo:hover{
+     transform: scale(1.1);
+  }
   

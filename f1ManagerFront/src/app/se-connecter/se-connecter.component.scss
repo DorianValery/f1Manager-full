@@ -28,6 +28,16 @@ color:white;
     height: auto;
     display: flex;
     align-items: flex-end;
+} 
+#logo-alignement{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#twitter{
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
 }
 .lien{
     font-weight: bolder;
