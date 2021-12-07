@@ -24,9 +24,11 @@ export class PiloteInventaireComponent implements OnInit {
   argent: number;
   prix : number;
   pilote : Pilote;
+  active:number=0;
 
   constructor(private appConfig: AppConfigService, private piloteService: PiloteInventaireHttpService,private ecurieService: EcurieService, private inventaireService: InventaireService, private joueurService: JoueurService) { 
    this.ecurie=this.ecurieService.ecurie;
+   this.pilotes=this.ecurieService.ecurie.pilotes;
   }
   
   ngOnInit(): void {}
@@ -94,6 +96,7 @@ acheter(pilote: Pilote){
     this.ecurie.argent = this.ecurieService.ecurie.argent;
     this.inventaireService.create(new Inventaire(null, null, this.joueurService.joueur, pilote)).subscribe(resp => {
       this.piloteService.load();
+      this.active=pilote.id;
     }, error => console.log(error));
   }
 }

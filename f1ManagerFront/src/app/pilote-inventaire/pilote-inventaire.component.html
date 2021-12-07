@@ -59,7 +59,7 @@
           
           <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item" *ngFor="let pilote of list() ; let i = index" [ngClass]="{'active': i === 1}">
+              <div class="carousel-item" *ngFor="let pilote of list() ; let i = index" [ngClass]="{'active': (i === 0 && active==0) || pilote.id==active}">
                     <!-- Card-->
                     <div class="card" style="width: 18rem;">
                       
@@ -108,7 +108,7 @@
         </div>
       </div>
     </div>
-    <div *ngIf="!pilotes[0]" class="piloteVide" (click)="choixV(0)" [ngStyle]="{'font-weight': choixPilote == 0 ? 'bolder' : ''}">Pilote 1</div>
+    <button *ngIf="!pilotes[0]" class="piloteVide" (click)="choixV(0)" [ngStyle]="{'font-weight': choixPilote == 0 ? 'bolder' : ''}">Pilote 1</button>
 
     <div *ngIf="pilotes[1]" class="piloteSelect" [ngClass]="{'piloteSelect1' : choixPilote==1}"
       (click)="choixV(1)">
@@ -119,8 +119,8 @@
         </div>
       </div>
     </div>
-    <div *ngIf="!pilotes[1]" class="piloteVide" (click)="choixV(1)" [ngStyle]="{'font-weight': choixPilote == 1 ? 'bolder' : ''}">Pilote 2</div>
-    <div class="btnValid" (click)="valider()">Valider</div>
+    <button *ngIf="!pilotes[1]" class="piloteVide" (click)="choixV(1)" [ngStyle]="{'font-weight': choixPilote == 1 ? 'bolder' : ''}">Pilote 2</button>
+    <button class="btnValid" (click)="valider()" [routerLink]="['/ecurie']" routerLinkActive="active">Valider</button>
   </div>
 
 </div>

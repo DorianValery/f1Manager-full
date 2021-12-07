@@ -14,6 +14,7 @@ import { InfrastructureInventaireService } from './infrastructure-inventaire.ser
 export class InfrastructureInventaireComponent implements OnInit {
 
   ecurie: Ecurie;
+  active:number=0;
 
   constructor(private appConfig: AppConfigService, private infrastructureInventaireService: InfrastructureInventaireService, private ecurieService: EcurieService, private inventaireService: InventaireService, private joueurService: JoueurService) {
     this.ecurie=this.ecurieService.ecurie;
@@ -53,6 +54,7 @@ export class InfrastructureInventaireComponent implements OnInit {
       this.ecurie.argent = this.ecurieService.ecurie.argent;
       this.inventaireService.create(new Inventaire(null, null, this.joueurService.joueur, null,null, infrastructure)).subscribe(resp => {
         this.infrastructureInventaireService.load();
+        this.active=infrastructure.id;
       }, error => console.log(error));
     }
 }

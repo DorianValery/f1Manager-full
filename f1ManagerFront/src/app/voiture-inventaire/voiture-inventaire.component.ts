@@ -17,6 +17,7 @@ export class VoitureInventaireComponent implements OnInit {
   voitures: Array<Voiture> = new Array<Voiture>();
   argent: number = this.ecurieService.ecurie.argent;
   voituresAffichees: Array<Voiture> = new Array<Voiture>();
+  active:number=0;
 
   constructor(private appConfig: AppConfigService, private voitureInventaireService: VoitureInventaireService, private ecurieService: EcurieService, private inventaireService: InventaireService, private joueurService: JoueurService) {
     this.voitureInventaireService.load();
@@ -30,7 +31,7 @@ export class VoitureInventaireComponent implements OnInit {
 
   list(): Array<Voiture> {
     return this.voitureInventaireService.findAll();
-  }
+    }
 
 
   select(voiture: Voiture) {
@@ -54,7 +55,8 @@ export class VoitureInventaireComponent implements OnInit {
         this.ecurieService.modify(this.ecurieService.ecurie);
         this.argent = this.ecurieService.ecurie.argent;
         this.inventaireService.create(new Inventaire(null, null, this.joueurService.joueur, null, response)).subscribe(resp => {
-          this.voitureInventaireService.load();
+        this.voitureInventaireService.load();
+        this.active=id;
         }, error => console.log(error));
 
         this.voitureInventaireService.load();
