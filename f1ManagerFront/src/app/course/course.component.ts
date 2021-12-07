@@ -26,6 +26,7 @@ export class CourseComponent implements OnInit {
 
 
   scoreGeneral: number[] = [];
+  info : string []=[];
 
   ecurie: Ecurie = new Ecurie();
 
@@ -40,9 +41,9 @@ export class CourseComponent implements OnInit {
   constructor(private appConfig: AppConfigService, private menuService: MenuHttpService, private courseService: CourseService, private ecurieService: EcurieService, private piloteService: PiloteInventaireHttpService, private saisonService: SaisonService) {
     this.listcourse()
     this.listEcurie()
-    this.saisonService.findCourseById(1);
-    this.findCourse(1);
-    this.menuService.findEcurieById(1);
+    this.ecuries =this.list();
+    console.log(this.ecuries)
+    
     
     console.log(this.ecuries)
   }
@@ -102,13 +103,6 @@ export class CourseComponent implements OnInit {
   findEcurie(id: number) {
     this.menuService.findEcurieById(id).subscribe(resp => {
       this.ecurie = resp;
-      this.ecuries.push(this.ecurie);
-      this.ecuries.push(this.ecurie);
-      this.ecuries.push(this.ecurie);
-      this.ecuries.push(this.ecurie);
-
-      this.ecuries.push(this.ecurie);
-      this.ecuries.push(this.ecurie);
     }, error => console.log(error))
   }
 
@@ -118,6 +112,7 @@ export class CourseComponent implements OnInit {
   algoPosition() {
     this.scoreGeneral = []
 
+    this.info = []
     this.classement = new Array<Order>();
 
     // this.order.voiture = new Voiture(1, 0, "test", 50, 250, 600, true, null, null);
@@ -175,35 +170,50 @@ export class CourseComponent implements OnInit {
 
 
     for (let element of this.ecuries) {
+     
 
       for (let el of element.voitures) {
-        var scoreVoiture: number = ((el.maniabilite + el.vitesse) - el.poids / 10)
+        var scoreVoiture: number =0 ;
+        scoreVoiture += ((el.maniabilite + el.vitesse) - el.poids / 10) 
+        console.log(scoreVoiture)
       }
       for (let el of element.pilotes) {
-        var scorePilote: number = (el.experience)
+        var scorePilote: number=0 ;
+        scorePilote+= (el.experience) 
+        console.log(scorePilote)
       }
       for (let el of element.infrastructures) {
-        var scoreInfra: number = (el.experience + el.nbIngenieurs + el.pitStop)
-      }
+        var scoreInfra: number=0 ;
+        scoreInfra += (el.experience + el.nbIngenieurs + el.pitStop)
+        console.log(scoreInfra)
+      } 
+     
+     
+      
+      
 
 
       //(((element.voiture.maniabilite + element.voiture.vitesse) - element.voiture.poids / 10) + (element.pilote.experience) + (element.infra.nbIngenieurs) + element.infra.pitStop) * (1 + Math.random());
 
 
 
-      this.scoreGeneral.push((scoreVoiture + scorePilote + scoreInfra) * (1 + Math.random()))
+      this.scoreGeneral.push((scoreVoiture + scorePilote + scoreInfra) * (1 + (Math.random()/10)))
+      this.scoreGeneral = this.scoreGeneral.sort((a, b) => b - a);
+      this.info.push(element.nom)
+      
 
 
-      console.log(this.scoreGeneral)
+      
     }
 
-
+      console.log(this.scoreGeneral)
+      console.log(this.info)
 
     // this.scoreGeneral.push(this.order.score);
 
     // console.log(this.order.score)
 
-    this.scoreGeneral = this.scoreGeneral.sort((a, b) => b - a);
+   
     console.log(this.scoreGeneral + "ok")
 
 
