@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AppConfigService } from '../app-config.service';
 import { Ecurie, Pilote } from '../model';
+import { CourseComponent } from './course.component';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,8 @@ export class CourseService {
   pilotes : Array<Pilote> = new Array<Pilote>();
   pilote: Pilote;
   piloteUrl : string;
+  scoreFin : any[] ;
+  
 
   constructor(private http: HttpClient, private appConfig: AppConfigService) {
     this.ecurieUrl = this.appConfig.backEndUrl + "ecurie/"
@@ -30,6 +33,10 @@ export class CourseService {
   findAllEcurie() : Array<Ecurie>{
     return this.ecuries;
   }
+
+ findScore() : any[]{
+  return this.scoreFin;
+ }
   
 
   loadEcurie(){
