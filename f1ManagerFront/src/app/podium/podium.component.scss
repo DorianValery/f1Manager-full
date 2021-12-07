@@ -1,0 +1,74 @@
+@font-face {
+    font-family:"Formula1-Regular";
+    src : url(../../assets/Formula1-Regular.ttf);
+  }
+  @font-face {
+    font-family:"Formula";
+    src : url(../../assets/Formula.ttf);
+  }
+  
+  #contenuPilote{
+    border: solid red 5px;
+    border-radius: 10%;
+    font-family: Formula;
+    font-size: xx-large;
+    color: red;
+    background-color: black;
+    border-radius: 10%;
+    width : 180%;
+  }
+  
+  #contenuVoiture{
+    border: solid green 5px;
+    border-radius: 10%;
+    font-family: Formula;
+    font-size: xx-large;
+    color: green;
+    background-color: black;
+    border-radius: 10%;
+    width : 180%;
+  }
+  
+  #contenuPrincipal{
+    display: flex;
+  }
+  
+  #contenuDroite{
+    flex-direction: column;
+  }
+  
+  #titre{
+    font-family:"Formula1-Regular";
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration-style: italic;
+    color: red;
+    background-color: black;
+    margin: 0;
+  }
+  
+  #titreCourse{
+    font-family:"Formula";
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    color: red;
+    background-color: black;
+  }
+  
+  #image{
+    border: solid blue 4px;
+    border-radius: 10%;
+  }
+  
+  #bouton {
+    font-family:"Formula1-Regular";
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: red;
+    border: solid orange 5px;
+    border-radius: 10%;
+    background-color: black;
+  }
+  

@@ -1,33 +1,86 @@
 
-.card{
-    display: flex;
-    justify-content: space-around;
-    align-items:center;
-    background-image: url(../../assets/fond_ciel_nuage.jpg);
-    border-bottom :solid black 5px;
-    text-decoration: none;
-    list-style-type: none;
+    .card{
+        display: flex;
+        justify-content: space-around;
+        align-items:center;
+        background-image: url(../../assets/fond_ciel_nuage.jpg);
+        border-bottom :solid black 5px;
+        text-decoration: none;
+        list-style-type: none;
+        
+        color :black;
+        font-weight:bold;
+        font-family:"Formula1-Regular";
+    }
+
+    #nomEcurie{
+        font-family:"Formula1-Regular";
+        text-align: center;
+        text-transform: uppercase;
+        font-size : 80px;
+    }
+
+    #titre{
+        font-family:"Formula1-Regular";
+        text-align: center;
+        text-transform: uppercase;
+        color: red;
+        background-color: black;
+        margin-top: 30px;
+    }
+
+    #contenuPrincipal{
+        display: flex;
+    }
+
+    #contenuPilote{
+        border: solid red 5px;
+        border-radius: 10%;
+        font-family: Formula1-regular;
+        font-size: large;
+        color: red;
+        background-color: black;
+        border-radius: 10%;
+        width : 33%;
+        margin-top: 5%;
+    }
     
-    color :black;
-    font-weight:bold;
-    font-family:"Formula1-Regular";
-}
-.card h2{
-    font-size: 40px;
-}
-.nomEcurie{
-    font-size: 30px;
-}
-.border{
-    border :solid;
-    background-color: whitesmoke;
-    width : 20%;
-    margin : 10px;
-}
-img{
-    width: 100%;
-    height :100%;
-}
-li{
-    list-style-type: none;
-}
+    #contenuVoiture{
+        border: solid green 5px;
+        border-radius: 10%;
+        font-family: Formula1-regular;
+        font-size: large;
+        color: green;
+        background-color: black;
+        border-radius: 10%;
+        width : 34%;
+        margin-top: 5%;
+    }
+
+    #contenuInfra{
+        border: solid blue 5px;
+        border-radius: 10%;
+        font-family: Formula1-regular;
+        font-size: large;
+        color: blue;
+        background-color: black;
+        border-radius: 10%;
+        width : 33%;
+        margin-top: 5%;
+    }
+
+    #bouton {
+        font-family:"Formula1-Regular";
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 20px;
+        color: red;
+        border: solid orange 5px;
+        border-radius: 10%;
+        background-color: black;
+    }
+
+    img{
+        width: 100%;
+        height :100%;
+    }

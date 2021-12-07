@@ -2,11 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AppConfigService } from '../app-config.service';
 import { Course, Ecurie, Pilote, Voiture } from '../model';
 import { SaisonService } from './saison.service';
-import { PiloteInventaireHttpService } from '../pilote-inventaire/pilote-inventaire-http.service';
-import { VoitureInventaireService } from '../voiture-inventaire/voiture-inventaire.service';
 import { EcurieService } from '../ecurie/ecurie.service';
 import { CourseService } from '../course/course.service';
-import { MenuHttpService } from '../menu/menu-http.service';
 
 
 @Component({
@@ -15,7 +12,6 @@ import { MenuHttpService } from '../menu/menu-http.service';
   styleUrls: ['./saison.component.scss']
 })
 export class SaisonComponent implements OnInit {
-
 
   piloteTest: Pilote;
   voitureTest: Voiture;
