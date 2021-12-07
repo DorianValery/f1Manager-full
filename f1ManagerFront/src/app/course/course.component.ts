@@ -90,6 +90,13 @@ export class CourseComponent implements OnInit {
 
   finCourse() {
     this.scoreFin = this.scoreGeneral;
+    // for(let e of this.scoreGeneral)
+    // {
+    //   this.courseService.saveScore(new Position(null,null,this.course,));
+    // }
+    this.scoreGeneral.forEach(( e , i)=>{
+      this.courseService.saveScore(new Position(null,null,this.course,i+1,e.ecurie));
+    })
     
     console.log(this.scoreFin);
 
