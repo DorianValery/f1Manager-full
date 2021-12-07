@@ -17,6 +17,7 @@ export class InfrastructureInventaireComponent implements OnInit {
 
   constructor(private appConfig: AppConfigService, private infrastructureInventaireService: InfrastructureInventaireService, private ecurieService: EcurieService, private inventaireService: InventaireService, private joueurService: JoueurService) {
     this.ecurie=this.ecurieService.ecurie;
+    console.log(this.ecurie);
   }
 
   ngOnInit(): void {
@@ -37,6 +38,7 @@ export class InfrastructureInventaireComponent implements OnInit {
   select(infrastructure: Infrastructure) {
     this.ecurie.infrastructures[0] = infrastructure;
     console.log(this.ecurie);
+    console.log(infrastructure);
       }
 
   valider()
