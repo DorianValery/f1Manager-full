@@ -8,11 +8,13 @@ import { SaisonService } from '../saison/saison.service';
   providedIn: 'root'
 })
 export class PodiumService {
+  
 
   courseID : number = this.ecurieService.ecurie.courseEnCours;
   course : Course;
   constructor(private saisonService : SaisonService, private ecurieService :EcurieService) { 
     this.findCourse(this.courseID)
+    console.log(this.course)
   }
 
 
@@ -21,7 +23,8 @@ export class PodiumService {
       this.course = resp;
       console.log(this.course);
       //sessionStorage.setItem("course",this.saisonTest)
-    },error=> console.log(error))
+    },error=> console.log(error));
+    
     return this.course;
   }
 }
