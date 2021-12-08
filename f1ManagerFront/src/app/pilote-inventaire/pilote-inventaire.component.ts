@@ -92,7 +92,7 @@ export class PiloteInventaireComponent implements OnInit {
 
 
 acheter(pilote: Pilote){
-  if (this.ecurieService.ecurie.argent > pilote.prix){
+  if (this.ecurieService.ecurie.argent >= pilote.prix){
     this.ecurieService.ecurie.argent = this.ecurieService.ecurie.argent - pilote.prix;
     this.ecurieService.modify(this.ecurieService.ecurie);
     this.ecurie.argent = this.ecurieService.ecurie.argent;

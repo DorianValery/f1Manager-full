@@ -50,7 +50,7 @@ export class VoitureInventaireComponent implements OnInit {
   acheter(id: number) {
 
     this.voitureInventaireService.findVoitureById(id).subscribe(response => {
-      if (this.ecurieService.ecurie.argent > response.prix) {
+      if (this.ecurieService.ecurie.argent >= response.prix) {
         this.ecurieService.ecurie.argent = this.ecurieService.ecurie.argent - response.prix;
         this.ecurieService.modify(this.ecurieService.ecurie);
         this.argent = this.ecurieService.ecurie.argent;
