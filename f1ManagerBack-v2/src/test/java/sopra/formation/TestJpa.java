@@ -1162,6 +1162,11 @@ public class TestJpa {
 		voiture1.setEcurie(ecurie1);
 		voiture1 = voitureRepo.save(voiture1);
 		
+		voiture9.setEcurie(ecurie9);
+		voiture9 = voitureRepo.save(voiture9);
+		
+		voiture10 = voitureRepo.save(voiture10);
+		
 		voiture2.setEcurie(ecurie2);
 		voiture2 = voitureRepo.save(voiture2);
 		
@@ -1182,11 +1187,7 @@ public class TestJpa {
 		
 		voiture8.setEcurie(ecurie8);
 		voiture8 = voitureRepo.save(voiture8);
-		
-		voiture9.setEcurie(ecurie9);
-		voiture9 = voitureRepo.save(voiture9);
-		
-		voiture10 = voitureRepo.save(voiture10);
+			
 		
 		voiture11.setEcurie(ecurie1);
 		voiture11 = voitureRepo.save(voiture11);
