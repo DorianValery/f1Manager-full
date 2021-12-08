@@ -76,7 +76,8 @@
 }
 .card-text{
     font-family: "Formula1-Regular";
-    text-align: center;
+    position:relative;
+    right:10%;
     font-size: 20px;
     
 }
@@ -125,4 +126,8 @@
 }
 .remplissage{
     height: 300px;
+}
+#imagePiloteSelect1{
+    display: flex;
+    align-items: center;
 }

@@ -1,16 +1,25 @@
 <nav  >
   
   <ul >
-    <img id="logo" src="./../assets/Logo-F1.jpg" alt="logo" [routerLink]="['/seconnecter']" >
-      <li class="nav-item">
+    <img id="logo" src="./../assets/Logo-F1.jpg" alt="logo" [routerLink]="['/accueil']" >
+      <li class="nav-item" *ngIf="seconnecterService.compte">
           <a class="nav-link" [routerLink]="['/pilote']" routerLinkActive="active">Pilote</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!seconnecterService.compte">
+        <a class="nav-link" [routerLink]="['/accueil']" routerLinkActive="active">Pilote</a>
+    </li>
+      <li class="nav-item" *ngIf="seconnecterService.compte">
           <a class="nav-link" [routerLink]="['/voiture']" routerLinkActive="active">Voiture</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!seconnecterService.compte">
+        <a class="nav-link" [routerLink]="['/accueil']" routerLinkActive="active">Voiture</a>
+    </li>
+      <li class="nav-item" *ngIf="seconnecterService.compte">
           <a class="nav-link" [routerLink]="['/infrastructure']" routerLinkActive="active">Infrastructure</a>
       </li>
+      <li class="nav-item" *ngIf="!seconnecterService.compte">
+        <a class="nav-link" [routerLink]="['/accueil']" routerLinkActive="active">Infrastructure</a>
+    </li>
       <div  *ngIf="seconnecterService.compte">
       <li class="nav-item">
         <a class="nav-link"  [routerLink]="['/ecurie']" routerLinkActive="active">Ecurie</a>

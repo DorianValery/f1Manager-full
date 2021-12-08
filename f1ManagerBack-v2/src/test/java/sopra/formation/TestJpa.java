@@ -84,7 +84,7 @@ public class TestJpa {
 		
 		//Pilotes 1 et 2 etat non possédés
 		
-		Pilote pilote1false =new Pilote();
+	   /*Pilote pilote1false =new Pilote();
 		pilote1false.setNom("BOTTAS");
 		pilote1false.setPrenom("Slow");
 		pilote1false.setAge(21);
@@ -153,7 +153,7 @@ public class TestJpa {
 		listPilote.add(pilote2false);
 		listPilote.add(pilote3false);
 		listPilote.add(pilote4false);
-		listPilote.add(piloteX);
+		listPilote.add(piloteX);*/
 		
 		//PILOTES DES ECURIES
 		//Inventaire inventaire1 = new Inventaire(50);
@@ -972,6 +972,7 @@ public class TestJpa {
 		ecurie2.setInfrastructure(listInfrastructure2);
 		ecurie2.setVoitures(listVoiture2);
 		ecurie2.setPilotes(listPilote2);
+		ecurie2.setCourseEnCours(1);
 		
 		Ecurie ecurie3 = new Ecurie();
 		ecurie3.setNom("SPEED BULLET");
@@ -980,6 +981,7 @@ public class TestJpa {
 		ecurie3.setInfrastructure(listInfrastructure3);
 		ecurie3.setVoitures(listVoiture3);
 		ecurie3.setPilotes(listPilote3);
+		ecurie3.setCourseEnCours(1);
 		
 		Ecurie ecurie4 = new Ecurie();
 		ecurie4.setNom("SPEED HUNTERS");
@@ -988,6 +990,7 @@ public class TestJpa {
 		ecurie4.setInfrastructure(listInfrastructure4);
 		ecurie4.setVoitures(listVoiture4);
 		ecurie4.setPilotes(listPilote4);
+		ecurie4.setCourseEnCours(1);
 		
 		Ecurie ecurie5 = new Ecurie();
 		ecurie5.setNom("FORMULA SCUDERIA");
@@ -996,6 +999,7 @@ public class TestJpa {
 		ecurie5.setInfrastructure(listInfrastructure5);
 		ecurie5.setVoitures(listVoiture5);
 		ecurie5.setPilotes(listPilote5);
+		ecurie5.setCourseEnCours(1);
 
 		Ecurie ecurie6 = new Ecurie();
 		ecurie6.setNom("GP ONE");
@@ -1004,6 +1008,7 @@ public class TestJpa {
 		ecurie6.setInfrastructure(listInfrastructure6);
 		ecurie6.setVoitures(listVoiture6);
 		ecurie6.setPilotes(listPilote6);
+		ecurie6.setCourseEnCours(1);
 		
 		Ecurie ecurie7 = new Ecurie();
 		ecurie7.setNom("HISTORIC CHAMPIONS");
@@ -1012,6 +1017,7 @@ public class TestJpa {
 		ecurie7.setInfrastructure(listInfrastructure7);
 		ecurie7.setVoitures(listVoiture7);
 		ecurie7.setPilotes(listPilote7);
+		ecurie7.setCourseEnCours(1);
 		
 		Ecurie ecurie8 = new Ecurie();
 		ecurie8.setNom("WHEEL MASTERS");
@@ -1020,11 +1026,13 @@ public class TestJpa {
 		ecurie8.setInfrastructure(listInfrastructure8);
 		ecurie8.setVoitures(listVoiture8);
 		ecurie8.setPilotes(listPilote8);
+		ecurie8.setCourseEnCours(1);
 		
 		Ecurie ecurie9 = new Ecurie();
 		ecurie9.setNom("F1 TEAM PRO");
 		ecurie9.setArgent(1200000);
 		ecurie9.setExperience(290);
+		ecurie9.setCourseEnCours(1);
 		
 		ecurie9.setVoitures(listVoiture9);
 		ecurie9.setPilotes(listPilote8);
@@ -1255,14 +1263,14 @@ public class TestJpa {
 		compteJoueur2.setJoueur(joueur2);
 		compteJoueur2 = compteRepo.save(compteJoueur2);
 		
-		pilote1false.setEcurie(ecurieJoueur1);
-		pilote2false.setEcurie(ecurieJoueur2);
+		//pilote1false.setEcurie(ecurieJoueur1);
+		//pilote2false.setEcurie(ecurieJoueur2);
 		
 		//pilote1false.setInventaire(inventaire1);
 		//pilote2false.setInventaire(inventaire1);
 		
-		pilote1false = piloteRepo.save(pilote1false);
-		pilote2false = piloteRepo.save(pilote2false);
+		//pilote1false = piloteRepo.save(pilote1false);
+		//pilote2false = piloteRepo.save(pilote2false);
 		
 		voiture1.setEcurie(ecurieJoueur1);
 		voiture1 = voitureRepo.save(voiture1);
@@ -1283,7 +1291,7 @@ public class TestJpa {
 	
 		Position positionPilote1 = new Position();
 		positionPilote1.setPosition(4);
-		positionPilote1.setPilote(pilote1false);
+		//positionPilote1.setPilote(pilote1false);
 		positionPilote1.setCourse(course1);
 		
 		positionPilote1 = positionRepo.save(positionPilote1);

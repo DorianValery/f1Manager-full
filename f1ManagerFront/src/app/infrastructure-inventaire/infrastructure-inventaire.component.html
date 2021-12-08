@@ -8,12 +8,12 @@
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false">
         <div class="carousel-inner">
    
-          <div class="carousel-item" *ngFor="let inf of list(); let i = index" [ngClass]="{'active': i === 0}">
+          <div class="carousel-item" *ngFor="let inf of list(); let i = index" [ngClass]="{'active': (i === 0 && active==0) || inf.id==active}">
          
             <div class="card border-0" style="width: 70%;">
             
               <div class="card-body" class="text-center">
-                <h5 class="card-title">Infrastructure : {{inf.nom}}</h5>
+                <h5 class="card-title">{{inf.nom}}</h5>
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item" *ngIf="inf.type=='P'">Type : Pilote</li>
                   <li class="list-group-item" *ngIf="inf.type=='V'">Type : Voiture</li>
@@ -22,8 +22,8 @@
                   <li class="list-group-item">Pitstop : {{inf.pitStop}}</li>
                 </ul>
               </div>
-              <div class="btnSelect" *ngIf="!inf.etat" (click)="acheter(inf)">Acheter : {{inf.prix}} ฿</div>
-              <div class="btnSelect" *ngIf="inf.etat" (click)="select(inf)">Sélectionner</div>
+              <button class="btnSelect" *ngIf="!inf.etat" (click)="acheter(inf)">Acheter : {{inf.prix}} ฿</button>
+              <button class="btnSelect" *ngIf="inf.etat" (click)="select(inf)">Sélectionner</button>
               <div class="card-footer" class="text-center">
               </div>
             </div>
@@ -51,8 +51,9 @@
           </div>
         </div>
       </div>
-      <div *ngIf="!ecurie.infrastructures[0]" class="infrastructureVide"  >Infrastructure</div>
-      <div class="btnValid" (click)="valider()">Valider</div>
+      <button *ngIf="!ecurie.infrastructures[0]" class="infrastructureVide"  >Infrastructure</button>
+      <button class="btnValid" (click)="valider()" [routerLink]="['/ecurie']" routerLinkActive="active">Valider</button>
+
     </div>
     <div class="remplissage"></div>
   </div> 

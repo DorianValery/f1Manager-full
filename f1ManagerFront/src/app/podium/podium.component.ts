@@ -17,14 +17,15 @@ export class PodiumComponent implements OnInit {
 
   elseBlock: TemplateRef<any>|null = null;
   ecurie : Ecurie = this.ecurieService.ecurie;
-  course : Course = this.saisonService.course;
+  course : Course ;
   idCourse : number = this.ecurieService.ecurie.courseEnCours;
   scoreFin : any[];
 
   constructor(private courseService : CourseService, private ecurieService : EcurieService, private saisonService : SaisonService,private podiumService :  PodiumService) {
 
+    this.course = podiumService.findCourse(this.idCourse);
    
-    console.log(this.scoreFin)
+    console.log(this.course);
 
    }
 
@@ -36,7 +37,7 @@ export class PodiumComponent implements OnInit {
     this.courseService.findScore().forEach(( e , i)=>{
       e.ecurie.courseEnCours ++;
       e.ecurie.argent += (this.podiumService.findCourse(this.idCourse).cashPrize-(i*10000));
-      console.log(this.course)
+      console.log(this.ecurie)
       this.ecurieService.modify(e.ecurie);
     })
    
