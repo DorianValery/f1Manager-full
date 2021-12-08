@@ -57,14 +57,14 @@ public class Joueur {
 		this.ecurie = ecurie;
 	}
 
-	public Joueur(String pseudo, int age, String mail, String telephone, Civilite civilite, Inventaire inventaire,
+	public Joueur(String pseudo, int age, String mail, String telephone, Civilite civ, Inventaire inventaire,
 			Ecurie ecurie) {
 		super();
 		this.pseudo = pseudo;
 		this.age = age;
 		this.mail = mail;
 		this.telephone = telephone;
-		this.civilite = civilite;
+		this.civ = civ;
 	}
 	
 	public long getId() {
@@ -108,11 +108,11 @@ public class Joueur {
 	}
 
 	public Civilite getCivilite() {
-		return civilite;
+		return civ;
 	}
 
-	public void setCiv(Civilite civilite) {
-		this.civilite = civilite;
+	public void setCiv(Civilite civ) {
+		this.civ = civ;
 	}
 
 	public List<Inventaire> getInventaires() {
