@@ -1082,6 +1082,7 @@ public class TestJpa {
 		course2.setPopularite(60);
 		course2.setTempsRef(null);
 		course2.setCashPrize(150000);
+		course2.setImage("../../assets/Imola.png");
 
 		Course course3 = new Course();
 		course3.setNom("Portimao");
@@ -1089,6 +1090,7 @@ public class TestJpa {
 		course3.setPopularite(50);
 		course3.setTempsRef(null);
 		course3.setCashPrize(140000);
+		course3.setImage("../../assets/Portimao.png");
 		
 		Course course4 = new Course();
 		course4.setNom("Catalunya");
@@ -1096,6 +1098,7 @@ public class TestJpa {
 		course4.setPopularite(65);
 		course4.setTempsRef(null);
 		course4.setCashPrize(180000);
+		course4.setImage("../../assets/Catalunya.png");
 		
 		Course course5 = new Course();
 		course5.setNom("Monaco");
@@ -1103,6 +1106,7 @@ public class TestJpa {
 		course5.setPopularite(90);
 		course5.setTempsRef(null);
 		course5.setCashPrize(250000);
+		course5.setImage("../../assets/Monaco.png");
 		
 		Course course6 = new Course();
 		course6.setNom("Baku City Circuit");
