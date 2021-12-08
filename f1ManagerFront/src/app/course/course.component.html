@@ -1,31 +1,21 @@
 
-<div id="tour">Tour {{nbTour}} /12</div>
-
-<div id="contenuPrincipal">
-
-    <div id="actions">
-        <button >REPARATION </button>nom ecurie : {{ecurie?.nom}}
-
-        <button >COURSE</button>
-        </div>
 <div id="tour">Tour {{nbTour}} /{{course?.nombreTour}}</div>
-
 <div id="contenuPrincipal">
 
-    <div id="actions">
-        <button>REPARATION</button>
-        <a><button *ngIf="nbTour < course?.nombreTour" (click)="passerTour()">PASSER TOUR</button></a>
-        <a routerLink="/podium" routerLinkActive="active"><button *ngIf="nbTour >= course?.nombreTour" (click)="finCourse()">PODIUM</button> </a>
+
+
+      <div id="bout" >
+       
+        <a><button id="btnValid" *ngIf="nbTour < course?.nombreTour" (click)="passerTour()">PASSER TOUR</button></a>
+        <a routerLink="/podium" routerLinkActive="active"><button id="btnValid" *ngIf="nbTour >= course?.nombreTour" (click)="finCourse()">PODIUM</button> </a>
     </div>
 
-    
-   
-                
+    <div id="containClass">
             <table id="classement">
                 <thead>
                     <tr>
-                        <th>CLASSEMENT</th>
-                        <th>CLASSEMENT V2</th>
+                        <th id="titreclass">CLASSEMENT</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -38,9 +28,22 @@
             </table>
             <!-- <podium *ngIf="" [data]=""></podium> -->
     </div>
-    <div class="container-fluid">
-       
-      </div>
+    
 
-      
+     </div>
+    <div id="baspage">
+
+
+
+        <div id="piste" >
+       <img src="../../assets/pistes_1.gif">
+          </div>
+        <div id="voiture">
+          <img id="imgVoiture" src="../../assets/voiture_surplace 1.gif">
+        </div>
+        <div id="voitureBleu">
+          <img id="imgVoitureBleu" src="../../assets/voiture_surplace_bleu.gif">
+        </div>
+        </div>
+    
 

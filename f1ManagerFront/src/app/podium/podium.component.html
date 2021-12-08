@@ -13,7 +13,7 @@
     </div>
    
     <div>
-        <div style="color: black; font-size: 25px;display: flex; justify-content: center;">PLACE :</div>
+        <div style="background: #ffffffed;color: black; font-size: 25px;display: flex; justify-content: center;">PLACE :</div>
     <div id="you">
         
         <div *ngFor ="let v of score();let i = index">
@@ -23,10 +23,10 @@
     </div>
     <div *ngFor ="let v of score();let i = index">
 
-        <div  style="color: black; font-size :16px;display: flex; justify-content: center;" *ngIf="v.ecurie.nom == ecurie.nom">Cashprize : {{course?.cashPrize-(i*10000)}}</div> 
+        <div  style="color: black; font-size :16px;display: flex; justify-content: center;" *ngIf="v.ecurie.nom == ecurie.nom">Cashprize : {{course?.cashPrize-(i*10000)}}<img id="pieces" src="../../assets/pieces.png" alt=""></div> 
           </div>  
           <br><br> 
-          <div > <a [routerLink]="['/course']" routerLinkActive="active"><button id="btnValid" (click)="courseSuivante()">RETOUR SAISON</button></a></div>
+          <div > <a [routerLink]="['/saison']" routerLinkActive="active"><button id="btnValid" (click)="courseSuivante()">RETOUR SAISON</button></a></div>
          
 </div>
     <div id="podium">
