@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AppConfigService } from '../app-config.service';
+import { EcurieService } from '../ecurie/ecurie.service';
 import { Ecurie, Pilote, Position } from '../model';
 
 
@@ -21,7 +22,7 @@ export class CourseService {
   
   
 
-  constructor(private http: HttpClient, private appConfig: AppConfigService) {
+  constructor(private http: HttpClient, private appConfig: AppConfigService, private ecurieService : EcurieService) {
     this.ecurieUrl = this.appConfig.backEndUrl + "ecurie/"
     this.positionUrl = this.appConfig.backEndUrl + "position/"
     this.loadEcurie();
@@ -59,7 +60,11 @@ export class CourseService {
   algoPosition() : any[] {
     this.scoreGeneral = [];
     
-    
+    this.ecuries.forEach((e,i)=>{
+      if(e.id==this.ecurieService.ecurie.id){
+        this.ecuries.splice(i,1,this.ecurieService.ecurie);
+      }
+    })
         
     for (let element of this.ecuries) {
      
