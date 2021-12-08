@@ -10,11 +10,11 @@
 #contenuPrincipal{
   display: flex;
   background-image: url("../../assets/fond_ciel_nuage.jpg");
-  margin : 0;
 }
 
 #contenuSecondaire{
   flex-direction: column;
+  margin-top: 5px;
 }
 
 #titrePrincipal{
@@ -23,7 +23,7 @@
   text-transform: uppercase;
   color: red;
   background-color: black;
-  margin: 0;
+  margin : 0;
 }
 
 #titreCourse{
@@ -59,7 +59,7 @@
   font-size: 15px;
   color: black;
   background-color: rgba(255, 0, 0, 0.2);
-  border-radius: 10%;
+  border-radius: 30px;
 }
 
 #contenuVoiture{
@@ -69,8 +69,7 @@
   font-size: 15px;
   color: black;
   background-color: rgba(0, 255, 0, 0.2);
-  border-radius: 10%;
-  width : 99%;
+  border-radius: 30px;
 }
 
 #contenuInfra{
@@ -80,14 +79,14 @@
   font-size: 15px;
   color: black;
   background-color: rgba(0, 0, 255, 0.2);
-  border-radius: 10%;
-  width : 99%;
+  border-radius: 30px;
 }
 
 #image{
   border: solid blue 4px;
   border-radius: 10%;
   width : 60%;
+  margin-top: 5px;
 }
 
 #bouton {
