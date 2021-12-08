@@ -228,4 +228,57 @@ export class SeConnecterForm {
 }
 
 
+export class Tour {
 
+    position: number;
+
+    constructor() {
+
+    }
+}
+
+export class Order {
+    voiture: Voiture;
+    pilote: Pilote;
+    infra: Infrastructure;
+    score: number;
+
+    constructor(voiture?: Voiture, pilote?: Pilote, infra?: Infrastructure, score?: number) {
+        this.voiture = voiture;
+        this.pilote = pilote;
+        this.infra = infra;
+        this.score = score;
+
+    }
+}
+export class InscriptionDTO {
+    login: string;
+    password: string;
+    mail: string;
+    age: number;
+    civilite: string;
+    id: number;
+
+    constructor(login?: string, password?: string, mail?: string, age?: number, civilite?: string, id?: number) {
+        this.login = login;
+        this.password = password;
+        this.mail = mail;
+        this.age = age;
+        this.id = id;
+        this.civilite = civilite;
+    }
+
+
+}
+
+// export class Order extends Ecurie {
+
+//     score: number;
+
+//     constructor(id?: number, version?: number, nom?: string, argent?: number, experience?: number, courseEncours?: number,score?: number) {
+//         super(id, version, nom, argent, experience, courseEncours);
+
+//         this.score = score;
+
+//     }
+// }
