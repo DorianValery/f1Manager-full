@@ -17,16 +17,15 @@
         font-family:"Formula1-Regular";
         text-align: center;
         text-transform: uppercase;
-        font-size : 80px;
+        font-size : 45px;
     }
 
     #titre{
         font-family:"Formula1-Regular";
         text-align: center;
         text-transform: uppercase;
-        color: red;
-        background-color: black;
-        margin-top: 30px;
+        color: black;
+        margin-top: 5px;
     }
 
     #contenuPrincipal{
@@ -37,43 +36,40 @@
         border: solid red 5px;
         border-radius: 10%;
         font-family: Formula1-regular;
-        font-size: large;
-        color: red;
-        background-color: black;
+        font-size: 20px;
+        color: black;
+        background-color: rgba(255, 0, 0, 0.2);
         border-radius: 10%;
         width : 33%;
-        margin-top: 5%;
     }
     
     #contenuVoiture{
         border: solid green 5px;
         border-radius: 10%;
         font-family: Formula1-regular;
-        font-size: large;
-        color: green;
-        background-color: black;
+        font-size: 20px;
+        color: black;
+        background-color: rgba(0, 255, 0, 0.2);
         border-radius: 10%;
         width : 34%;
-        margin-top: 5%;
     }
 
     #contenuInfra{
         border: solid blue 5px;
         border-radius: 10%;
         font-family: Formula1-regular;
-        font-size: large;
-        color: blue;
-        background-color: black;
+        font-size: 20px;
+        color: black;
+        background-color: rgba(0, 0, 255, 0.2);
         border-radius: 10%;
         width : 33%;
-        margin-top: 5%;
     }
 
     #bouton {
         font-family:"Formula1-Regular";
         text-align: center;
         text-transform: uppercase;
-        font-size: 20px;
+        font-size: 30px;
         color: red;
         border: solid orange 5px;
         border-radius: 10%;

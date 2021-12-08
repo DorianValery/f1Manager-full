@@ -8,7 +8,9 @@
     <div id="contenuPilote">
         <div id="titre">Pilotes</div>
         <ul *ngFor="let p of ecurie?.pilotes">
+            <br><br>
             <li > {{p?.civ}} {{p?.prenom}} {{p?.nom}} | Nationalité : {{p?.nationalite}} | Xp: {{p?.experience}}</li>
+            <br><br>
         </ul>
     </div>
 
@@ -16,6 +18,7 @@
     <div id="contenuVoiture">
         <div id="titre">Voitures</div>
         <ul *ngFor="let p of ecurie?.voitures">
+            <br><br>
             <li > {{p?.marque}} | Maniabilité: {{p?.maniabilite}} | Poids: {{p?.poids}} | Vitesse max : {{p?.vitesse}}km/h <img src="{{p?.image}}"></li>
         </ul>
     </div>
@@ -23,14 +26,16 @@
     <div id="contenuInfra">
         <div id="titre">Infrastructures</div>
         <ul *ngFor="let p of ecurie?.infrastructures">
-            <li >Nom :{{p?.nom}} {{p?.nbIngenieurs}}/10</li>
+            <br><br>
+            <li >{{p?.nom}} | Ingénieurs : {{p?.nbIngenieurs}}</li>
         </ul>
     </div>
 
 </div>
 
+<br><br>
 
-<div><a [routerLink]="['/course']" routerLinkActive="active"><button id="bouton">LANCER SAISON</button></a></div><!--href="course/" -->
+<div><a [routerLink]="['/course']" routerLinkActive="active"><button id="bouton">LANCER LA SAISON</button></a></div><!--href="course/" -->
 
 <!-- <div><a href="course/"><button (click)="lancerSaison(ecurie.id)" >LANCER SAISON</button></a></div> -->
 

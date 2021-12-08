@@ -1,6 +1,7 @@
 <div class="card-header  text-black">
-    <h1 id="titre">Course {{courseTest?.id}}</h1>
-        <div id="titreCourse">{{courseTest?.nom}} <br>{{courseTest?.nombreTour}} tours</div>
+    <h1 id="titrePrincipal">Course {{courseTest?.id}}</h1>
+        <div id="titreCourse">{{courseTest?.nom}} </div> 
+        <div id="titreCourse2">{{courseTest?.nombreTour}} tours</div>
 </div>
 
 <div id="contenuPrincipal">
@@ -8,42 +9,35 @@
     <img id="image" src="{{courseTest?.image}}">
    
     <div id="contenuSecondaire">
-        <table id="contenuPilote">
-            <thead>
-                <tr>
-                    <th>PILOTES</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let p of ecurie?.pilotes">
-                    <td>{{p.prenom}}</td>
-                    <td>{{p.nom}}</td>
-                    <td>{{p.nationalite}}</td>
-                    <td>{{p.experience}}</td>
-                    <td></td>
-            </tbody>
-        </table>
+        <div id="contenuPilote">
+            <div id="titre">Pilotes</div>
+            <ul *ngFor="let p of ecurie?.pilotes">
+                <br><br>
+                <li>{{p?.civ}} {{p?.prenom}} {{p?.nom}} | Nationalité : {{p?.nationalite}} | Xp: {{p?.experience}}</li>
+                <br><br>
+            </ul>
+        </div>
 
-        <table id="contenuVoiture" class="table">
-            <thead>
-                <tr>
-                    <th>VOITURES</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let v of ecurie?.voitures">
-                    <td>{{v.marque}}</td>
-                    <td>{{v.vitesse}}</td>
-                    <td></td>
-            </tbody>
-        </table>
-
-        <a [routerLink]="['jeu/']" routerLinkActive="active"> <button id="bouton"> LANCER LA COURSE ! </button> </a><!--href="jeu/"-->
         
-    </div>
- 
+        <div id="contenuVoiture">
+            <div id="titre">Voitures</div>
+            <ul *ngFor="let p of ecurie?.voitures">
+                <br><br>
+                <li>{{p?.marque}} | Maniabilité: {{p?.maniabilite}} | Poids: {{p?.poids}} | Vitesse max : {{p?.vitesse}}km/h</li>
+            </ul>
+        </div>
+    
+        <div id="contenuInfra">
+            <div id="titre">Infrastructures</div>
+            <ul *ngFor="let p of ecurie?.infrastructures">
+                <br><br>
+                <li>{{p?.nom}} | Ingénieurs : {{p?.nbIngenieurs}}</li>
+            </ul>
+        </div>
+    
+
+    <a [routerLink]="['jeu/']" routerLinkActive="active"> <button id="bouton"> LANCER LA COURSE ! </button> </a><!--href="jeu/"-->
+</div>
 </div> 
 <div class="container-fluid">
     <router-outlet></router-outlet>
