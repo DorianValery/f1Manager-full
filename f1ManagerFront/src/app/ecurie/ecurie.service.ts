@@ -39,12 +39,14 @@ export class EcurieService {
 
   modify(ecurie: Ecurie){
          this.http.put<Ecurie>(this.ecurieUrl+this.ecurie.id, ecurie).subscribe(response=>{
+           this.ecurie.version = response.version;
       //  this.loadEcurie(this.ecurie.id);
      }, error => console.log(error));
     }
 
     modifyPodium(ecurie: Ecurie, id : number){
       this.http.put<Ecurie>(this.ecurieUrl+id, ecurie).subscribe(response=>{
+        ecurie.version = response.version;
         //  this.loadEcurie(this.ecurie.id);
        }, error => console.log(error));
       
