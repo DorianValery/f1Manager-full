@@ -8,7 +8,9 @@ import { JoueurService } from '../joueur/joueur.service';
 
 
 import { Ecurie, Inventaire, Pilote } from '../model';
+import { SeConnecterHttpService } from '../se-connecter/se-connecter-http.service';
 import { PiloteInventaireHttpService } from './pilote-inventaire-http.service';
+import { SeConnecterForm } from '../model';
 
 @Component({
   selector: 'app-pilote-inventaire',
@@ -104,6 +106,8 @@ acheter(pilote: Pilote){
 cancel() {
     this.piloteForm = null;
   }
+
+ 
 }
   
 
