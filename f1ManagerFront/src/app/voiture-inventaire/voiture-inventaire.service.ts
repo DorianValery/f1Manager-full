@@ -31,6 +31,7 @@ export class VoitureInventaireService {
   load() {
     this.http.get<Array<Voiture>>(this.voitureInventaireUrl).subscribe(response => {    
       this.voitures = response;
+      this.voitures=this.voitures.slice(0,10);
       this.inventaireService.loadVoitures().subscribe(resp =>{
           this.voitures.forEach(v => {
             if(resp.includes(v.id)) {

@@ -38,9 +38,7 @@
 <div><button [routerLink]="['/course']" routerLinkActive="active" id="bouton">LANCER LA SAISON</button></div><!--href="course/" -->
 
 <!-- <div><a href="course/"><button (click)="lancerSaison(ecurie.id)" >LANCER SAISON</button></a></div> -->
+<div class="remplissage2" *ngIf="!(ecurie==null)"></div>
+<div class="remplissage" *ngIf="ecurie==null"></div>
 
-<div class="container-fluid">
-    <router-outlet></router-outlet>
-</div>
-    
 

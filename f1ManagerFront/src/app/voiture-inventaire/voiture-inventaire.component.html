@@ -8,7 +8,7 @@
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false">
       <div class="carousel-inner">
         <!-- ngfor loop using get dynamic value and ngclass for add acive class -->
-        <div class="carousel-item"  *ngFor="let voit of list(); let i = index" [ngClass]="{'active': (i === 0 && active==0) || voit.id==active}">
+        <div class="carousel-item"  *ngFor="let voit of list(); let i = index"  [ngClass]="{'active': (i === 0 && active==0) || voit.id==active}" >
           <!-- card -->
           <div class="card border-0" style="width: 70%;">
             <img class="card-img-top" [src]="voit.image" alt="Card image cap">
@@ -28,7 +28,7 @@
                 </div>-->
             </div>
           </div>
-        </div>
+      </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
         data-bs-slide="prev">

@@ -30,7 +30,7 @@ export class VoitureInventaireComponent implements OnInit {
   }
 
   list(): Array<Voiture> {
-    return this.voitureInventaireService.findAll().slice(0,9);
+    return this.voitureInventaireService.findAll();
     }
 
 
