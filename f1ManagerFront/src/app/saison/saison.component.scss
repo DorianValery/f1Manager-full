@@ -90,12 +90,16 @@
 }
 
 #bouton {
-  font-family:"Formula1-Regular";
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 35px;
-  color: red;
-  border: solid orange 5px;
-  border-radius: 10%;
-  background-color: black;
+  background-image: url("../../assets/font-bouton.png");
+    background-size: 100% 100%;
+    text-align: center;
+    font-family: "Formula1-Regular";
+    color: white;
+    height: 70px;
+    width: 340px;
+    font-size: 23px;
+    font-weight: bold;
+}
+#bouton:hover{
+  transform: scale(1.1);
 }
