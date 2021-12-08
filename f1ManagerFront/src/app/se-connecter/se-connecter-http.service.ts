@@ -14,6 +14,7 @@ export class SeConnecterHttpService {
 
   compteUrl: string;
   compte: Compte;
+  comptes: Array<Compte> = new Array<Compte>();
 
   constructor(private http: HttpClient, private appConfig: AppConfigService, private joueurService: JoueurService, private ecurieService: EcurieService) {
     this.compteUrl = this.appConfig.backEndUrl + "compte/"
@@ -28,5 +29,28 @@ export class SeConnecterHttpService {
     this.joueurService.joueur=null;
     this.ecurieService.ecurie=null;
 
+  }
+  findCompteById(id:number):Observable<Compte>{
+    return this.http.get<Compte>(this.compteUrl + id);
+  }
+  
+  findAll(): Array<Compte> {
+    return this.comptes;
+  }
+  create(compte:Compte){
+    this.http.post<Compte>(this.compteUrl, compte).subscribe(resp => {
+      this.load();
+    }, error => console.log(error));
+  }
+  modify(compte:Compte){
+    this.http.put<Compte>(this.compteUrl + compte.id, compte).subscribe(resp => {
+      this.load();
+    }, error => console.log(error))
+  }
+
+  load(){
+    this.http.get<Array<Compte>>(this.compteUrl).subscribe(response => {
+      this.comptes = response;
+    }, error => console.log(error));
   }
 }

@@ -23,33 +23,32 @@
     </div>
 
     <div class="p-2 bd-highlight">
-      <form class="row g-3">
+      <div class="row g-3">
           
        <div class="col-md-5">
-            <label for="inputAddress2" class="form-label">Pseudo</label>
-            <input type="text" class="form-control" id="inputPseudo" placeholder="Choisis ton pseudo" >
+            <label for="inputAddress2" class="form-label">Login</label>
+            <input type="text" class="form-control" id="inputPseudo" placeholder="Choisi ton nom d'utilisateur" [(ngModel)]="inscriptionForm.login">
         </div>
         <div class="col-md-5">
           <label for="inputPassword4" class="form-label">Password</label>
-          <input type="password" class="form-control" id="inputPassword4" placeholder="Mot de passe" >
+          <input type="password" class="form-control" id="inputPassword4" placeholder="Mot de passe" [(ngModel)]="inscriptionForm.password">
         </div>
         
         <div class="col-10">
             <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Entre ton email">
-       
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Entre ton email" [(ngModel)]="inscriptionForm.mail">
         </div>
         
         <div class="col-md-4">
           <label for="inputAge" class="form-label">Age</label>
-          <input type="number" class="form-control" id="inputAge" placeholder="Age"  >
+          <input type="number" class="form-control" id="inputAge" placeholder="Age"  [(ngModel)]="inscriptionForm.age">
         </div>
 
         <div class="col-md-4">
             <label for="civilite">Civilité:</label>
-            <select class="form-control" id="civilite" >
+            <select class="form-control" id="civilite" [(ngModel)]="inscriptionForm.civilite">
                 <option value="">Choisir une civilité</option>
-                <option *ngFor="let civilite of civilites" [value]="civilite">{{civilite}}</option>
+                <option *ngFor="let civ of civilites" [value]="civ">{{civ}}</option>
             </select>
         </div>
         
@@ -60,7 +59,7 @@
         </div>
 
         
-      </form>
+      </div>
     </div>
 </div>
 <div class="container-fluid">
