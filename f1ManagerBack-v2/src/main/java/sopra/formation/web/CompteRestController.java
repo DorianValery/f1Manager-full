@@ -21,18 +21,23 @@ import org.springframework.web.server.ResponseStatusException;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import sopra.formation.model.Compte;
+import sopra.formation.model.Joueur;
 import sopra.formation.model.Views;
 import sopra.formation.repository.ICompteRepository;
+import sopra.formation.repository.IJoueurRepository;
+import sopra.formation.web.dto.InscriptionDTO;
 import sopra.formation.web.dto.SeConnecterForm;
 
 @RestController
 @RequestMapping("/compte")
 @CrossOrigin("*")
 public class CompteRestController {
-	
-	
+
 	@Autowired
 	private ICompteRepository compteRepo;
+
+	@Autowired
+	private IJoueurRepository joueurRepo;
 
 	@GetMapping("")
 	@JsonView(Views.ViewCompte.class)
@@ -53,9 +58,9 @@ public class CompteRestController {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Compte non trouvé");
 		}
 	}
-	
+
 	@GetMapping("{id}/detail")
-	//@JsonView(Views.ViewCompteDetail.class)
+	// @JsonView(Views.ViewCompteDetail.class)
 	public Compte detail(@PathVariable Long id) {
 		Optional<Compte> optCompte = compteRepo.findById(id);
 
@@ -65,13 +70,14 @@ public class CompteRestController {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Compte non trouvé");
 		}
 	}
-	
-	//se connecter
+
+	// se connecter
 	@PostMapping("/seconnecter")
-	//@JsonView(Views.ViewCompteWithRoles.class)
+	// @JsonView(Views.ViewCompteWithRoles.class)
 	@JsonView(Views.ViewCompte.class)
 	public Compte seconnecter(@RequestBody SeConnecterForm seconnecter) {
-		Optional<Compte> optCompte = compteRepo.findByLoginAndPassword(seconnecter.getLogin(), seconnecter.getPassword());
+		Optional<Compte> optCompte = compteRepo.findByLoginAndPassword(seconnecter.getLogin(),
+				seconnecter.getPassword());
 
 		if (optCompte.isPresent()) {
 			return optCompte.get();
@@ -109,19 +115,37 @@ public class CompteRestController {
 
 		Compte compteFind = compteRepo.findById(id).get();
 
-
 		compteFind = compteRepo.save(compteFind);
 
 		return compteFind;
 	}
-	
+
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Long id) {
 		if (!compteRepo.existsById(id)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Compte non trouvé");
 		}
-		
+
 		compteRepo.deleteById(id);
 	}
 
+	@PostMapping("/inscription")
+	@JsonView(Views.ViewCompte.class)
+	public Compte create(@RequestBody InscriptionDTO inscription) {
+		Joueur joueur = new Joueur();
+		joueur.setMail(inscription.getMail());
+		joueur.setAge(inscription.getAge());
+		joueur.setCiv(inscription.getCivilite());
+
+		joueur = joueurRepo.save(joueur);
+		
+		Compte compte = new Compte();
+		compte.setLogin(inscription.getLogin());
+		compte.setPassword(inscription.getPassword());
+		compte.setJoueur(joueur);
+		
+		compte = compteRepo.save(compte);
+		
+		return compte;
+	}
 }
