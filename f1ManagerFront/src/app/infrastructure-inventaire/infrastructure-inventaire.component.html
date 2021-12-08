@@ -22,7 +22,7 @@
                   <li class="list-group-item">Pitstop : {{inf.pitStop}}</li>
                 </ul>
               </div>
-              <button class="btnSelect" *ngIf="!inf.etat" (click)="acheter(inf)">Acheter : {{inf.prix}} ฿</button>
+              <button class="btnSelect" *ngIf="!inf.etat" (click)="acheter(inf)">Acheter : {{inf.prix}} <img id="petitePiece" src="../../assets/pieces.png" alt=""></button>
               <button class="btnSelect" *ngIf="inf.etat" (click)="select(inf)">Sélectionner</button>
               <div class="card-footer" class="text-center">
               </div>

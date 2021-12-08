@@ -20,7 +20,7 @@
                 <li class="list-group-item">Poids : {{voit.poids}}</li>
               </ul>
             </div>
-            <button class="btnSelect" *ngIf="!voit.etat" (click)="acheter(voit.id)">Acheter : {{voit.prix}} ฿</button>
+            <button class="btnSelect" *ngIf="!voit.etat" (click)="acheter(voit.id)">Acheter : {{voit.prix}} <img id="petitePiece" src="../../assets/pieces.png" alt=""></button>
             <button class="btnSelect" *ngIf="voit.etat" (click)="select(voit)">Sélectionner</button>
             <div class="card-footer" class="text-center">
               <!--<div><button  *ngIf="voit.etat" >Sélectionner</button>
