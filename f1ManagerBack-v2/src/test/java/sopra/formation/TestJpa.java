@@ -868,7 +868,7 @@ public class TestJpa {
 		//Ecuries du joueur
 		
 		Ecurie ecurieJoueur1 = new Ecurie();
-		ecurieJoueur1.setNom("EcurieJoueur1");
+		ecurieJoueur1.setNom("Ecurie F1 Manager");
 		ecurieJoueur1.setArgent(1200000);
 		ecurieJoueur1.setExperience(500);
 		ecurieJoueur1.setCourseEnCours(1);
