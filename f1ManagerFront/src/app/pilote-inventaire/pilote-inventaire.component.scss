@@ -83,32 +83,38 @@
 }
 
 .btnSelect{
-    background-image: url("../../assets/bouttonsel.png");
-    background-size: 100% 100% ;
+    background-image: url("../../assets/font-bouton.png");
+    background-size: 100% 100%;
     height: 70px;
-    width: 300px; 
-    text-align: center;  
-    line-height: 70px;
+    width: 80%;
     font-family: "Formula1-Regular";
-    margin: 5px; 
-    font-size: 20px; 
+    margin: 8px;
+    font-size: 26px;
+    color: white;
     position: relative;
-    right: 2%;
+    right: -7%;
 }
 .btnSelect:hover{
+    transform: scale(1.1);
     font-weight: bold;
     
 }
 
 .btnValid{
-    background-image: url("../../assets/bouttonsel.png");
+    background-image: url("../../assets/font-bouton.png");
     background-size: 100% 100% ;
     text-align: center;
     font-family: "Formula1-Regular"; 
+    color: white;
     height: 70px;
     width: 15%;
-    line-height: 70px;
-    font-size: 20px;  
+    //line-height: 70px;
+    font-size: 31px;
+}
+
+.btnValid:hover{
+    transform: scale(1.1);
+    font-weight: bold;
 }
 .piloteVide{
     background-image: url("../../assets/bouttonsel.png");
@@ -121,9 +127,13 @@
     font-size: 20px;
     margin-bottom: 5 px;
 }
-.btnValid:hover{
+
+
+#btnValid:hover{
+    transform: scale(1.1);
     font-weight: bold;
-}
+  }
+  
 .remplissage{
     height: 300px;
 }

@@ -7,6 +7,9 @@ background-color: black;
 border-color:white;
 color:white;
 }
+.btn:hover, .btn-success:hover, .float-end:hover{
+transform: scale(1.1);
+}
 .col-12{
     font-family: "Formula1-Regular";
 }
