@@ -7,68 +7,86 @@
     src : url(../../assets/Formula.ttf);
   }
   
-  #contenuPilote{
-    border: solid red 5px;
-    border-radius: 10%;
-    font-family: Formula;
-    font-size: xx-large;
-    color: red;
-    background-color: black;
-    border-radius: 10%;
-    width : 180%;
-  }
-  
-  #contenuVoiture{
-    border: solid green 5px;
-    border-radius: 10%;
-    font-family: Formula;
-    font-size: xx-large;
-    color: green;
-    background-color: black;
-    border-radius: 10%;
-    width : 180%;
-  }
-  
-  #contenuPrincipal{
-    display: flex;
-  }
-  
-  #contenuDroite{
-    flex-direction: column;
-  }
-  
-  #titre{
+  .card{
+    
+    
+    background-image: url(../../assets/fond_ciel_nuage.jpg);
+    border-bottom :solid black 5px;
+    text-decoration: none;
+    
+    
+    color :black;
+    font-weight:bold;
     font-family:"Formula1-Regular";
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration-style: italic;
-    color: red;
-    background-color: black;
-    margin: 0;
-  }
-  
-  #titreCourse{
-    font-family:"Formula";
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 40px;
-    color: red;
-    background-color: black;
-  }
-  
-  #image{
-    border: solid blue 4px;
-    border-radius: 10%;
-  }
-  
-  #bouton {
-    font-family:"Formula1-Regular";
-    text-align: center;
-    text-transform: uppercase;
+}
+
+.card-title{
+  display: flex;
+  justify-content: center;
+  font-size: large;
+}
+
+#contenuPrincipal{
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+}
+
+#position{
+  border: solid 5px;
+  border-radius: 10%;
+  background-color: white;
+}
+
+#podium{
+  border: solid 5px;
+  border-radius: 10%;
+  background-color: white;
+}
+
+#you{
+  display: flex;
+    justify-content: center;
+    height: 227px;
+    width: 100%;
+    background-image: url("../../assets/trophee.png");
+    background-size: contain;
+}
+
+#echelle{
+  margin-right :10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+#header{
+  font-family:"Formula1-Regular";
+  font-size: xx-large;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration-style: italic;
+  color: red;
+  background-color: black;
+  margin: 0;
+}
+#trophee{
+font-size : 75px;
+display: flex;
+justify-content: center;
+color: black;
+}
+
+#btnValid{
+  background-image: url("../../assets/font-bouton.png");
+  background-size: contain;
+    height: 75px;
+    width: 225px;
+    border: none;
+    color: white;
     font-size: 20px;
-    color: red;
-    border: solid orange 5px;
-    border-radius: 10%;
-    background-color: black;
-  }
-  
+}
+
+
+#btnValid:hover{
+  transform: scale(1.1);
+}

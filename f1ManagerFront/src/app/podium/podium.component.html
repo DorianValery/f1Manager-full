@@ -1,40 +1,47 @@
+<div id="header">FIN DE LA COURSE</div>
 
-<div>
-    <table>
-        <thead>
-            <tr>
-                <th>POSITION</th>
-                <th>PODIUM</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor ="let v of score();let i = index">
-                             
-                <td>{{i+1}} - {{v.ecurie.nom}}</td>
-                <td *ngIf="i < 3">{{i+1}} - {{v.ecurie.nom}}</td>
-                <td></td>
-            </tr>
-            
-        </tbody>
+<div class="card">
 
-    </table>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Votre Position</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor ="let v of score();let i = index">
-                <td *ngIf="v.ecurie == ecurie.nom; else elseBlock">{{i+1}} <ng-template #elseBlock></ng-template></td>
-            </tr>
-        </tbody>
-    </table>
+    
+<div id="contenuPrincipal">
+    <div id="position">
+        <div class="card-title">POSITION</div>
+        <div id="echelle" *ngFor ="let v of score();let i = index">
+            <div >{{i+1}} - {{v.ecurie.nom}}</div>
+        </div>
+    </div>
+   
+    <div>
+        <div style="color: black; font-size: 25px;display: flex; justify-content: center;">PLACE :</div>
+    <div id="you">
+        
+        <div *ngFor ="let v of score();let i = index">
+            <div id="trophee" *ngIf="v.ecurie.nom == ecurie.nom">{{i+1}}</div>
+           
+        </div>
+    </div>
+    <div *ngFor ="let v of score();let i = index">
+
+        <div  style="color: black; font-size :16px;display: flex; justify-content: center;" *ngIf="v.ecurie.nom == ecurie.nom">Cashprize : {{course?.cashPrize-(i*10000)}}</div> 
+          </div>  
+          <br><br> 
+          <div > <a [routerLink]="['/course']" routerLinkActive="active"><button id="btnValid" (click)="courseSuivante()">RETOUR SAISON</button></a></div>
+         
 </div>
-    <div><button (click)="courseSuivante()">REVENIR A LA SAISON</button></div>
+    <div id="podium">
+        <div class="card-title">PODIUM</div>
+        <div id="echelle" *ngFor ="let v of score();let i = index">
+            <div  *ngIf="i < 3">{{i+1}} - {{v.ecurie.nom}}</div>
+        </div>
+    </div>
 
+    
+      
+</div> 
+        
+</div>
+    
 
 
 
