@@ -48,7 +48,7 @@ export class InfrastructureInventaireComponent implements OnInit {
   }
 
   acheter(infrastructure: Infrastructure){
-    if (this.ecurieService.ecurie.argent > infrastructure.prix){
+    if (this.ecurieService.ecurie.argent >= infrastructure.prix){
       this.ecurieService.ecurie.argent = this.ecurieService.ecurie.argent - infrastructure.prix;
       this.ecurieService.modify(this.ecurieService.ecurie);
       this.ecurie.argent = this.ecurieService.ecurie.argent;

@@ -11,10 +11,8 @@ import sopra.formation.model.Compte;
 import sopra.formation.model.Course;
 import sopra.formation.model.Ecurie;
 import sopra.formation.model.Infrastructure;
-import sopra.formation.model.Inventaire;
 import sopra.formation.model.Joueur;
 import sopra.formation.model.Pilote;
-import sopra.formation.model.Position;
 import sopra.formation.model.Type;
 import sopra.formation.model.Voiture;
 import sopra.formation.model.typeInfra;
@@ -59,104 +57,30 @@ public class TestJpa {
 		
 		compteJoueur1 = compteRepo.save(compteJoueur1);
 		
-		Compte compteJoueur2= new Compte();
-		compteJoueur2.setLogin("Joueur2");
-		compteJoueur2.setPassword("Joueur2");
-		compteJoueur2.setType(Type.JOUEUR);
+//		Compte compteJoueur2= new Compte();
+//		compteJoueur2.setLogin("Joueur2");
+//		compteJoueur2.setPassword("Joueur2");
+//		compteJoueur2.setType(Type.JOUEUR);
+//		
+//		compteJoueur2 = compteRepo.save(compteJoueur2);
+//		
+//		Compte compteJoueur3= new Compte();
+//		compteJoueur3.setLogin("Joueur3");
+//		compteJoueur3.setPassword("Joueur3");
+//		compteJoueur3.setType(Type.JOUEUR);
+//		
+//		compteJoueur3 = compteRepo.save(compteJoueur3);
+//		
+//		Compte compteJoueur4= new Compte();
+//		compteJoueur4.setLogin("Joueur4");
+//		compteJoueur4.setPassword("Joueur4");
+//		compteJoueur4.setType(Type.JOUEUR);
 		
-		compteJoueur2 = compteRepo.save(compteJoueur2);
-		
-		Compte compteJoueur3= new Compte();
-		compteJoueur3.setLogin("Joueur3");
-		compteJoueur3.setPassword("Joueur3");
-		compteJoueur3.setType(Type.JOUEUR);
-		
-		compteJoueur3 = compteRepo.save(compteJoueur3);
-		
-		Compte compteJoueur4= new Compte();
-		compteJoueur4.setLogin("Joueur4");
-		compteJoueur4.setPassword("Joueur4");
-		compteJoueur4.setType(Type.JOUEUR);
-		
-		compteAdmin = compteRepo.save(compteAdmin);
-		
-		
-		
-		//Pilotes 1 et 2 etat non possédés
-		
-	   /*Pilote pilote1false =new Pilote();
-		pilote1false.setNom("BOTTAS");
-		pilote1false.setPrenom("Slow");
-		pilote1false.setAge(21);
-		pilote1false.setNationalite("Finlandaise");
-		pilote1false.setCiv(Civilite.M);
-		pilote1false.setExperience(60);
-		//pilote1false.setEtat(false);
-		pilote1false.setPrix(60000);
-		pilote1false.setPosition(1);
+//		compteAdmin = compteRepo.save(compteAdmin);
 		
 		
-		pilote1false = piloteRepo.save(pilote1false);
-		
-		Pilote pilote2false =new Pilote();
-		pilote2false.setNom("LITTLE");
-		pilote2false.setPrenom("Jane");
-		pilote2false.setAge(20);
-		pilote2false.setNationalite("Anglaise");
-		pilote2false.setCiv(Civilite.MME);
-		pilote2false.setExperience(63);
-		//pilote2false.setEtat(false);
-		pilote2false.setPrix(65000);
-		
-		pilote2false = piloteRepo.save(pilote2false);
-		
-		Pilote pilote3false =new Pilote();
-		pilote3false.setNom("LINCOLN");
-		pilote3false.setPrenom("Jenny");
-		pilote3false.setAge(20);
-		pilote3false.setNationalite("Américaine");
-		pilote3false.setCiv(Civilite.MME);
-		pilote3false.setExperience(60);
-		//pilote3false.setEtat(true);
-		pilote3false.setPrix(65000);
-		
-		pilote3false = piloteRepo.save(pilote3false);
-		
-		Pilote pilote4false =new Pilote();
-		pilote4false.setNom("LEO");
-		pilote4false.setPrenom("Messi");
-		pilote4false.setAge(22);
-		pilote4false.setNationalite("Mexicaine");
-		pilote4false.setCiv(Civilite.M);
-		pilote4false.setExperience(70);
-		//pilote4false.setEtat(true);
-		pilote4false.setPrix(80000);
-		
-		pilote4false = piloteRepo.save(pilote4false);
-		
-		//Pilotes 1 et 2 etat possédés
-
-		Pilote piloteX =new Pilote();
-		piloteX.setNom("X");
-		piloteX.setPrenom("X");
-		piloteX.setAge(0);
-		piloteX.setNationalite("X");
-		piloteX.setCiv(Civilite.M);
-		piloteX.setExperience(500);
-		//piloteX.setEtat(false);
-		piloteX.setPrix(2000000);
-		
-		piloteX = piloteRepo.save(piloteX);
-		
-		List <Pilote> listPilote = new ArrayList();
-		listPilote.add(pilote1false);
-		listPilote.add(pilote2false);
-		listPilote.add(pilote3false);
-		listPilote.add(pilote4false);
-		listPilote.add(piloteX);*/
 		
 		//PILOTES DES ECURIES
-		//Inventaire inventaire1 = new Inventaire(50);
 		
 		Pilote pilote1 =new Pilote();
 		pilote1.setNom("SUSHI");
@@ -165,7 +89,6 @@ public class TestJpa {
 		pilote1.setNationalite("Japonaise");
 		pilote1.setCiv(Civilite.M);
 		pilote1.setExperience(60);
-		//pilote1.setEtat(false);
 		pilote1.setPrix(100000);
 		pilote1.setImagePilote("./../assets/pilote 1.png");
 		
@@ -176,7 +99,6 @@ public class TestJpa {
 		pilote2.setNationalite("Chinoise");
 		pilote2.setCiv(Civilite.M);
 		pilote2.setExperience(65);
-		//pilote2.setEtat(false);
 		pilote2.setPrix(100000);
 		pilote2.setImagePilote("./../assets/pilote 2.png");
 		
@@ -187,7 +109,6 @@ public class TestJpa {
 		pilote3.setNationalite("Néerlandaise");
 		pilote3.setCiv(Civilite.M);
 		pilote3.setExperience(95);
-		//pilote3.setEtat(false);
 		pilote3.setPrix(150000);
 		pilote3.setImagePilote("./../assets/pilote 3.png");
 		
@@ -198,7 +119,6 @@ public class TestJpa {
 		pilote4.setNationalite("Américiaine");
 		pilote4.setCiv(Civilite.MME);
 		pilote4.setExperience(90);
-		//pilote4.setEtat(false);
 		pilote4.setPrix(150000);
 		pilote4.setImagePilote("./../assets/pilote 4.png");
 		
@@ -209,7 +129,6 @@ public class TestJpa {
 		pilote5.setNationalite("Française");
 		pilote5.setCiv(Civilite.M);
 		pilote5.setExperience(150);
-	//	pilote5.setEtat(false);
 		pilote5.setPrix(200000);
 		pilote5.setImagePilote("./../assets/pilote 5.png");
 		
@@ -220,7 +139,6 @@ public class TestJpa {
 		pilote6.setNationalite("Anglaise");
 		pilote6.setCiv(Civilite.MME);
 		pilote6.setExperience(95);
-		//pilote6.setEtat(false);
 		pilote6.setPrix(170000);
 		pilote6.setImagePilote("./../assets/pilote 6.png");
 		
@@ -231,7 +149,6 @@ public class TestJpa {
 		pilote7.setNationalite("Coréenne");
 		pilote7.setCiv(Civilite.M);
 		pilote7.setExperience(80);
-		//pilote7.setEtat(false);
 		pilote7.setPrix(120000);
 		pilote7.setImagePilote("./../assets/pilote 7.png");
 		
@@ -242,7 +159,6 @@ public class TestJpa {
 		pilote8.setNationalite("Coréenne");
 		pilote8.setCiv(Civilite.M);
 		pilote8.setExperience(85);
-		//pilote8.setEtat(false);
 		pilote8.setPrix(140000);
 		pilote8.setImagePilote("./../assets/pilote 8.png");
 		
@@ -253,7 +169,6 @@ public class TestJpa {
 		pilote9.setNationalite("Mexicaine");
 		pilote9.setCiv(Civilite.M);
 		pilote9.setExperience(60);
-		//pilote9.setEtat(false);
 		pilote9.setPrix(95000);
 		pilote9.setImagePilote("./../assets/pilote 9.png");
 		
@@ -264,7 +179,6 @@ public class TestJpa {
 		pilote10.setNationalite("Mexicaine");
 		pilote10.setCiv(Civilite.M);
 		pilote10.setExperience(65);
-		//pilote10.setEtat(false);
 		pilote10.setPrix(100000);
 		pilote10.setImagePilote("./../assets/pilote 10.png");
 		
@@ -275,7 +189,6 @@ public class TestJpa {
 		pilote11.setNationalite("Italienne");
 		pilote11.setCiv(Civilite.M);
 		pilote11.setExperience(200);
-		//pilote11.setEtat(false);
 		pilote11.setPrix(300000);
 		pilote11.setImagePilote("./../assets/pilote 11.png");
 		
@@ -286,7 +199,6 @@ public class TestJpa {
 		pilote12.setNationalite("Allemande");
 		pilote12.setCiv(Civilite.MME);
 		pilote12.setExperience(205);
-		//pilote12.setEtat(false);
 		pilote12.setPrix(310000);
 		pilote12.setImagePilote("./../assets/pilote 12.png");
 		
@@ -297,7 +209,6 @@ public class TestJpa {
 		pilote13.setNationalite("Suisse");
 		pilote13.setCiv(Civilite.M);
 		pilote13.setExperience(220);
-		//pilote13.setEtat(false);
 		pilote13.setPrix(400000);
 		pilote13.setImagePilote("./../assets/pilote 13.png");
 		
@@ -308,7 +219,6 @@ public class TestJpa {
 		pilote14.setNationalite("Allemande");
 		pilote14.setCiv(Civilite.M);
 		pilote14.setExperience(240);
-		//pilote14.setEtat(false);
 		pilote14.setPrix(430000);
 		pilote14.setImagePilote("./../assets/pilote 14.png");
 		
@@ -319,7 +229,6 @@ public class TestJpa {
 		pilote15.setNationalite("Italienne");
 		pilote15.setCiv(Civilite.M);
 		pilote15.setExperience(120);
-		//pilote15.setEtat(false);
 		pilote15.setPrix(140000);
 		pilote15.setImagePilote("./../assets/pilote 15.png");
 		
@@ -330,7 +239,6 @@ public class TestJpa {
 		pilote16.setNationalite("Italienne");
 		pilote16.setCiv(Civilite.MME);
 		pilote16.setExperience(120);
-		//pilote16.setEtat(false);
 		pilote16.setPrix(130000);
 		pilote16.setImagePilote("./../assets/pilote 16.png");
 		
@@ -341,7 +249,6 @@ public class TestJpa {
 		pilote17.setNationalite("Anglaise");
 		pilote17.setCiv(Civilite.M);
 		pilote17.setExperience(150);
-		//pilote17.setEtat(false);
 		pilote17.setPrix(180000);
 		pilote17.setImagePilote("./../assets/pilote 17.png");
 		
@@ -352,7 +259,6 @@ public class TestJpa {
 		pilote18.setNationalite("Anglaise");
 		pilote18.setCiv(Civilite.M);
 		pilote18.setExperience(124);
-		//pilote18.setEtat(false);
 		pilote18.setPrix(170000);
 		pilote18.setImagePilote("./../assets/pilote 18.png");
 
@@ -363,7 +269,6 @@ public class TestJpa {
 		pilote19.setNationalite("Mexicaine");
 		pilote19.setCiv(Civilite.MME);
 		pilote19.setExperience(117);
-		//pilote19.setEtat(false);
 		pilote19.setPrix(170000);
 		pilote19.setImagePilote("./../assets/pilote 19.png");
 		
@@ -375,70 +280,10 @@ public class TestJpa {
 		pilote20.setNationalite("Anglaise");
 		pilote20.setCiv(Civilite.M);
 		pilote20.setExperience(128);
-		//pilote20.setEtat(false);
 		pilote20.setPrix(180000);
 		pilote20.setImagePilote("./../assets/pilote 20.png");
 		
-		pilote1 = piloteRepo.save(pilote1);
-		pilote2 = piloteRepo.save(pilote2);
-		pilote3 = piloteRepo.save(pilote3);
-		pilote4 = piloteRepo.save(pilote4);
-		pilote5 = piloteRepo.save(pilote5);
-		pilote6 = piloteRepo.save(pilote6);
-		pilote7 = piloteRepo.save(pilote7);
-		pilote8 = piloteRepo.save(pilote8);
-		pilote9 = piloteRepo.save(pilote9);
-		pilote10 = piloteRepo.save(pilote10);
-		pilote11 = piloteRepo.save(pilote11);
-		pilote12 = piloteRepo.save(pilote12);
-		pilote13 = piloteRepo.save(pilote13);
-		pilote14 = piloteRepo.save(pilote14);
-		pilote15 = piloteRepo.save(pilote15);
-		pilote16 = piloteRepo.save(pilote16);
-		pilote17 = piloteRepo.save(pilote17);
-		pilote18 = piloteRepo.save(pilote18);
-		pilote19 = piloteRepo.save(pilote19);
-		pilote20 = piloteRepo.save(pilote20);
-		
-		List <Pilote> listPilote1 = new ArrayList();
-		listPilote1.add(pilote1);
-		listPilote1.add(pilote2);
-		
-		List <Pilote> listPilote2 = new ArrayList();
-		listPilote1.add(pilote3);
-		listPilote1.add(pilote4);
-		
-		List <Pilote> listPilote3 = new ArrayList();
-		listPilote1.add(pilote5);
-		listPilote1.add(pilote6);
-		
-		List <Pilote> listPilote4 = new ArrayList();
-		listPilote1.add(pilote7);
-		listPilote1.add(pilote8);
-		
-		List <Pilote> listPilote5 = new ArrayList();
-		listPilote1.add(pilote9);
-		listPilote1.add(pilote10);
-		
-		List <Pilote> listPilote6 = new ArrayList();
-		listPilote1.add(pilote11);
-		listPilote1.add(pilote12);
-		
-		List <Pilote> listPilote7 = new ArrayList();
-		listPilote1.add(pilote13);
-		listPilote1.add(pilote14);
-		
-		List <Pilote> listPilote8 = new ArrayList();
-		listPilote1.add(pilote15);
-		listPilote1.add(pilote16);
-		
-		List <Pilote> listPilote9= new ArrayList();
-		listPilote1.add(pilote17);
-		listPilote1.add(pilote18);
-		
-		List <Pilote> listPilote10 = new ArrayList();
-		listPilote1.add(pilote19);
-		listPilote1.add(pilote20);
+
 		
 		//VOITURES DES ECURIES
 		
@@ -449,7 +294,6 @@ public class TestJpa {
 		voiture1.setVitesse(300);
 		voiture1.setPrix(300000);
 		voiture1.setImage("../../assets/voiture_bleue.gif");
-		//voiture1.setEtat(true);
 
 		Voiture voiture2 = new Voiture();
 		voiture2.setMarque("LOTUS");
@@ -457,7 +301,6 @@ public class TestJpa {
 		voiture2.setPoids(780);
 		voiture2.setVitesse(305);
 		voiture2.setPrix(400000);
-		//voiture2.setEtat(false);
 		voiture2.setImage("../../assets/voiture_jaune.gif");
 		
 		Voiture voiture3 = new Voiture();
@@ -466,7 +309,6 @@ public class TestJpa {
 		voiture3.setPoids(774);
 		voiture3.setVitesse(315);
 		voiture3.setPrix(420000);
-		//voiture3.setEtat(false);
 		voiture3.setImage("../../assets/voiture_rouge.gif");
 		
 		Voiture voiture4= new Voiture();
@@ -475,7 +317,6 @@ public class TestJpa {
 		voiture4.setPoids(780);
 		voiture4.setVitesse(320);
 		voiture4.setPrix(380000);
-		//voiture4.setEtat(false);
 		voiture4.setImage("../../assets/voiture_orange.gif");
 		
 		Voiture voiture5= new Voiture();
@@ -484,16 +325,14 @@ public class TestJpa {
 		voiture5.setPoids(810);
 		voiture5.setVitesse(297);
 		voiture5.setPrix(400000);
-		//voiture5.setEtat(false);
 		voiture5.setImage("../../assets/voiture_verte.gif");
 	
 		Voiture voiture6= new Voiture();
-		voiture6.setMarque("FERRARI");
+		voiture6.setMarque("ALFA ROMEO");
 		voiture6.setManiabilite(12);
 		voiture6.setPoids(770);
 		voiture6.setVitesse(330);
 		voiture6.setPrix(500000);
-		//voiture6.setEtat(false);
 		voiture6.setImage("../../assets/voiture_rouge.gif");
 		
 		Voiture voiture7= new Voiture();
@@ -502,7 +341,6 @@ public class TestJpa {
 		voiture7.setPoids(765);
 		voiture7.setVitesse(335);
 		voiture7.setPrix(500000);
-		//voiture7.setEtat(false);
 		voiture7.setImage("../../assets/voiture_rose.gif");
 		
 		Voiture voiture8= new Voiture();
@@ -511,66 +349,186 @@ public class TestJpa {
 		voiture8.setPoids(755);
 		voiture8.setVitesse(350);
 		voiture8.setPrix(620000);
-		//voiture8.setEtat(false);
 		voiture8.setImage("../../assets/voiture_bleue.gif");
+		
+		Voiture voiture9= new Voiture();
+		voiture9.setMarque("ALPHA TAURI");
+		voiture9.setManiabilite(9);
+		voiture9.setPoids(790);
+		voiture9.setVitesse(320);
+		voiture9.setPrix(390000);
+		voiture9.setImage("../../assets/voiture_bleue.gif");
+		
+		Voiture voiture10= new Voiture();
+		voiture10.setMarque("WILLIAMS");
+		voiture10.setManiabilite(7);
+		voiture10.setPoids(800);
+		voiture10.setVitesse(295);
+		voiture10.setPrix(350000);
+		voiture10.setImage("../../assets/voiture_jaune.gif");
+		
+		Voiture voiture11 = new Voiture();
+		voiture11.setMarque("ALPINE");
+		voiture11.setManiabilite(6);
+		voiture11.setPoids(800);
+		voiture11.setVitesse(300);
+		voiture11.setPrix(300000);
+		voiture11.setImage("../../assets/voiture_bleue.gif");
+
+		Voiture voiture12 = new Voiture();
+		voiture12.setMarque("LOTUS");
+		voiture12.setManiabilite(8);
+		voiture12.setPoids(780);
+		voiture12.setVitesse(305);
+		voiture12.setPrix(400000);
+		voiture12.setImage("../../assets/voiture_jaune.gif");
+		
+		Voiture voiture13 = new Voiture();
+		voiture13.setMarque("FERRARI");
+		voiture13.setManiabilite(8);
+		voiture13.setPoids(774);
+		voiture13.setVitesse(315);
+		voiture13.setPrix(420000);
+		voiture13.setImage("../../assets/voiture_rouge.gif");
+		
+		Voiture voiture14= new Voiture();
+		voiture14.setMarque("MCLAREN");
+		voiture14.setManiabilite(8);
+		voiture14.setPoids(780);
+		voiture14.setVitesse(320);
+		voiture14.setPrix(380000);
+		voiture14.setImage("../../assets/voiture_orange.gif");
+		
+		Voiture voiture15= new Voiture();
+		voiture15.setMarque("ASTON MARTIN");
+		voiture15.setManiabilite(9);
+		voiture15.setPoids(810);
+		voiture15.setVitesse(297);
+		voiture15.setPrix(400000);
+		voiture15.setImage("../../assets/voiture_verte.gif");
+	
+		Voiture voiture16= new Voiture();
+		voiture16.setMarque("ALFA ROMEO");
+		voiture16.setManiabilite(12);
+		voiture16.setPoids(770);
+		voiture16.setVitesse(330);
+		voiture16.setPrix(500000);
+		voiture16.setImage("../../assets/voiture_rouge.gif");
+		
+		Voiture voiture17= new Voiture();
+		voiture17.setMarque("MERCEDES");
+		voiture17.setManiabilite(12);
+		voiture17.setPoids(765);
+		voiture17.setVitesse(335);
+		voiture17.setPrix(500000);
+		voiture17.setImage("../../assets/voiture_rose.gif");
+		
+		Voiture voiture18= new Voiture();
+		voiture18.setMarque("HONDA");
+		voiture18.setManiabilite(14);
+		voiture18.setPoids(755);
+		voiture18.setVitesse(350);
+		voiture18.setPrix(620000);
+		voiture18.setImage("../../assets/voiture_bleue.gif");
+		
+		Voiture voiture19= new Voiture();
+		voiture19.setMarque("ALPHA TAURI");
+		voiture19.setManiabilite(9);
+		voiture19.setPoids(790);
+		voiture19.setVitesse(320);
+		voiture19.setPrix(390000);
+		voiture19.setImage("../../assets/voiture_bleue.gif");
+		
+		Voiture voiture20= new Voiture();
+		voiture20.setMarque("WILLIAMS");
+		voiture20.setManiabilite(7);
+		voiture20.setPoids(800);
+		voiture20.setVitesse(295);
+		voiture20.setPrix(350000);
+		voiture20.setImage("../../assets/voiture_jaune.gif");
 			
-		voiture1 = voitureRepo.save(voiture1);
-		voiture2 = voitureRepo.save(voiture2);
-		voiture3 = voitureRepo.save(voiture3);
-		voiture4 = voitureRepo.save(voiture4);
-		voiture5 = voitureRepo.save(voiture5);
-		voiture6 = voitureRepo.save(voiture6);
-		voiture7 = voitureRepo.save(voiture7);
-		voiture8 = voitureRepo.save(voiture8);
 		
-		List<Voiture> listVoiture1 = new ArrayList();
-		listVoiture1.add(voiture1);
-		listVoiture1.add(voiture2);
-		
-		List<Voiture> listVoiture2 = new ArrayList();
-		listVoiture2.add(voiture3);
-		listVoiture2.add(voiture4);
-		
-		List<Voiture> listVoiture3 = new ArrayList();
-		listVoiture3.add(voiture5);
-		listVoiture3.add(voiture6);
-		
-		List<Voiture> listVoiture4 = new ArrayList();
-		listVoiture4.add(voiture7);
-		listVoiture4.add(voiture8);
-		
-		List<Voiture> listVoiture5 = new ArrayList();
-		listVoiture5.add(voiture6);
-		listVoiture5.add(voiture7);
-		
-		List<Voiture> listVoiture6 = new ArrayList();
-		listVoiture6.add(voiture4);
-		listVoiture6.add(voiture5);
-		
-		List<Voiture> listVoiture7 = new ArrayList();
-		listVoiture7.add(voiture5);
-		listVoiture7.add(voiture6);
-		
-		List<Voiture> listVoiture8 = new ArrayList();
-		listVoiture8.add(voiture2);
-		listVoiture8.add(voiture3);
-		
-		List<Voiture> listVoiture9 = new ArrayList();
-		listVoiture9.add(voiture6);
-		listVoiture9.add(voiture8);
-		
-		List<Voiture> listVoiture10 = new ArrayList();
-		listVoiture10.add(voiture1);
-		listVoiture10.add(voiture3);
+
 		
 		//Infrastructures
 		
-		Infrastructure infraPilote1 = new Infrastructure();
+		Infrastructure infra1 = new Infrastructure();
+		infra1.setExperience(10);
+		infra1.setNom("Equipe de mecanicien");
+		infra1.setNbIngenieurs(5);
+		infra1.setPrix(100000);
+		infra1.setType(typeInfra.V);
+		
+		Infrastructure infra2 = new Infrastructure();
+		infra2.setExperience(10);
+		infra2.setNom("Ingénieurs motoristes");
+		infra2.setNbIngenieurs(4);
+		infra2.setPrix(120000);
+		infra2.setType(typeInfra.V);
+		
+		Infrastructure infra3 = new Infrastructure();
+		infra3.setExperience(15);
+		infra3.setNom("Equipe de développement du châssis");
+		infra3.setNbIngenieurs(5);
+		infra3.setPrix(130000);
+		infra3.setType(typeInfra.V);
+		
+		Infrastructure infra4 = new Infrastructure();
+		infra4.setExperience(10);
+		infra4.setNom("Préparateus physiques");
+		infra4.setNbIngenieurs(2);
+		infra4.setPrix(100000);
+		infra4.setType(typeInfra.P);
+		
+		Infrastructure infra5 = new Infrastructure();
+		infra5.setExperience(10);
+		infra5.setNom("Préparateurs mentaux");
+		infra5.setNbIngenieurs(2);
+		infra5.setPrix(120000);
+		infra5.setType(typeInfra.P);
+		
+		Infrastructure infra6 = new Infrastructure();
+		infra6.setExperience(15);
+		infra6.setNom("Séances d'essais");
+		infra6.setNbIngenieurs(8);
+		infra6.setPrix(130000);
+		infra6.setType(typeInfra.V);
+		
+		Infrastructure infra7 = new Infrastructure();
+		infra7.setExperience(10);
+		infra7.setNom("Sponsor");
+		infra7.setNbIngenieurs(2);
+		infra7.setPrix(100000);
+		infra7.setType(typeInfra.M);
+		
+		Infrastructure infra8 = new Infrastructure();
+		infra8.setExperience(10);
+		infra8.setNom("Equipe marketing");
+		infra8.setNbIngenieurs(6);
+		infra8.setPrix(120000);
+		infra8.setType(typeInfra.M);
+		
+		Infrastructure infra9 = new Infrastructure();
+		infra9.setExperience(15);
+		infra9.setNom("Publicité et communication");
+		infra9.setNbIngenieurs(6);
+		infra9.setPrix(130000);
+		infra9.setType(typeInfra.M);
+		
+		Infrastructure infra10 = new Infrastructure();
+		infra10.setExperience(20);
+		infra10.setNom("Séances d'entrainement aux pitstop");
+		infra10.setNbIngenieurs(7);
+		infra10.setPrix(150000);
+		infra10.setType(typeInfra.V);
+		
+		
+		///////////////////////////////////////////////////////////////
+		/*Infrastructure infraPilote1 = new Infrastructure();
 		infraPilote1.setExperience(15);
 		infraPilote1.setNom("infraPilote1");
 		infraPilote1.setNbIngenieurs(5);
 		infraPilote1.setPrix(100000);
-		//infraPilote1.setEtat(false);
 		infraPilote1.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture1 = new Infrastructure();
@@ -579,7 +537,6 @@ public class TestJpa {
 		infraVoiture1.setNbIngenieurs(5);
 		infraVoiture1.setPitStop(7);
 		infraVoiture1.setPrix(120000);
-		//infraVoiture1.setEtat(false);
 		infraVoiture1.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing1 = new Infrastructure();
@@ -587,7 +544,6 @@ public class TestJpa {
 		infraMarketing1.setNom("infraMarketing1");
 		infraMarketing1.setNbIngenieurs(2);
 		infraMarketing1.setPrix(100000);
-		//infraMarketing1.setEtat(false);
 		infraMarketing1.setType(typeInfra.M);
 		
 		infraPilote1 = infrastructureRepo.save(infraPilote1);
@@ -606,7 +562,6 @@ public class TestJpa {
 		infraPilote2.setNom("infraPilote2");
 		infraPilote2.setNbIngenieurs(5);
 		infraPilote2.setPrix(0);
-		//infraPilote2.setEtat(false);
 		infraPilote2.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture2 = new Infrastructure();
@@ -615,7 +570,6 @@ public class TestJpa {
 		infraVoiture2.setNbIngenieurs(6);
 		infraVoiture2.setPitStop(4);
 		infraVoiture2.setPrix(0);
-		//infraVoiture2.setEtat(false);
 		infraVoiture2.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing2 = new Infrastructure();
@@ -623,7 +577,6 @@ public class TestJpa {
 		infraMarketing2.setNom("infraMarketing2");
 		infraMarketing2.setNbIngenieurs(2);
 		infraMarketing2.setPrix(0);
-		//infraMarketing2.setEtat(false);
 		infraMarketing2.setType(typeInfra.M);
 		
 		infraPilote2 = infrastructureRepo.save(infraPilote2);
@@ -642,7 +595,6 @@ public class TestJpa {
 		infraPilote3.setNom("infraPilote3");
 		infraPilote3.setNbIngenieurs(6);
 		infraPilote3.setPrix(0);
-		//infraPilote3.setEtat(false);
 		infraPilote3.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture3 = new Infrastructure();
@@ -651,7 +603,6 @@ public class TestJpa {
 		infraVoiture3.setNbIngenieurs(5);
 		infraVoiture3.setPitStop(5);
 		infraVoiture3.setPrix(0);
-		//infraVoiture3.setEtat(false);
 		infraVoiture3.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing3 = new Infrastructure();
@@ -659,7 +610,6 @@ public class TestJpa {
 		infraMarketing3.setNom("infraMarketing3");
 		infraMarketing3.setNbIngenieurs(3);
 		infraMarketing3.setPrix(0);
-		//infraMarketing3.setEtat(false);
 		infraMarketing3.setType(typeInfra.M);
 		
 		infraPilote3 = infrastructureRepo.save(infraPilote3);
@@ -678,7 +628,6 @@ public class TestJpa {
 		infraPilote4.setNom("infraPilote4");
 		infraPilote4.setNbIngenieurs(7);
 		infraPilote4.setPrix(0);
-		//infraPilote4.setEtat(false);
 		infraPilote4.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture4 = new Infrastructure();
@@ -687,7 +636,6 @@ public class TestJpa {
 		infraVoiture4.setNbIngenieurs(6);
 		infraVoiture4.setPitStop(4);
 		infraVoiture4.setPrix(0);
-		//infraVoiture4.setEtat(false);
 		infraVoiture4.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing4 = new Infrastructure();
@@ -695,7 +643,6 @@ public class TestJpa {
 		infraMarketing4.setNom("infraMarketing4");
 		infraMarketing4.setNbIngenieurs(3);
 		infraMarketing4.setPrix(0);
-		//infraMarketing4.setEtat(false);
 		infraMarketing4.setType(typeInfra.M);
 		
 		infraPilote4 = infrastructureRepo.save(infraPilote4);
@@ -714,7 +661,6 @@ public class TestJpa {
 		infraPilote5.setNom("infraPilote5");
 		infraPilote5.setNbIngenieurs(5);
 		infraPilote5.setPrix(0);
-		//infraPilote5.setEtat(false);
 		infraPilote5.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture5 = new Infrastructure();
@@ -723,7 +669,6 @@ public class TestJpa {
 		infraVoiture5.setNbIngenieurs(5);
 		infraVoiture5.setPitStop(7);
 		infraVoiture5.setPrix(0);
-		//infraVoiture5.setEtat(false);
 		infraVoiture5.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing5 = new Infrastructure();
@@ -731,7 +676,6 @@ public class TestJpa {
 		infraMarketing5.setNom("infraMarketing5");
 		infraMarketing5.setNbIngenieurs(2);
 		infraMarketing5.setPrix(0);
-		//infraMarketing5.setEtat(false);
 		infraMarketing5.setType(typeInfra.M);
 		
 		infraPilote5 = infrastructureRepo.save(infraPilote5);
@@ -750,7 +694,6 @@ public class TestJpa {
 		infraPilote6.setNom("infraPilote6");
 		infraPilote6.setNbIngenieurs(4);
 		infraPilote6.setPrix(0);
-		//infraPilote6.setEtat(false);
 		infraPilote6.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture6 = new Infrastructure();
@@ -759,7 +702,6 @@ public class TestJpa {
 		infraVoiture6.setNbIngenieurs(6);
 		infraVoiture6.setPitStop(6);
 		infraVoiture6.setPrix(0);
-		//infraVoiture6.setEtat(false);
 		infraVoiture6.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing6 = new Infrastructure();
@@ -767,7 +709,6 @@ public class TestJpa {
 		infraMarketing6.setNom("infraMarketing6");
 		infraMarketing6.setNbIngenieurs(2);
 		infraMarketing6.setPrix(0);
-		//infraMarketing6.setEtat(false);
 		infraMarketing6.setType(typeInfra.M);
 		
 		infraPilote6 = infrastructureRepo.save(infraPilote6);
@@ -786,7 +727,6 @@ public class TestJpa {
 		infraPilote7.setNom("infraPilote7");
 		infraPilote7.setNbIngenieurs(7);
 		infraPilote7.setPrix(0);
-		//infraPilote7.setEtat(false);
 		infraPilote7.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture7 = new Infrastructure();
@@ -795,7 +735,6 @@ public class TestJpa {
 		infraVoiture7.setNbIngenieurs(7);
 		infraVoiture7.setPitStop(3);
 		infraVoiture7.setPrix(0);
-		//infraVoiture7.setEtat(false);
 		infraVoiture7.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing7 = new Infrastructure();
@@ -803,7 +742,6 @@ public class TestJpa {
 		infraMarketing7.setNom("infraMarketing7");
 		infraMarketing7.setNbIngenieurs(3);
 		infraMarketing7.setPrix(0);
-		//infraMarketing7.setEtat(false);
 		infraMarketing7.setType(typeInfra.M);
 		
 		infraPilote7 = infrastructureRepo.save(infraPilote7);
@@ -822,7 +760,6 @@ public class TestJpa {
 		infraPilote8.setNom("infraPilote8");
 		infraPilote8.setNbIngenieurs(5);
 		infraPilote8.setPrix(0);
-	//	infraPilote8.setEtat(false);
 		infraPilote8.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture8 = new Infrastructure();
@@ -831,7 +768,6 @@ public class TestJpa {
 		infraVoiture8.setNbIngenieurs(6);
 		infraVoiture8.setPitStop(7);
 		infraVoiture8.setPrix(0);
-		//infraVoiture8.setEtat(false);
 		infraVoiture8.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing8 = new Infrastructure();
@@ -839,7 +775,6 @@ public class TestJpa {
 		infraMarketing8.setNom("infraMarketing8");
 		infraMarketing8.setNbIngenieurs(4);
 		infraMarketing8.setPrix(0);
-		//infraMarketing8.setEtat(false);
 		infraMarketing8.setType(typeInfra.M);
 		
 		infraPilote8 = infrastructureRepo.save(infraPilote8);
@@ -858,7 +793,6 @@ public class TestJpa {
 		infraPilote9.setNom("infraPilote9");
 		infraPilote9.setNbIngenieurs(5);
 		infraPilote9.setPrix(0);
-		//infraPilote9.setEtat(false);
 		infraPilote9.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture9 = new Infrastructure();
@@ -867,7 +801,6 @@ public class TestJpa {
 		infraVoiture9.setNbIngenieurs(6);
 		infraVoiture9.setPitStop(5);
 		infraVoiture9.setPrix(0);
-		//infraVoiture9.setEtat(false);
 		infraVoiture9.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing9 = new Infrastructure();
@@ -875,7 +808,6 @@ public class TestJpa {
 		infraMarketing9.setNom("infraMarketing9");
 		infraMarketing9.setNbIngenieurs(3);
 		infraMarketing9.setPrix(0);
-		//infraMarketing9.setEtat(false);
 		infraMarketing9.setType(typeInfra.M);
 		
 		infraPilote9 = infrastructureRepo.save(infraPilote9);
@@ -894,7 +826,6 @@ public class TestJpa {
 		infraPilote10.setNom("infraPilote10");
 		infraPilote10.setNbIngenieurs(6);
 		infraPilote10.setPrix(0);
-		//infraPilote10.setEtat(false);
 		infraPilote10.setType(typeInfra.P);
 		
 		Infrastructure infraVoiture10 = new Infrastructure();
@@ -903,7 +834,6 @@ public class TestJpa {
 		infraVoiture10.setNbIngenieurs(6);
 		infraVoiture10.setPitStop(5);
 		infraVoiture10.setPrix(0);
-		//infraVoiture10.setEtat(false);
 		infraVoiture10.setType(typeInfra.V);
 		
 		Infrastructure infraMarketing10 = new Infrastructure();
@@ -911,7 +841,6 @@ public class TestJpa {
 		infraMarketing10.setNom("infraMarketing10");
 		infraMarketing10.setNbIngenieurs(3);
 		infraMarketing10.setPrix(0);
-		//infraMarketing10.setEtat(false);
 		infraMarketing10.setType(typeInfra.M);
 		
 		infraPilote10 = infrastructureRepo.save(infraPilote10);
@@ -934,25 +863,25 @@ public class TestJpa {
 		listInfrastructure7 = infrastructureRepo.saveAll(listInfrastructure7);
 		listInfrastructure8 = infrastructureRepo.saveAll(listInfrastructure8);
 		listInfrastructure9 = infrastructureRepo.saveAll(listInfrastructure9);
-		listInfrastructure10 = infrastructureRepo.saveAll(listInfrastructure10);
+		listInfrastructure10 = infrastructureRepo.saveAll(listInfrastructure10);*/
 		
 		//Ecuries du joueur
 		
 		Ecurie ecurieJoueur1 = new Ecurie();
 		ecurieJoueur1.setNom("EcurieJoueur1");
-		ecurieJoueur1.setArgent(500000000);
+		ecurieJoueur1.setArgent(1200000);
 		ecurieJoueur1.setExperience(500);
 		ecurieJoueur1.setCourseEnCours(1);
 		
 		ecurieJoueur1 = ecurieRepo.save(ecurieJoueur1);
 		
-		Ecurie ecurieJoueur2 = new Ecurie();
-		ecurieJoueur2.setNom("Ecurie2");
-		ecurieJoueur2.setArgent(40000);
-		ecurieJoueur2.setExperience(400);
-		ecurieJoueur2.setCourseEnCours(1);
-		
-		ecurieJoueur2 = ecurieRepo.save(ecurieJoueur2);
+//		Ecurie ecurieJoueur2 = new Ecurie();
+//		ecurieJoueur2.setNom("Ecurie2");
+//		ecurieJoueur2.setArgent(40000);
+//		ecurieJoueur2.setExperience(400);
+//		ecurieJoueur2.setCourseEnCours(1);
+//		
+//		ecurieJoueur2 = ecurieRepo.save(ecurieJoueur2);
 		
 		//ECURIES IA
 		
@@ -960,72 +889,48 @@ public class TestJpa {
 		ecurie1.setNom("RACE SPIRIT");
 		ecurie1.setArgent(1000000);
 		ecurie1.setExperience(300);
-		ecurie1.setInfrastructure(listInfrastructure1);
-		ecurie1.setVoitures(listVoiture1);
-		ecurie1.setPilotes(listPilote1);
 		ecurie1.setCourseEnCours(1);
 		
 		Ecurie ecurie2 = new Ecurie();
 		ecurie2.setNom("LEGENDARY");
 		ecurie2.setArgent(1200000);
 		ecurie2.setExperience(320);
-		ecurie2.setInfrastructure(listInfrastructure2);
-		ecurie2.setVoitures(listVoiture2);
-		ecurie2.setPilotes(listPilote2);
 		ecurie2.setCourseEnCours(1);
 		
 		Ecurie ecurie3 = new Ecurie();
 		ecurie3.setNom("SPEED BULLET");
 		ecurie3.setArgent(1200000);
 		ecurie3.setExperience(322);
-		ecurie3.setInfrastructure(listInfrastructure3);
-		ecurie3.setVoitures(listVoiture3);
-		ecurie3.setPilotes(listPilote3);
 		ecurie3.setCourseEnCours(1);
 		
 		Ecurie ecurie4 = new Ecurie();
 		ecurie4.setNom("SPEED HUNTERS");
 		ecurie4.setArgent(1300000);
 		ecurie4.setExperience(325);
-		ecurie4.setInfrastructure(listInfrastructure4);
-		ecurie4.setVoitures(listVoiture4);
-		ecurie4.setPilotes(listPilote4);
 		ecurie4.setCourseEnCours(1);
 		
 		Ecurie ecurie5 = new Ecurie();
 		ecurie5.setNom("FORMULA SCUDERIA");
 		ecurie5.setArgent(1000000);
 		ecurie5.setExperience(300);
-		ecurie5.setInfrastructure(listInfrastructure5);
-		ecurie5.setVoitures(listVoiture5);
-		ecurie5.setPilotes(listPilote5);
 		ecurie5.setCourseEnCours(1);
 
 		Ecurie ecurie6 = new Ecurie();
 		ecurie6.setNom("GP ONE");
 		ecurie6.setArgent(1100000);
 		ecurie6.setExperience(290);
-		ecurie6.setInfrastructure(listInfrastructure6);
-		ecurie6.setVoitures(listVoiture6);
-		ecurie6.setPilotes(listPilote6);
 		ecurie6.setCourseEnCours(1);
 		
 		Ecurie ecurie7 = new Ecurie();
 		ecurie7.setNom("HISTORIC CHAMPIONS");
 		ecurie7.setArgent(1140000);
 		ecurie7.setExperience(350);
-		ecurie7.setInfrastructure(listInfrastructure7);
-		ecurie7.setVoitures(listVoiture7);
-		ecurie7.setPilotes(listPilote7);
 		ecurie7.setCourseEnCours(1);
 		
 		Ecurie ecurie8 = new Ecurie();
 		ecurie8.setNom("WHEEL MASTERS");
 		ecurie8.setArgent(1400000);
 		ecurie8.setExperience(340);
-		ecurie8.setInfrastructure(listInfrastructure8);
-		ecurie8.setVoitures(listVoiture8);
-		ecurie8.setPilotes(listPilote8);
 		ecurie8.setCourseEnCours(1);
 		
 		Ecurie ecurie9 = new Ecurie();
@@ -1033,10 +938,6 @@ public class TestJpa {
 		ecurie9.setArgent(1200000);
 		ecurie9.setExperience(290);
 		ecurie9.setCourseEnCours(1);
-		
-		ecurie9.setVoitures(listVoiture9);
-		ecurie9.setPilotes(listPilote8);
-		ecurie9.setInfrastructure(listInfrastructure9);
 		
 		
 		ecurie1= ecurieRepo.save(ecurie1);
@@ -1050,21 +951,6 @@ public class TestJpa {
 		ecurie9= ecurieRepo.save(ecurie9);
 		
 		
-		//Inventaires
-		
-		
-		//Inventaire inventaire2 = new Inventaire(0);
-		//Inventaire inventaire3 = new Inventaire(0);
-		//Inventaire inventaire4 = new Inventaire(0);
-		
-		//inventaire1.setPilotes(listPilote);
-		//inventaire1.setInfrastructure(listInfrastructure3);
-		//inventaire1.setVoitures(listVoiture10);
-		
-//		inventaire1 = inventaireRepo.save(inventaire1);
-//		inventaire2 = inventaireRepo.save(inventaire2);
-//		inventaire3 = inventaireRepo.save(inventaire3);
-//		inventaire4 = inventaireRepo.save(inventaire4);
 	
 		//Course
 		
@@ -1244,24 +1130,22 @@ public class TestJpa {
 		joueur1.setTelephone("0606060606");
 		joueur1.setCiv(Civilite.M);
 		joueur1.setEcurie(ecurieJoueur1);
-		//joueur1.setInventaire(inventaire1);
 		
 		joueur1 = joueurRepo.save(joueur1);
 		compteJoueur1.setJoueur(joueur1);
 		compteJoueur1 = compteRepo.save(compteJoueur1);
 
-		Joueur joueur2=new Joueur();
-		joueur2.setPseudo("Joueur2");
-		joueur2.setAge(27);
-		joueur2.setMail("joueur2@gmail.com");
-		joueur2.setTelephone("0606060606");
-		joueur2.setCiv(Civilite.MME);
-		joueur2.setEcurie(ecurieJoueur2);
-		//joueur2.setInventaire(inventaire2);
+//		Joueur joueur2=new Joueur();
+//		joueur2.setPseudo("Joueur2");
+//		joueur2.setAge(27);
+//		joueur2.setMail("joueur2@gmail.com");
+//		joueur2.setTelephone("0606060606");
+//		joueur2.setCiv(Civilite.MME);
+//		joueur2.setEcurie(ecurieJoueur2);
 		
-		joueur2 = joueurRepo.save(joueur2);
-		compteJoueur2.setJoueur(joueur2);
-		compteJoueur2 = compteRepo.save(compteJoueur2);
+		//joueur2 = joueurRepo.save(joueur2);
+		//compteJoueur2.setJoueur(joueur2);
+		//compteJoueur2 = compteRepo.save(compteJoueur2);
 		
 		//pilote1false.setEcurie(ecurieJoueur1);
 		//pilote2false.setEcurie(ecurieJoueur2);
@@ -1272,29 +1156,156 @@ public class TestJpa {
 		//pilote1false = piloteRepo.save(pilote1false);
 		//pilote2false = piloteRepo.save(pilote2false);
 		
-		voiture1.setEcurie(ecurieJoueur1);
+		
+		//Enregistrement des Voitures
+		
+		voiture1.setEcurie(ecurie1);
 		voiture1 = voitureRepo.save(voiture1);
 		
-		voiture2.setEcurie(ecurieJoueur1);
+		voiture2.setEcurie(ecurie2);
 		voiture2 = voitureRepo.save(voiture2);
 		
-		infraMarketing1.setEcurie(ecurieJoueur1);
-		infraMarketing1 = infrastructureRepo.save(infraMarketing1);
+		voiture3.setEcurie(ecurie3);
+		voiture3 = voitureRepo.save(voiture3);
 		
-		infraPilote1.setEcurie(ecurieJoueur1);
-		infraPilote1 = infrastructureRepo.save(infraPilote1);
+		voiture4.setEcurie(ecurie4);
+		voiture4 = voitureRepo.save(voiture4);
 		
-		infraVoiture1.setEcurie(ecurieJoueur1);
-		infraVoiture1 = infrastructureRepo.save(infraVoiture1);
+		voiture5.setEcurie(ecurie5);
+		voiture5 = voitureRepo.save(voiture5);
 		
-		//inventaire1 = inventaireRepo.save(inventaire1);
+		voiture6.setEcurie(ecurie6);
+		voiture6 = voitureRepo.save(voiture6);
+		
+		voiture7.setEcurie(ecurie7);
+		voiture7 = voitureRepo.save(voiture7);
+		
+		voiture8.setEcurie(ecurie8);
+		voiture8 = voitureRepo.save(voiture8);
+		
+		voiture9.setEcurie(ecurie9);
+		voiture9 = voitureRepo.save(voiture9);
+		
+		voiture10 = voitureRepo.save(voiture10);
+		
+		voiture11.setEcurie(ecurie1);
+		voiture11 = voitureRepo.save(voiture11);
+		
+		voiture12.setEcurie(ecurie2);
+		voiture12 = voitureRepo.save(voiture12);
+		
+		voiture13.setEcurie(ecurie3);
+		voiture13 = voitureRepo.save(voiture13);
+		
+		voiture14.setEcurie(ecurie4);
+		voiture14 = voitureRepo.save(voiture14);
+		
+		voiture15.setEcurie(ecurie5);
+		voiture15 = voitureRepo.save(voiture15);
+		
+		voiture16.setEcurie(ecurie6);
+		voiture16 = voitureRepo.save(voiture16);
+		
+		voiture17.setEcurie(ecurie7);
+		voiture17 = voitureRepo.save(voiture17);
+		
+		voiture18.setEcurie(ecurie8);
+		voiture18 = voitureRepo.save(voiture18);
+		
+		voiture19.setEcurie(ecurie9);
+		voiture19 = voitureRepo.save(voiture19);
+		
+		voiture20 = voitureRepo.save(voiture20);
+		
+		
+		//Enregistrement des Pilotes
+		
+		pilote1.setEcurie(ecurie1);
+		pilote1 = piloteRepo.save(pilote1);
+		
+		pilote2.setEcurie(ecurie1);
+		pilote2 = piloteRepo.save(pilote2);
+		
+		pilote3.setEcurie(ecurie2);
+		pilote3 = piloteRepo.save(pilote3);
+		
+		pilote4.setEcurie(ecurie2);
+		pilote4 = piloteRepo.save(pilote4);
+		
+		pilote5.setEcurie(ecurie3);
+		pilote5 = piloteRepo.save(pilote5);
+		
+		pilote6.setEcurie(ecurie3);
+		pilote6 = piloteRepo.save(pilote6);
+		
+		pilote7.setEcurie(ecurie4);
+		pilote7 = piloteRepo.save(pilote7);
+		
+		pilote8.setEcurie(ecurie4);
+		pilote8 = piloteRepo.save(pilote8);
+		
+		pilote9.setEcurie(ecurie5);
+		pilote9 = piloteRepo.save(pilote9);
+		
+		pilote10.setEcurie(ecurie5);
+		pilote10 = piloteRepo.save(pilote10);
+		
+		pilote11.setEcurie(ecurie6);
+		pilote11 = piloteRepo.save(pilote11);
+		
+		pilote12.setEcurie(ecurie6);
+		pilote12 = piloteRepo.save(pilote12);
+		
+		pilote13.setEcurie(ecurie7);
+		pilote13 = piloteRepo.save(pilote13);
+		
+		pilote14.setEcurie(ecurie7);
+		pilote14 = piloteRepo.save(pilote14);
+		
+		pilote15.setEcurie(ecurie8);
+		pilote15 = piloteRepo.save(pilote15);
+		
+		pilote16.setEcurie(ecurie8);
+		pilote16 = piloteRepo.save(pilote16);
+		
+		pilote17.setEcurie(ecurie9);
+		pilote17 = piloteRepo.save(pilote17);
+		
+		pilote18.setEcurie(ecurie9);
+		pilote18 = piloteRepo.save(pilote18);
+		
+		pilote19=piloteRepo.save(pilote19);
+		pilote20=piloteRepo.save(pilote20);
+
+		//Enregistrement des Infrastructures
 	
-		Position positionPilote1 = new Position();
-		positionPilote1.setPosition(4);
-		//positionPilote1.setPilote(pilote1false);
-		positionPilote1.setCourse(course1);
+		infra1.setEcurie(ecurie1);
+		infra1 = infrastructureRepo.save(infra1);
 		
-		positionPilote1 = positionRepo.save(positionPilote1);
+		infra2.setEcurie(ecurie2);
+		infra2 = infrastructureRepo.save(infra2);
+		
+		infra3.setEcurie(ecurie3);
+		infra3 = infrastructureRepo.save(infra3);
+		
+		infra4.setEcurie(ecurie4);
+		infra4 = infrastructureRepo.save(infra4);
+		
+		infra5.setEcurie(ecurie5);
+		infra5 = infrastructureRepo.save(infra5);
+		
+		infra6.setEcurie(ecurie6);
+		infra6 = infrastructureRepo.save(infra6);
+		
+		infra7.setEcurie(ecurie7);
+		infra7 = infrastructureRepo.save(infra7);
+		
+		infra8.setEcurie(ecurie8);
+		infra8 = infrastructureRepo.save(infra8);
+		
+		infra9.setEcurie(ecurie9);
+		infra9 = infrastructureRepo.save(infra9);
+		
 
 		spring.close();
 	}
