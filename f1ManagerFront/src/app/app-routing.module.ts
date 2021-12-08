@@ -24,8 +24,7 @@ const routes: Routes = [
   {path: "course", component: SaisonComponent},
   {path: "course/jeu", component: CourseComponent},
   {path: "podium", component: PodiumComponent},
-  {path: "podium/course", component: SaisonComponent},
-  {path: '', redirectTo: 'seconnecter', pathMatch: 'full' }
+  {path: "podium/course", component: SaisonComponent}
 ];
 
 @NgModule({
