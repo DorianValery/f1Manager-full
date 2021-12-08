@@ -12,10 +12,12 @@ export class EcurieService {
   ecuries: Array<Ecurie> = new Array<Ecurie>();
   ecurie:Ecurie;
   ecurieUrl: string;
+  ecurieUrlss: string;
   course : Course;
 
   constructor(private http: HttpClient, private appConfig: AppConfigService) {
     this.ecurieUrl = this.appConfig.backEndUrl + "ecurie/"
+    this.ecurieUrlss = this.appConfig.backEndUrl + "ecurie"
     this.load();
   }
 
@@ -40,6 +42,13 @@ export class EcurieService {
       //  this.loadEcurie(this.ecurie.id);
      }, error => console.log(error));
     }
+
+    modifyPodium(ecurie: Ecurie, id : number){
+      this.http.put<Ecurie>(this.ecurieUrl+id, ecurie).subscribe(response=>{
+        //  this.loadEcurie(this.ecurie.id);
+       }, error => console.log(error));
+      
+ }
 
   load() {
     this.http.get<Array<Ecurie>>(this.ecurieUrl).subscribe(response => {

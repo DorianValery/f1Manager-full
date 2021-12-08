@@ -186,6 +186,18 @@ public class EcurieRestController {
 			return ecurie;
 		}
 		
+		@PutMapping("")
+		@JsonView(Views.ViewEcurie.class)
+		public Ecurie update(@RequestBody Ecurie ecurie) {
+			if (!ecurieRepo.existsById(ecurie.getId())) {
+				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Ecurie non trouvé");
+			}
+
+			ecurie = ecurieRepo.save(ecurie);
+
+			return ecurie;
+		}
+		
 		@DeleteMapping("/{id}")
 		public void delete(@PathVariable Long id) {
 			if (!ecurieRepo.existsById(id)) {

@@ -18,12 +18,15 @@ export class PodiumComponent implements OnInit {
   elseBlock: TemplateRef<any>|null = null;
   ecurie : Ecurie = this.ecurieService.ecurie;
   course : Course ;
-  idCourse : number = this.ecurieService.ecurie.courseEnCours;
+  
   scoreFin : any[];
+  courseID : number = this.ecurieService.ecurie.courseEnCours;
 
   constructor(private courseService : CourseService, private ecurieService : EcurieService, private saisonService : SaisonService,private podiumService :  PodiumService) {
 
-    this.course = podiumService.findCourse(this.idCourse);
+    console.log(this.courseID);
+    this.findThecourse(this.courseID);
+    this.course = podiumService.findCourse(this.courseID);
    
     console.log(this.course);
 
@@ -35,12 +38,21 @@ export class PodiumComponent implements OnInit {
    courseSuivante(){
      
     this.courseService.findScore().forEach(( e , i)=>{
+      //e.ecurie = new Ecurie(e.ecurie.id,e.ecurie.version,null,e.ecurie.argent,e.ecurie.courseEnCours,null,null,null,null,null);
       e.ecurie.courseEnCours ++;
-      e.ecurie.argent += (this.podiumService.findCourse(this.idCourse).cashPrize-(i*10000));
-      console.log(this.ecurie)
-      this.ecurieService.modify(e.ecurie);
+      e.ecurie.argent += this.course.cashPrize-(i*10000);
+      console.log(e.ecurie)
+      this.ecurieService.modifyPodium(e.ecurie,e.ecurie.id);
     })
    
+   }
+
+   findThecourse(courseID : number){
+    this.saisonService.findCourseById(courseID).subscribe(resp =>{
+      this.course = resp;
+      console.log(this.course);
+      //sessionStorage.setItem("course",this.saisonTest)
+    },error=> console.log(error));
    }
 
   ngOnInit(): void {
