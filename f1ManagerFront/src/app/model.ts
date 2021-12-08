@@ -49,10 +49,10 @@ export class Ecurie {
     pilotes: Pilote[];
     infrastructures: Infrastructure[];
     voitures: Voiture[];
-    positionFinale : Position;
+    positionFinale : Position[];
 
 
-    constructor(id?: number, version?: number, nom?: string, argent?: number, experience?: number, courseEnCours?: number, pilotes?: Pilote[], infrastructures?: Infrastructure[], voitures?: Voiture[], positionFinale?: Position) {
+    constructor(id?: number, version?: number, nom?: string, argent?: number, experience?: number, courseEnCours?: number, pilotes?: Pilote[], infrastructures?: Infrastructure[], voitures?: Voiture[], positionFinale?: Position[]) {
         this.id = id;
         this.version = version;
         this.nom = nom;
@@ -62,7 +62,7 @@ export class Ecurie {
         this.pilotes = pilotes;
         this.infrastructures = infrastructures;
         this.voitures = voitures;
-        this.positionFinale = positionFinale;
+        this.positionFinale= positionFinale;
      }
 }
 export class Pilote {
