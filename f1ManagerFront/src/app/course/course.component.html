@@ -24,7 +24,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let valeur of scoreGeneral; let i = index">
-                        <td>{{i+1}} - {{valeur.ecurie.nom}}</td>
+                        <td  [ngClass]=" {'notreEcurie' : valeur.ecurie.id==ecurie.id}">{{i+1}} - {{valeur.ecurie.nom}}</td>
                         
                        
                     </tr>

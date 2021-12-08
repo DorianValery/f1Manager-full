@@ -6,14 +6,14 @@
     
 <div id="contenuPrincipal">
     <div id="position">
-        <div class="card-title">POSITION</div>
+        <div class="card-title">CLASSEMENT</div>
         <div id="echelle" *ngFor ="let v of score();let i = index">
             <div >{{i+1}} - {{v.ecurie.nom}}</div>
         </div>
     </div>
    
     <div>
-        <div style="background: #ffffffed;color: black; font-size: 25px;display: flex; justify-content: center;">PLACE :</div>
+        <div style="background: #ffffffed;color: black; font-size: 25px;display: flex; justify-content: center;">POSITION</div>
     <div id="you">
         
         <div *ngFor ="let v of score();let i = index">
