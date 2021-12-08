@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppConfigService } from '../app-config.service';
-import { Compte, Joueur } from '../model';
+import { Compte, InscriptionDTO, Joueur } from '../model';
 import { SeConnecterHttpService } from '../se-connecter/se-connecter-http.service';
 import { InscriptionJoueurService } from './inscription-joueur.service';
 
@@ -12,8 +12,7 @@ import { InscriptionJoueurService } from './inscription-joueur.service';
 })
 export class InscriptionJoueurComponent implements OnInit {
 
-  joueurForm: Joueur = null;
-  compteForm: Compte = null;
+  inscriptionForm: InscriptionDTO = new InscriptionDTO();
   civilites: Array<String> = new Array<String>();
 
   constructor(private appConfig: AppConfigService, private inscriptionService: InscriptionJoueurService,private seConnecter: SeConnecterHttpService, private router: Router) {
@@ -30,29 +29,21 @@ export class InscriptionJoueurComponent implements OnInit {
   }
 
   save() {
-    if (!this.joueurForm.id) {
-      this.inscriptionService.create(this.joueurForm);
+    if (!this.inscriptionForm.id) {
+      this.inscriptionService.create(this.inscriptionForm);
     } else {
-      this.inscriptionService.modify(this.joueurForm);
+      this.inscriptionService.modify(this.inscriptionForm);
     }
     this.router.navigate(['/seconnecter']);
-    this.joueurForm = null;
+    this.inscriptionForm = null;
   }
   cancel() {
     this.router.navigate(['/seconnecter']);
-    this.joueurForm = null;
+    this.inscriptionForm = null;
   }
   listCompte(): Array<Compte> {
     return this.seConnecter.findAll();
   }
-  saveCompte(){
-    if (!this.compteForm.id) {
-      this.seConnecter.create(this.compteForm);
-    } else {
-      this.seConnecter.modify(this.compteForm);
-    }
-    this.router.navigate(['/seconnecter']);
-    this.compteForm = null;
-  }
+  
 
 }
