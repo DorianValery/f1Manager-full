@@ -228,7 +228,11 @@ export class SeConnecterForm {
 }
 
 
+export class Tour {
 
+    position: number;
+
+    constructor() {
 
     }
 }
