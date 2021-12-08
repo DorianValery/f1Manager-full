@@ -84,7 +84,7 @@ public class TestJpa {
 		
 		//Pilotes 1 et 2 etat non possédés
 		
-		Pilote pilote1false =new Pilote();
+	   /*Pilote pilote1false =new Pilote();
 		pilote1false.setNom("BOTTAS");
 		pilote1false.setPrenom("Slow");
 		pilote1false.setAge(21);
@@ -153,7 +153,7 @@ public class TestJpa {
 		listPilote.add(pilote2false);
 		listPilote.add(pilote3false);
 		listPilote.add(pilote4false);
-		listPilote.add(piloteX);
+		listPilote.add(piloteX);*/
 		
 		//PILOTES DES ECURIES
 		//Inventaire inventaire1 = new Inventaire(50);
@@ -1251,14 +1251,14 @@ public class TestJpa {
 		compteJoueur2.setJoueur(joueur2);
 		compteJoueur2 = compteRepo.save(compteJoueur2);
 		
-		pilote1false.setEcurie(ecurieJoueur1);
-		pilote2false.setEcurie(ecurieJoueur2);
+		//pilote1false.setEcurie(ecurieJoueur1);
+		//pilote2false.setEcurie(ecurieJoueur2);
 		
 		//pilote1false.setInventaire(inventaire1);
 		//pilote2false.setInventaire(inventaire1);
 		
-		pilote1false = piloteRepo.save(pilote1false);
-		pilote2false = piloteRepo.save(pilote2false);
+		//pilote1false = piloteRepo.save(pilote1false);
+		//pilote2false = piloteRepo.save(pilote2false);
 		
 		voiture1.setEcurie(ecurieJoueur1);
 		voiture1 = voitureRepo.save(voiture1);
@@ -1279,7 +1279,7 @@ public class TestJpa {
 	
 		Position positionPilote1 = new Position();
 		positionPilote1.setPosition(4);
-		positionPilote1.setPilote(pilote1false);
+		//positionPilote1.setPilote(pilote1false);
 		positionPilote1.setCourse(course1);
 		
 		positionPilote1 = positionRepo.save(positionPilote1);

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SeConnecterHttpService } from '../se-connecter/se-connecter-http.service';
 import { AccueilService } from './accueil.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { AccueilService } from './accueil.service';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor(private accueilService: AccueilService,private router: Router) { }
+  constructor(private accueilService: AccueilService,private router: Router, private seconnecterService: SeConnecterHttpService) { }
 
   ngOnInit(): void {
   }

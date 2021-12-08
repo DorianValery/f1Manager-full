@@ -12,6 +12,7 @@ import { SeConnecterComponent } from './se-connecter/se-connecter.component';
 import { VoitureInventaireComponent } from './voiture-inventaire/voiture-inventaire.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   {path: "accueil", component: AccueilComponent},
   {path: "menu", component: MenuComponent},
   {path: "seconnecter", component: SeConnecterComponent},

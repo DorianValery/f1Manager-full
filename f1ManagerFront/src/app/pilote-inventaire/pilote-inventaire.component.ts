@@ -8,7 +8,9 @@ import { JoueurService } from '../joueur/joueur.service';
 
 
 import { Ecurie, Inventaire, Pilote } from '../model';
+import { SeConnecterHttpService } from '../se-connecter/se-connecter-http.service';
 import { PiloteInventaireHttpService } from './pilote-inventaire-http.service';
+import { SeConnecterForm } from '../model';
 
 @Component({
   selector: 'app-pilote-inventaire',
@@ -24,6 +26,7 @@ export class PiloteInventaireComponent implements OnInit {
   argent: number;
   prix : number;
   pilote : Pilote;
+  seconnecterForm: SeConnecterForm = new SeConnecterForm();
 
   constructor(private appConfig: AppConfigService, private piloteService: PiloteInventaireHttpService,private ecurieService: EcurieService, private inventaireService: InventaireService, private joueurService: JoueurService) { 
    this.ecurie=this.ecurieService.ecurie;
@@ -101,6 +104,8 @@ acheter(pilote: Pilote){
 cancel() {
     this.piloteForm = null;
   }
+
+ 
 }
   
 
